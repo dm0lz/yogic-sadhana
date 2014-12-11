@@ -1,0 +1,2 @@
+module Backend::PracticesHelper
+end
