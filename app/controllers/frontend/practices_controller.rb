@@ -3,7 +3,7 @@ class Frontend::PracticesController < FrontendController
   before_action :authenticate_admin!
 
   def index
-    render text: "Frontend Practices"
+    render 'index'
   end
 
 end

@@ -1,2 +1,0 @@
-module FrontEnd::PracticesHelper
-end

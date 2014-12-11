@@ -3,7 +3,7 @@ class Backend::PracticesController < BackendController
   before_action :authenticate_admin!
 
   def index
-    render text: "Backend practices"
+    render 'index'
   end
 
 end
