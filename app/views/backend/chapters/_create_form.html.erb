@@ -1,0 +1,20 @@
+
+<h2>Create Chapter form</h2>
+
+<%= form_tag backend_chapters_path, method: :post do %>
+
+  <ul>
+    <li>
+      <%= label_tag "Title" %>
+      <%= text_field_tag :title %>
+    </li>
+    <li>
+      <%= label_tag "Description" %>
+      <%= text_field_tag :description %>
+    </li>
+    <li>
+      <%= submit_tag  "submit" %>
+    </li>
+  </ul>
+
+<% end %>

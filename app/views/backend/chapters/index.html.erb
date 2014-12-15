@@ -1,0 +1,41 @@
+<h1>Backend::Chapters#index</h1>
+<p>Find me in app/views/backend/chapters/index.html.erb</p>
+
+<%= render partial: 'create_form' %>
+
+<h1>List of Chapters</h1>
+
+
+<div class="container">
+  <% @chapters.each do |chapter| %>
+    <div class="row well well-sm">
+
+      <div class="col-md-10">
+
+        <ul>
+          <li>
+            <h4>Title</h4>
+            <%= chapter.title %>
+          </li>
+          <li>
+            <h4>Description</h4>
+            <%= chapter.description %>
+          </li>
+
+        </div>
+
+        <div class="col-md-2">
+          <li>
+            <%= link_to "Show chapter", backend_chapter_path(chapter), class: "btn btn-info" %>
+          </li>
+          <div class="simple-spacer"></div>
+          <li>
+            <%= link_to "Destroy Chapter", backend_chapter_path(chapter), method: :delete, class: "btn btn-danger" %>
+          </li>
+        </ul>
+
+        </div>
+
+    </div>
+  <% end %>
+</div>

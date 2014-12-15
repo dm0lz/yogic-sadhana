@@ -3,6 +3,7 @@ class CreatePractices < ActiveRecord::Migration
     create_table :practices do |t|
       t.string :name
       t.text :description
+      t.references :chapter, index: true
 
       t.timestamps
     end

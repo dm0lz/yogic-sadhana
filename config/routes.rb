@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'home/index'
-
   root to: "home#index"
 
   devise_for :admins
@@ -9,6 +7,7 @@ Rails.application.routes.draw do
   namespace :backend do
     resources :practices, only: [:index] do
     end
+    resources :chapters
   end
 
   namespace :frontend do

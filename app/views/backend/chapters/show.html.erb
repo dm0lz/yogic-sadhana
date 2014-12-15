@@ -1,0 +1,17 @@
+<h1>Backend::Chapters#show</h1>
+<p>Find me in app/views/backend/chapters/show.html.erb</p>
+
+
+<div class="container">
+  <div class="row">
+    <ul class="well">
+      <li>Id : <%= @chapter.id %></li>
+      <li>Title : <%= @chapter.title %></li>
+      <li>Description : <%= @chapter.description %></li>
+    </ul>
+  </div>
+</div>
+
+<%= link_to "Edit chapter", edit_backend_chapter_path(@chapter), class: "btn btn-warning" %>
+<%= link_to "Back to chapters list", backend_chapters_path, class: "btn btn-success" %>
+
