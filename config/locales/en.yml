@@ -1,23 +1,36 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        chapter:
+          attributes:
+            title:
+              blank: "Title cannot be blank"
+            description:
+              blank: "Description cannot be blank"
+  chapters:
+    titles:
+      edit_chapter: "Edit chapter"
+      create_chapter: "Create new chapter"
+    buttons:
+      list: "Chapters list"
+      create_chapter: "Create a new chapter"
+      show_chapter: "Show chapter"
+      destroy_chapter: "Destroy chapter"
+      edit_chapter: "Edit chapter"
+      back_to_chapter_description: "Back to chapter description"
+      back_to_chapters_list: "Back to chapters list"
+      submit_edit: "Edit"
+      submit_create: "Create"
+      back: "Back"
+    attributes:
+      id: "Id"
+      title: "Title"
+      description: "Description"
+    flash_messages:
+      chapter_created: "Chapter was successfully created"
+      chapter_updated: "Chapter was successfully updated"
+      chapter_destroyed: "Chapter was successfully destroyed"
+
+

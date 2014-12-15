@@ -1,0 +1,35 @@
+
+fr:
+  activerecord:
+    errors:
+      models:
+        chapter:
+          attributes:
+            title:
+              blank: "Le title ne peut pas être vide"
+            description:
+              blank: "La description ne peut pas être vide"
+  chapters:
+    titles:
+      edit_chapter: "Editer le chapitre"
+      create_chapter: "Créer un nouveau chapitre"
+    buttons:
+      list: "Liste des chapitres"
+      create_chapter: "Créer un nouveau chapitre"
+      show_chapter: "Voir le chapitre"
+      destroy_chapter: "Effacer le chapitre"
+      edit_chapter: "Editer le chapitre"
+      back_to_chapter_description: "Retourner à la description du chapitre"
+      back_to_chapters_list: "Retourner à la liste des chapitres"
+      submit_edit: "Mettre à jour"
+      submit_create: "Créer"
+      back: "Retour"
+    attributes:
+      id: "Id"
+      title: "Titre"
+      description: "Description"
+    flash_messages:
+      chapter_created: "Le chapitre a été crée avec succès"
+      chapter_updated: "Le chapitre a été mis à jour avec succès"
+      chapter_destroyed: "Le chapitre a été détruit avec succès"
+

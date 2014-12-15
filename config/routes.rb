@@ -1,18 +1,22 @@
 Rails.application.routes.draw do
 
-  root to: "home#index"
+  scope "(:locale)", :locale => /en|fr/ do
 
-  devise_for :admins
+    root to: "home#index"
 
-  namespace :backend do
-    resources :practices, only: [:index] do
+    devise_for :admins
+
+    namespace :backend do
+      resources :practices, only: [:index] do
+      end
+      resources :chapters
     end
-    resources :chapters
-  end
 
-  namespace :frontend do
-    resources :practices, only: [:index] do
+    namespace :frontend do
+      resources :practices, only: [:index] do
+      end
     end
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

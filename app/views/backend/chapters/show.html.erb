@@ -5,13 +5,13 @@
 <div class="container">
   <div class="row">
     <ul class="well">
-      <li>Id : <%= @chapter.id %></li>
-      <li>Title : <%= @chapter.title %></li>
-      <li>Description : <%= @chapter.description %></li>
+      <li><%= t('chapters.attributes.id') %> : <%= @chapter.id %></li>
+      <li><%= t('chapters.attributes.title') %> : <%= @chapter.title %></li>
+      <li><%= t('chapters.attributes.description') %> : <%= @chapter.description %></li>
     </ul>
   </div>
 </div>
 
-<%= link_to "Edit chapter", edit_backend_chapter_path(@chapter), class: "btn btn-warning" %>
-<%= link_to "Back to chapters list", backend_chapters_path, class: "btn btn-success" %>
+<%= link_to t('chapters.buttons.edit_chapter'), edit_backend_chapter_path(@chapter), class: "btn btn-warning" %>
+<%= link_to t('chapters.buttons.back_to_chapters_list'), backend_chapters_path, class: "btn btn-success" %>
 

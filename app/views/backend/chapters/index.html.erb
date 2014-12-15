@@ -3,9 +3,9 @@
 
 <%#= render partial: 'create_form' %>
 
-<%= link_to "create new chapter", new_backend_chapter_path, class: "btn btn-success" %>
+<%= link_to t('chapters.buttons.create_chapter'), new_backend_chapter_path, class: "btn btn-success" %>
 
-<h1>List of Chapters</h1>
+<h1><%= t('chapters.buttons.list') %></h1>
 
 <div class="container">
   <% @chapters.each do |chapter| %>
@@ -15,11 +15,11 @@
 
         <ul>
           <li>
-            <h4>Title</h4>
+            <h4><%= t('chapters.attributes.title') %></h4>
             <%= chapter.title %>
           </li>
           <li>
-            <h4>Description</h4>
+            <h4><%= t('chapters.attributes.description') %></h4>
             <%= chapter.description %>
           </li>
 
@@ -27,15 +27,15 @@
 
         <div class="col-md-2">
           <li>
-            <%= link_to "Show chapter", backend_chapter_path(chapter), class: "btn btn-info" %>
+            <%= link_to t('chapters.buttons.show_chapter'), backend_chapter_path(chapter), class: "btn btn-info" %>
           </li>
-          <div class="simple-spacer"></div>
+          <div class="small-spacer"></div>
           <li>
-            <%= link_to "Destroy Chapter", backend_chapter_path(chapter), method: :delete, class: "btn btn-danger" %>
+            <%= link_to t('chapters.buttons.destroy_chapter'), backend_chapter_path(chapter), method: :delete, class: "btn btn-danger" %>
           </li>
-          <div class="simple-spacer"></div>
+          <div class="small-spacer"></div>
           <li>
-            <%= link_to "Edit Chapter", edit_backend_chapter_path(chapter), method: :get, class: "btn btn-warning" %>
+            <%= link_to t('chapters.buttons.edit_chapter'), edit_backend_chapter_path(chapter), method: :get, class: "btn btn-warning" %>
           </li>
         </ul>
 

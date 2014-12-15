@@ -7,9 +7,10 @@ class Backend::ChaptersController < BackendController
   def create
     @chapter = Chapter.new chapter_params
     if @chapter.save
+      flash[:success] = t('chapters.flash_messages.chapter_created')
       redirect_to :backend_chapters
     else
-      flash[:alert] = @chapter.errors.messages
+      flash[:error] = @chapter.errors.messages.map{|k,v| v}.flatten.join " -- "
       redirect_to new_backend_chapter_path(@chapter)
     end
   end
@@ -22,6 +23,7 @@ class Backend::ChaptersController < BackendController
   def destroy
     @chapter = Chapter.find chapter_params[:id]
     if @chapter.destroy
+      flash[:success] = t('chapters.flash_messages.chapter_destroyed')
       redirect_to :backend_chapters
     else
       @errors = @chapter.errors
@@ -32,9 +34,10 @@ class Backend::ChaptersController < BackendController
   def update
     @chapter = Chapter.find chapter_params[:id]
     if @chapter.update_attributes(chapter_params)
+      flash[:success] = t('chapters.flash_messages.chapter_updated')
       redirect_to :backend_chapters
     else
-      flash[:alert] = @chapter.errors.messages
+      flash[:error] = @chapter.errors.messages.map{|k,v| v}.flatten.join " -- "
       redirect_to edit_backend_chapter_path(@chapter)
     end
   end
