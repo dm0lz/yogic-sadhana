@@ -24,7 +24,7 @@ class Backend::ChaptersController < BackendController
     @chapter = Chapter.find chapter_params[:id]
     if @chapter.destroy
       flash[:success] = t('chapters.flash_messages.chapter_destroyed')
-      redirect_to :backend_chapters
+      redirect_to backend_course_chapters_path(@chapter.course)
     else
       @errors = @chapter.errors
       render 'shared/errors'
@@ -35,7 +35,7 @@ class Backend::ChaptersController < BackendController
     @chapter = Chapter.find chapter_params[:id]
     if @chapter.update_attributes(chapter_params)
       flash[:success] = t('chapters.flash_messages.chapter_updated')
-      redirect_to :backend_chapters
+      redirect_to backend_course_chapters_path(@chapter.course)
     else
       flash[:error] = @chapter.errors.messages.map{|k,v| v}.flatten.join " -- "
       redirect_to edit_backend_chapter_path(@chapter)
@@ -43,7 +43,6 @@ class Backend::ChaptersController < BackendController
   end
 
   def show
-    #binding.pry
     @chapter = Chapter.find chapter_params[:id]
     render 'show'
   end

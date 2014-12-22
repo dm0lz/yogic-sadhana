@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     devise_for :admins
 
     namespace :backend do
-      resources :courses do
+      resources :courses, shallow: true do
         resources :chapters
       end
     end

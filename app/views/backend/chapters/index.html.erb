@@ -4,3 +4,5 @@
 <h1><%= t('chapters.buttons.list') %></h1>
 
 <%= render 'chapters_list' %>
+
+<%= link_to t('chapters.buttons.back_to_chapters_list'), backend_course_path(params["course_id"]), class: "btn btn-warning" %>
