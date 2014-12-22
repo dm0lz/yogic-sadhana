@@ -9,6 +9,29 @@ en:
               blank: "Title cannot be blank"
             description:
               blank: "Description cannot be blank"
+  courses:
+    titles:
+      edit_course: "Edit course"
+      create_course: "Create new course"
+    buttons:
+      list: "Courses list"
+      create_course: "create a new course"
+      show_course: "Show course"
+      destroy_course: "Destroy course"
+      edit_course: "Edit course"
+      back_to_course_description: "Back to course description"
+      back_to_courses_list: "Back to course list"
+      submit_edit: "Edit"
+      submit_create: "Create"
+      back: "Back"
+    attributes:
+      id: "Id"
+      title: "Title"
+      description: "Description"
+    flash_messages:
+      course_created: "course was successfully created"
+      course_updated: "course was successfully updated"
+      course_destroyed: "course was successfully destroyed"
   chapters:
     titles:
       edit_chapter: "Edit chapter"
@@ -16,6 +39,7 @@ en:
     buttons:
       list: "Chapters list"
       create_chapter: "Create a new chapter"
+      create_course: "create a new course"
       show_chapter: "Show chapter"
       destroy_chapter: "Destroy chapter"
       edit_chapter: "Edit chapter"

@@ -8,7 +8,7 @@ class Backend::ChaptersController < BackendController
     @chapter = Chapter.new chapter_params
     if @chapter.save
       flash[:success] = t('chapters.flash_messages.chapter_created')
-      redirect_to :backend_chapters
+      redirect_to :backend_course_chapters
     else
       flash[:error] = @chapter.errors.messages.map{|k,v| v}.flatten.join " -- "
       redirect_to new_backend_chapter_path(@chapter)
@@ -43,12 +43,13 @@ class Backend::ChaptersController < BackendController
   end
 
   def show
+    #binding.pry
     @chapter = Chapter.find chapter_params[:id]
     render 'show'
   end
 
   private
   def chapter_params
-    params.permit :id, :title, :description
+    params.permit :id, :title, :description, :course_id
   end
 end

@@ -1,0 +1,38 @@
+
+<div class="container">
+  <% @courses.each do |course| %>
+    <div class="row well well-sm">
+
+      <div class="col-md-10">
+
+        <ul>
+          <li>
+            <h4><%= t('courses.attributes.title') %></h4>
+            <%= course.title %>
+          </li>
+          <li>
+            <h4><%= t('courses.attributes.description') %></h4>
+            <%= course.description %>
+          </li>
+
+        </div>
+
+        <div class="col-md-2">
+          <li>
+            <%= link_to t('courses.buttons.show_course'), backend_course_path(course), class: "btn btn-info" %>
+          </li>
+          <div class="small-spacer"></div>
+          <li>
+            <%= link_to t('courses.buttons.destroy_course'), backend_course_path(course), method: :delete, class: "btn btn-danger" %>
+          </li>
+          <div class="small-spacer"></div>
+          <li>
+            <%= link_to t('courses.buttons.edit_course'), edit_backend_course_path(course), method: :get, class: "btn btn-warning" %>
+          </li>
+        </ul>
+
+        </div>
+
+    </div>
+  <% end %>
+</div>

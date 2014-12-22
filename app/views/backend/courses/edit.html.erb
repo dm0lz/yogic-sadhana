@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+
+    <%= render partial: "edit_form", locals: {course: @course} %>
+    <%= link_to t('courses.buttons.back_to_course_description'), backend_course_path(@course), class: "row btn btn-success" %>
+    <%= link_to t('courses.buttons.back_to_courses_list'), backend_courses_path, class: "row btn btn-info", style: "margin-left:20px" %>
+
+  </div>
+</div>

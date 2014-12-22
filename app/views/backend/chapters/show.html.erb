@@ -12,6 +12,6 @@
   </div>
 </div>
 
-<%= link_to t('chapters.buttons.edit_chapter'), edit_backend_chapter_path(@chapter), class: "btn btn-warning" %>
-<%= link_to t('chapters.buttons.back_to_chapters_list'), backend_chapters_path, class: "btn btn-success" %>
+<%= link_to t('chapters.buttons.edit_chapter'), edit_backend_course_chapter_path(@chapter.course, @chapter), class: "btn btn-warning" %>
+<%= link_to t('chapters.buttons.back_to_chapters_list'), backend_course_chapters_path, class: "btn btn-success" %>
 

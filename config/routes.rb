@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   scope "(:locale)", :locale => /en|fr/ do
 
     root to: "home#index"
@@ -7,14 +8,12 @@ Rails.application.routes.draw do
     devise_for :admins
 
     namespace :backend do
-      resources :practices, only: [:index] do
+      resources :courses do
+        resources :chapters
       end
-      resources :chapters
     end
 
     namespace :frontend do
-      resources :practices, only: [:index] do
-      end
     end
 
   end

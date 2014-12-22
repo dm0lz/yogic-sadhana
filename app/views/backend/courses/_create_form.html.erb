@@ -3,12 +3,12 @@
 <div class="col-md-12">
   <div class="well well-sm">
 
-    <%= form_tag backend_course_chapters_path, method: :post do %>
+    <%= form_tag backend_courses_path, method: :post do %>
       <fieldset>
-        <legend class="text-center"><%= t('chapters.titles.create_chapter') %></legend>
+        <legend class="text-center"><%= t('courses.titles.create_course') %></legend>
 
         <div class="form-group">
-          <%= label_tag t('chapters.attributes.title'), nil, class: "col-md-3 control-label" %>
+          <%= label_tag t('courses.attributes.title'), nil, class: "col-md-3 control-label" %>
           <div class="col-md-9">
             <%= text_field_tag :title, nil, class: "form-control" %>
             <div class="small-spacer"></div>

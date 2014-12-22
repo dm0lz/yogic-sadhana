@@ -9,6 +9,29 @@ fr:
               blank: "Le title ne peut pas être vide"
             description:
               blank: "La description ne peut pas être vide"
+  courses:
+    titles:
+      edit_course: "Editer le cours"
+      create_course: "Créer un nouveau cours"
+    buttons:
+      list: "Liste des cours"
+      create_course: "Créer un nouveau cours"
+      show_course: "Voir le cours"
+      destroy_course: "Effacer le cours"
+      edit_course: "Editer le cours"
+      back_to_course_description: "Retourner à la description du cours"
+      back_to_courses_list: "Retourner à la liste des cours"
+      submit_edit: "Editer"
+      submit_create: "Créer"
+      back: "Retour"
+    attributes:
+      id: "Id"
+      title: "Titre"
+      description: "Description"
+    flash_messages:
+      course_created: "course was successfully created"
+      course_updated: "course was successfully updated"
+      course_destroyed: "course was successfully destroyed"
   chapters:
     titles:
       edit_chapter: "Editer le chapitre"
