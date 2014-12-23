@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
     namespace :backend do
       resources :courses, shallow: true do
-        resources :chapters
+        resources :chapters, shallow: true do
+          resources :practices
+        end
       end
     end
 

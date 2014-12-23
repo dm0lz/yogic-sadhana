@@ -2,6 +2,8 @@ class Backend::ChaptersController < BackendController
 
   def index
     @chapters = Chapter.all
+    @course = Course.find chapter_params[:course_id]
+    render 'index'
   end
 
   def create
@@ -44,6 +46,7 @@ class Backend::ChaptersController < BackendController
 
   def show
     @chapter = Chapter.find chapter_params[:id]
+    @practices = @chapter.practices
     render 'show'
   end
 

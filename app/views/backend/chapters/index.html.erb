@@ -1,8 +1,19 @@
 
+<div class="container">
+  <div class="row">
+    <h1>Course : <%= @course.title %></h1>
+    <ul class="well">
+      <li><%= t('courses.attributes.id') %> : <%= @course.id %></li>
+      <li><%= t('courses.attributes.title') %> : <%= @course.title %></li>
+      <li><%= t('courses.attributes.description') %> : <%= @course.description %></li>
+    </ul>
+  </div>
+</div>
+
 <%= link_to t('chapters.buttons.create_chapter'), new_backend_course_chapter_path, class: "btn btn-success" %>
 
 <h1><%= t('chapters.buttons.list') %></h1>
 
 <%= render 'chapters_list' %>
 
-<%= link_to t('chapters.buttons.back_to_chapters_list'), backend_course_path(params["course_id"]), class: "btn btn-warning" %>
+<%= link_to t('chapters.buttons.back_to_chapters_list'), backend_course_path(@course), class: "btn btn-warning" %>
