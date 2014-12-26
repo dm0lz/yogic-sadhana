@@ -56,5 +56,28 @@ en:
       chapter_created: "Chapter was successfully created"
       chapter_updated: "Chapter was successfully updated"
       chapter_destroyed: "Chapter was successfully destroyed"
+  practices:
+    titles:
+      edit_practices: "Edit practice"
+      create_practice: "Create new practice"
+    buttons:
+      list: "Courses list"
+      create_practice: "create a new practice"
+      show_practice: "Show practice"
+      destroy_practice: "Destroy practice"
+      edit_practice: "Edit practice"
+      back_to_practice_description: "Back to practice description"
+      back_to_practices_list: "Back to practices list"
+      submit_edit: "Edit"
+      submit_create: "Create"
+      back: "Back"
+    attributes:
+      id: "Id"
+      title: "Title"
+      description: "Description"
+    flash_messages:
+      practice_created: "practice was successfully created"
+      practice_updated: "practice was successfully updated"
+      practice_destroyed: "practice was successfully destroyed"
 
 

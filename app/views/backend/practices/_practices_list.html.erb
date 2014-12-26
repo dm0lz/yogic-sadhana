@@ -7,11 +7,11 @@
 
         <ul>
           <li>
-            <h4><%= t('chapters.attributes.title') %></h4>
+            <h4><%= t('practices.attributes.title') %></h4>
             <%= practice.title %>
           </li>
           <li>
-            <h4><%= t('chapters.attributes.description') %></h4>
+            <h4><%= t('practices.attributes.description') %></h4>
             <%= practice.description %>
           </li>
 
@@ -19,15 +19,15 @@
 
         <div class="col-md-2">
           <li>
-            <%#= link_to t('chapters.buttons.show_chapter'), backend_chapter_path(practice), class: "btn btn-info" %>
+            <%= link_to t('practices.buttons.show_practice'), backend_practice_path(practice), class: "btn btn-info" %>
           </li>
           <div class="small-spacer"></div>
           <li>
-            <%#= link_to t('chapters.buttons.destroy_chapter'), backend_chapter_path(practice), method: :delete, class: "btn btn-danger" %>
+            <%= link_to t('practices.buttons.destroy_practice'), backend_practice_path(practice), method: :delete, class: "btn btn-danger" %>
           </li>
           <div class="small-spacer"></div>
           <li>
-            <%#= link_to t('chapters.buttons.edit_chapter'), edit_backend_chapter_path(practice), method: :get, class: "btn btn-warning" %>
+            <%= link_to t('practices.buttons.edit_practice'), edit_backend_practice_path(practice), method: :get, class: "btn btn-warning" %>
           </li>
         </ul>
 

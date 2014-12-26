@@ -10,10 +10,10 @@
   </div>
 </div>
 
-<%= link_to t('chapters.buttons.create_chapter'), new_backend_course_chapter_path, class: "btn btn-success" %>
+<%= link_to t('chapters.buttons.create_chapter'), new_backend_course_chapter_path, class: "btn btn-warning" %>
 
 <h1><%= t('chapters.buttons.list') %></h1>
 
 <%= render 'chapters_list' %>
 
-<%= link_to t('chapters.buttons.back_to_chapters_list'), backend_course_path(@course), class: "btn btn-warning" %>
+<%= link_to t('courses.buttons.back_to_course_description'), backend_course_path(@course), class: "btn btn-success" %>

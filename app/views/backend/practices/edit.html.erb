@@ -1,0 +1,10 @@
+
+<div class="container">
+  <div class="row">
+
+    <%= render partial: "edit_form", locals: {practice: @practice} %>
+    <%= link_to t('practices.buttons.back_to_practice_description'), backend_practice_path(@practice), class: "row btn btn-success" %>
+    <%= link_to t('practices.buttons.back_to_practices_list'), backend_practice_path, class: "row btn btn-info", style: "margin-left:20px" %>
+
+  </div>
+</div>

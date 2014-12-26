@@ -1,9 +1,9 @@
-<h1>Backend::Chapters#show</h1>
-<p>Find me in app/views/backend/chapters/show.html.erb</p>
+
 
 
 <div class="container">
   <div class="row">
+    <h1>Chapter : <%= @chapter.title %></h1>
     <ul class="well">
       <li><%= t('chapters.attributes.id') %> : <%= @chapter.id %></li>
       <li><%= t('chapters.attributes.title') %> : <%= @chapter.title %></li>
@@ -13,14 +13,11 @@
   </div>
 </div>
 
-<%= link_to t('chapters.buttons.edit_chapter'), edit_backend_chapter_path(@chapter), class: "btn btn-warning" %>
 <%= link_to t('chapters.buttons.back_to_chapters_list'), backend_course_chapters_path(@chapter.course), class: "btn btn-success" %>
+<%= link_to t('chapters.buttons.edit_chapter'), edit_backend_chapter_path(@chapter), class: "btn btn-info" %>
+<%= link_to t('practices.buttons.list'), backend_chapter_practices_path(@chapter), class: "btn btn-danger" %>
 
 <div class="small-spacer"></div>
 
-<%= link_to "Create new practice", new_backend_chapter_practice_path(@chapter), class: "btn btn-info" %>
 
-<div class="small-spacer"></div>
-
-
-<%= render 'backend/practices/practices_list' %>
+<%#= render 'backend/practices/practices_list' %>

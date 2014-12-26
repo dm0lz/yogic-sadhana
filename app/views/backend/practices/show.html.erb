@@ -1,0 +1,19 @@
+
+<h1>Backend::Practices#show</h1>
+<p>Find me in app/views/backend/practices/show.html.erb</p>
+
+
+<div class="container">
+  <div class="row">
+    <ul class="well">
+      <li><%= t('practices.attributes.id') %> : <%= @practice.id %></li>
+      <li><%= t('practices.attributes.title') %> : <%= @practice.title %></li>
+      <li><%= t('practices.attributes.description') %> : <%= @practice.description %></li>
+    </ul>
+  </div>
+</div>
+
+<%= link_to t('practices.buttons.back_to_practices_list'), backend_chapter_practices_path(@chapter), class: "btn btn-success" %>
+<%= link_to t('practices.buttons.edit_practice'), edit_backend_practice_path(@practice), class: "btn btn-info" %>
+
+
