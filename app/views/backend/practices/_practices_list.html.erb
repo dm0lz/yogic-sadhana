@@ -19,15 +19,15 @@
 
         <div class="col-md-2">
           <li>
-            <%= link_to t('practices.buttons.show_practice'), backend_practice_path(practice), class: "btn btn-info" %>
+            <%= link_to t('practices.buttons.show_practice'), backend_practice_path(practice), class: "btn btn-success" %>
+          </li>
+          <div class="small-spacer"></div>
+          <li>
+            <%= link_to t('practices.buttons.edit_practice'), edit_backend_practice_path(practice), method: :get, class: "btn btn-info" %>
           </li>
           <div class="small-spacer"></div>
           <li>
             <%= link_to t('practices.buttons.destroy_practice'), backend_practice_path(practice), method: :delete, class: "btn btn-danger" %>
-          </li>
-          <div class="small-spacer"></div>
-          <li>
-            <%= link_to t('practices.buttons.edit_practice'), edit_backend_practice_path(practice), method: :get, class: "btn btn-warning" %>
           </li>
         </ul>
 

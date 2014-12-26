@@ -19,15 +19,15 @@
 
         <div class="col-md-2">
           <li>
-            <%= link_to t('chapters.buttons.show_chapter'), backend_chapter_path(chapter), class: "btn btn-info" %>
+            <%= link_to t('chapters.buttons.show_chapter'), backend_chapter_path(chapter), class: "btn btn-success" %>
+          </li>
+          <div class="small-spacer"></div>
+          <li>
+            <%= link_to t('chapters.buttons.edit_chapter'), edit_backend_chapter_path(chapter), method: :get, class: "btn btn-info" %>
           </li>
           <div class="small-spacer"></div>
           <li>
             <%= link_to t('chapters.buttons.destroy_chapter'), backend_chapter_path(chapter), method: :delete, class: "btn btn-danger" %>
-          </li>
-          <div class="small-spacer"></div>
-          <li>
-            <%= link_to t('chapters.buttons.edit_chapter'), edit_backend_chapter_path(chapter), method: :get, class: "btn btn-warning" %>
           </li>
         </ul>
 
