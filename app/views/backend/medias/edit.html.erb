@@ -1,0 +1,12 @@
+<h1>Backend::Medias#edit</h1>
+<p>Find me in app/views/backend/medias/edit.html.erb</p>
+
+<div class="container">
+  <div class="row">
+
+    <%= render partial: "edit_form", locals: {media: @media} %>
+    <%= link_to t('medias.buttons.back_to_media_description'), backend_media_path(@media), class: "row btn btn-success" %>
+    <%= link_to t('medias.buttons.back_to_medias_list'), backend_media_path, class: "row btn btn-info", style: "margin-left:20px" %>
+
+  </div>
+</div>

@@ -44,7 +44,7 @@ class Backend::CoursesController < BackendController
       flash[:success] = t('courses.flash_messages.course_destroyed')
       redirect_to :backend_courses
     else
-      @errors = @courses.errors
+      @errors = @course.errors
       render 'shared/errors'
     end
   end

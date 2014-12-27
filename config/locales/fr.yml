@@ -29,15 +29,16 @@ fr:
       title: "Titre"
       description: "Description"
     flash_messages:
-      course_created: "course was successfully created"
-      course_updated: "course was successfully updated"
-      course_destroyed: "course was successfully destroyed"
+      course_created: "Le cours a été crée avec succès"
+      course_updated: "Le cours a été mis à jour correctement"
+      course_destroyed: "Le cours a été détruit avec succès"
   chapters:
     titles:
       edit_chapter: "Editer le chapitre"
       create_chapter: "Créer un nouveau chapitre"
     buttons:
       list: "Voir la liste des chapitres"
+      list_title: "Liste des chapitres"
       create_chapter: "Créer un nouveau chapitre"
       show_chapter: "Voir le chapitre"
       destroy_chapter: "Effacer le chapitre"
@@ -57,10 +58,11 @@ fr:
       chapter_destroyed: "Le chapitre a été détruit avec succès"
   practices:
     titles:
-      edit_practices: "Edit practice"
-      create_practice: "Create new practice"
+      edit_practices: "Editer la pratique"
+      create_practice: "Créer une nouvelle pratique"
     buttons:
       list: "Voir la liste des pratiques"
+      list_title: "Liste des pratiques"
       create_practice: "Créer une nouvelle pratique"
       show_practice: "Voir la pratique"
       destroy_practice: "Effacer la pratique"
@@ -75,6 +77,30 @@ fr:
       title: "Title"
       description: "Description"
     flash_messages:
-      practice_created: "practice was successfully created"
-      practice_updated: "practice was successfully updated"
-      practice_destroyed: "practice was successfully destroyed"
+      practice_created: "La pratique a été crée avec succès"
+      practice_updated: "La pratique a été mis à jour correctement"
+      practice_destroyed: "La pratique a été détruite avec succès"
+  medias:
+    titles:
+      edit_medias: "Editer le media"
+      create_medias: "Créer un nouveau media"
+    buttons:
+      list: "Voir la liste des medias"
+      list_title: "Liste des medias"
+      create_media: "Créer un nouveau media"
+      show_media: "Voir le media"
+      destroy_media: "Effacer le media"
+      edit_media: "Editer le media"
+      back_to_media_description: "Retourner à la description du media"
+      back_to_medias_list: "Retourner à la liste des medias"
+      submit_edit: "Editer"
+      submit_create: "Créer"
+      back: "retour"
+    attributes:
+      id: "Id"
+      title: "Title"
+      description: "Description"
+    flash_messages:
+      media_created: "Le media a été crée avec succès"
+      media_updated: "Le media a été mis à jour correctement"
+      media_destroyed: "Le media a été détruit avec succès"

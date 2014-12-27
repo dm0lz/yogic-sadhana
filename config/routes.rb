@@ -10,12 +10,15 @@ Rails.application.routes.draw do
     namespace :backend do
       resources :courses, shallow: true do
         resources :chapters, shallow: true do
-          resources :practices
+          resources :practices, shallow: true do
+            resources :medias
+          end
         end
       end
     end
 
     namespace :frontend do
+      get 'home/index'
     end
 
   end

@@ -1,0 +1,25 @@
+<h1>Backend::Medias#index</h1>
+<p>Find me in app/views/backend/medias/index.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <h1>Practice : <%= @practice.title %></h1>
+    <ul class="well">
+      <li><%= t('medias.attributes.id') %> : <%= @practice.id %></li>
+      <li><%= t('medias.attributes.title') %> : <%= @practice.title %></li>
+      <li><%= t('medias.attributes.description') %> : <%= @practice.description %></li>
+    </ul>
+  </div>
+</div>
+
+<%= link_to t('medias.buttons.create_media'), new_backend_practice_media_path, class: "btn btn-warning" %>
+
+<div class="small-spacer"></div>
+
+<h1><%= t('medias.buttons.list_title') %></h1>
+
+<%= render 'backend/medias/medias_list' %>
+
+<%= link_to t('medias.buttons.back_to_practice_description'), backend_practice_path(@practice), class: "btn btn-success" %>
+
+<div class="small-spacer"></div>

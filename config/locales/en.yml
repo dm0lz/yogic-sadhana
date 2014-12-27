@@ -15,6 +15,7 @@ en:
       create_course: "Create new course"
     buttons:
       list: "Courses list"
+      list_title: "Chapters list"
       create_course: "create a new course"
       show_course: "Show course"
       destroy_course: "Destroy course"
@@ -61,7 +62,8 @@ en:
       edit_practices: "Edit practice"
       create_practice: "Create new practice"
     buttons:
-      list: "Courses list"
+      list: "Show Practices list"
+      list_title: "Practices list"
       create_practice: "create a new practice"
       show_practice: "Show practice"
       destroy_practice: "Destroy practice"
@@ -79,5 +81,27 @@ en:
       practice_created: "practice was successfully created"
       practice_updated: "practice was successfully updated"
       practice_destroyed: "practice was successfully destroyed"
-
-
+  medias:
+    titles:
+      edit_medias: "Edit media"
+      create_medias: "Create new media"
+    buttons:
+      list: "Show medias list"
+      list_title: "Medias list"
+      create_media: "Create new media"
+      show_media: "Show media"
+      destroy_media: "destroy media"
+      edit_media: "Edit media"
+      back_to_media_description: "Back to media description"
+      back_to_media_list: "Back to media list"
+      submit_edit: "Edit"
+      submit_create: "Create"
+      back: "Back"
+    attributes:
+      id: "Id"
+      title: "Title"
+      description: "Description"
+    flash_messages:
+      media_created: "media was successfully created"
+      media_updated: "media was successfully updated"
+      media_destroyed: "media was successfully destroyed"

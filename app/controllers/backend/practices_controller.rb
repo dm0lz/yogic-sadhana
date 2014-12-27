@@ -45,7 +45,7 @@ class Backend::PracticesController < BackendController
       flash[:success] = t('practices.flash_messages.practice_destroyed')
       redirect_to backend_chapter_practices_path @practice.chapter
     else
-      @errors = @courses.errors
+      @errors = @practice.errors
       render 'shared/errors'
     end
   end
