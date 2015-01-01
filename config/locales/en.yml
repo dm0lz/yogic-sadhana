@@ -9,6 +9,18 @@ en:
               blank: "Title cannot be blank"
             description:
               blank: "Description cannot be blank"
+        course:
+          attributes:
+            title:
+              blank: "Title cannot be blank"
+            description:
+              blank: "Description cannot be blank"
+        practice:
+          attributes:
+            title:
+              blank: "Title cannot be blank"
+            description:
+              blank: "Description cannot be blank"
   courses:
     titles:
       edit_course: "Edit course"

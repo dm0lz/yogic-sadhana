@@ -14,7 +14,7 @@ class Backend::CoursesController < BackendController
       redirect_to :backend_courses
     else
       flash[:error] = @course.errors.messages.map{|k,v| v}.flatten.join " -- "
-      redirect_to new_backend_chapter_path(@course)
+      redirect_to new_backend_course_path
     end
   end
 

@@ -11,11 +11,11 @@ class Backend::PracticesController < BackendController
   def create
     @practice = Practice.new practice_params
     if @practice.save
-      flash[:success] = t('chapters.flash_messages.chapter_created')
+      flash[:success] = t('chapters.flash_messages.practice_created')
       redirect_to backend_chapter_practices_path
     else
-      flash[:error] = @chapter.errors.messages.map{|k,v| v}.flatten.join " -- "
-      redirect_to new_backend_chapter_path(@chapter)
+      flash[:error] = @practice.errors.messages.map{|k,v| v}.flatten.join " -- "
+      redirect_to new_backend_chapter_practice_path
     end
   end
 

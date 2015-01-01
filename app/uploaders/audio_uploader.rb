@@ -5,8 +5,8 @@ class AudioUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
-  permissions 0777
-  directory_permissions 0777
+  # permissions 0777
+  # directory_permissions 0777
 
   # Choose what kind of storage to use for this uploader:
   storage :file
