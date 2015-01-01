@@ -51,7 +51,8 @@ en:
       edit_chapter: "Edit chapter"
       create_chapter: "Create new chapter"
     buttons:
-      list: "Chapters list"
+      list: "Show chapters list"
+      list_title: "Chapters list"
       create_chapter: "Create a new chapter"
       create_course: "create a new course"
       show_chapter: "Show chapter"
