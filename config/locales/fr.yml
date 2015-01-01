@@ -41,6 +41,7 @@ fr:
       id: "Id"
       title: "Titre"
       description: "Description"
+      course_title: "Titre du cours"
     flash_messages:
       course_created: "Le cours a été crée avec succès"
       course_updated: "Le cours a été mis à jour correctement"
@@ -65,6 +66,7 @@ fr:
       id: "Id"
       title: "Titre"
       description: "Description"
+      chapter_title: "Titre du chapitre"
     flash_messages:
       chapter_created: "Le chapitre a été crée avec succès"
       chapter_updated: "Le chapitre a été mis à jour avec succès"
@@ -89,6 +91,7 @@ fr:
       id: "Id"
       title: "Title"
       description: "Description"
+      practice_title: "Titre de la pratique"
     flash_messages:
       practice_created: "La pratique a été crée avec succès"
       practice_updated: "La pratique a été mis à jour correctement"

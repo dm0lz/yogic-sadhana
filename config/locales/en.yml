@@ -41,6 +41,7 @@ en:
       id: "Id"
       title: "Title"
       description: "Description"
+      course_title: "Course Title"
     flash_messages:
       course_created: "course was successfully created"
       course_updated: "course was successfully updated"
@@ -65,6 +66,7 @@ en:
       id: "Id"
       title: "Title"
       description: "Description"
+      chapter_title: "Chapter Title"
     flash_messages:
       chapter_created: "Chapter was successfully created"
       chapter_updated: "Chapter was successfully updated"
@@ -89,6 +91,7 @@ en:
       id: "Id"
       title: "Title"
       description: "Description"
+      practice_title: "Practice Title"
     flash_messages:
       practice_created: "practice was successfully created"
       practice_updated: "practice was successfully updated"

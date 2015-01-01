@@ -8,6 +8,8 @@
       <li><%= t('medias.attributes.id') %> : <%= @practice.id %></li>
       <li><%= t('medias.attributes.title') %> : <%= @practice.title %></li>
       <li><%= t('medias.attributes.description') %> : <%= @practice.description %></li>
+      <li><%= t('courses.attributes.course_title') %> : <%= @practice.chapter.course.title %></li>
+      <li><%= t('chapters.attributes.chapter_title') %> : <%= @practice.chapter.title %></li>
     </ul>
   </div>
 </div>
@@ -20,6 +22,6 @@
 
 <%= render 'backend/medias/medias_list' %>
 
-<%= link_to t('medias.buttons.back_to_practice_description'), backend_practice_path(@practice), class: "btn btn-success" %>
+<%= link_to t('practices.buttons.back_to_practice_description'), backend_practice_path(@practice), class: "btn btn-success" %>
 
 <div class="small-spacer"></div>

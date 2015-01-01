@@ -4,7 +4,7 @@ class Backend::ChaptersController < BackendController
   before_action :find_course, only: [:index, :new]
 
   def index
-    @chapters = Chapter.all
+    @chapters = Chapter.where course_id: params[:course_id]
     render 'index'
   end
 
@@ -49,7 +49,6 @@ class Backend::ChaptersController < BackendController
   end
 
   def show
-    @practices = @chapter.practices
     render 'show'
   end
 
