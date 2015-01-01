@@ -24,7 +24,6 @@ class Backend::CoursesController < BackendController
   end
 
   def show
-    @chapters = @course.chapters
     render 'show'
   end
 

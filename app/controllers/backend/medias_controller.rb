@@ -20,7 +20,6 @@ class Backend::MediasController < BackendController
   end
 
   def show
-    @practice = @media.practice
     render 'show'
   end
 

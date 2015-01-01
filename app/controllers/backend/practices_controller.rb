@@ -20,7 +20,6 @@ class Backend::PracticesController < BackendController
   end
 
   def show
-    @chapter = @practice.chapter
     render 'show'
   end
 
