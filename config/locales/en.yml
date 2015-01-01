@@ -101,6 +101,7 @@ en:
       id: "Id"
       title: "Title"
       description: "Description"
+      audio: "Audio file"
     flash_messages:
       media_created: "media was successfully created"
       media_updated: "media was successfully updated"

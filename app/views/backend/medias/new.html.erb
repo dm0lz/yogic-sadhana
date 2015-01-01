@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
 
-    <%= render partial: "create_form" %>
+    <%= render partial: "create_form", locals: {media: @media}  %>
 
     <%= link_to t('medias.buttons.back'), backend_practice_medias_path, class: "row btn btn-success" %>
 

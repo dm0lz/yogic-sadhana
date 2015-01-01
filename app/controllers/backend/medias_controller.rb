@@ -1,8 +1,10 @@
 class Backend::MediasController < BackendController
+
+  before_action :find_media, only: [:show, :edit, :update, :destroy]
+  before_action :find_practice, only: [:index, :new]
+
   def index
-    #binding.pry
-    @medias = Medium.where practice_id: media_params[:practice_id]
-    @practice = Practice.find media_params[:practice_id]
+    @medias = Medium.where practice_id: params[:practice_id]
     render 'index'
   end
 
@@ -18,18 +20,20 @@ class Backend::MediasController < BackendController
   end
 
   def show
-    @media = Medium.find media_params[:id]
     @practice = @media.practice
     render 'show'
   end
 
   def edit
-    @media = Medium.find media_params[:id]
     render 'edit'
   end
 
+  def new
+    @media = Medium.new
+    render 'new'
+  end
+
   def update
-    @media = Medium.find media_params[:id]
     if @media.update_attributes(media_params)
       flash[:success] = t('medias.flash_messages.media_updated')
       redirect_to backend_media_path @media
@@ -40,10 +44,9 @@ class Backend::MediasController < BackendController
   end
 
   def destroy
-    @media = Medium.find media_params[:id]
     if @media.destroy
       flash[:success] = t('medias.flash_messages.media_destroyed')
-      redirect_to backend_chapter_medias_path @media.practice
+      redirect_to backend_practice_medias_path @media.practice
     else
       @errors = @media.errors
       render 'shared/errors'
@@ -52,6 +55,15 @@ class Backend::MediasController < BackendController
 
   private
   def media_params
-    params.permit :id, :title, :description, :practice_id
+    params.require(:medium).permit(:id, :title, :description, :practice_id, :audio)
   end
+
+  def find_media
+    @media = Medium.find params[:id]
+  end
+
+  def find_practice
+    @practice = Practice.find params[:practice_id]
+  end
+
 end

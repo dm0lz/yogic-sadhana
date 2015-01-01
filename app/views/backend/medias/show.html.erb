@@ -7,6 +7,7 @@
       <li><%= t('medias.attributes.id') %> : <%= @media.id %></li>
       <li><%= t('medias.attributes.title') %> : <%= @media.title %></li>
       <li><%= t('medias.attributes.description') %> : <%= @media.description %></li>
+      <li><%= t('medias.attributes.audio') %> : <%= audio_tag @media.audio.url %></li>
     </ul>
   </div>
 </div>

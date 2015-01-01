@@ -1,8 +1,10 @@
 class Backend::ChaptersController < BackendController
 
+  before_action :find_chapter, only: [:edit, :destroy, :update, :show]
+  before_action :find_course, only: [:index, :new]
+
   def index
     @chapters = Chapter.all
-    @course = Course.find chapter_params[:course_id]
     render 'index'
   end
 
@@ -13,17 +15,20 @@ class Backend::ChaptersController < BackendController
       redirect_to :backend_course_chapters
     else
       flash[:error] = @chapter.errors.messages.map{|k,v| v}.flatten.join " -- "
-      redirect_to new_backend_chapter_path(@chapter)
+      redirect_to new_backend_course_chapter_path
     end
   end
 
+  def new
+    @chapter = Chapter.new
+    render 'new'
+  end
+
   def edit
-    @chapter = Chapter.find chapter_params[:id]
     render 'edit'
   end
 
   def destroy
-    @chapter = Chapter.find chapter_params[:id]
     if @chapter.destroy
       flash[:success] = t('chapters.flash_messages.chapter_destroyed')
       redirect_to backend_course_chapters_path(@chapter.course)
@@ -34,10 +39,9 @@ class Backend::ChaptersController < BackendController
   end
 
   def update
-    @chapter = Chapter.find chapter_params[:id]
     if @chapter.update_attributes(chapter_params)
       flash[:success] = t('chapters.flash_messages.chapter_updated')
-      redirect_to backend_course_chapters_path(@chapter.course)
+      redirect_to backend_course_chapters_path(@chapter)
     else
       flash[:error] = @chapter.errors.messages.map{|k,v| v}.flatten.join " -- "
       redirect_to edit_backend_chapter_path(@chapter)
@@ -45,13 +49,20 @@ class Backend::ChaptersController < BackendController
   end
 
   def show
-    @chapter = Chapter.find chapter_params[:id]
     @practices = @chapter.practices
     render 'show'
   end
 
   private
   def chapter_params
-    params.permit :id, :title, :description, :course_id
+    params.require(:chapter).permit(:id, :title, :description, :course_id)
+  end
+
+  def find_chapter
+    @chapter = Chapter.find params[:id]
+  end
+
+  def find_course
+    @course = Course.find params[:course_id]
   end
 end

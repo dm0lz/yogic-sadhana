@@ -1,5 +1,7 @@
 class Backend::CoursesController < BackendController
 
+  before_action :find_course, only: [:show, :edit, :update, :destroy]
+
   def index
     @courses = Course.all
     render 'index'
@@ -16,19 +18,21 @@ class Backend::CoursesController < BackendController
     end
   end
 
+  def new
+    @course = Course.new
+    render 'new'
+  end
+
   def show
-    @course = Course.find course_params[:id]
     @chapters = @course.chapters
     render 'show'
   end
 
   def edit
-    @course = Course.find course_params[:id]
     render 'edit'
   end
 
   def update
-    @course = Course.find course_params[:id]
     if @course.update_attributes(course_params)
       flash[:success] = t('courses.flash_messages.course_updated')
       redirect_to :backend_courses
@@ -39,7 +43,6 @@ class Backend::CoursesController < BackendController
   end
 
   def destroy
-    @course = Course.find course_params[:id]
     if @course.destroy
       flash[:success] = t('courses.flash_messages.course_destroyed')
       redirect_to :backend_courses
@@ -51,6 +54,11 @@ class Backend::CoursesController < BackendController
 
   private
   def course_params
-    params.permit :id, :title, :description
+    params.require(:course).permit(:id, :title, :description)
   end
+
+  def find_course
+    @course = Course.find params[:id]
+  end
+
 end
