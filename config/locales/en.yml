@@ -21,6 +21,16 @@ en:
               blank: "Title cannot be blank"
             description:
               blank: "Description cannot be blank"
+  nav_bar:
+    login: "Login"
+    logout: "Logout"
+    register: "Signup"
+    account_settings: "Account Settings"
+  breadcrumbs:
+    courses: "Courses"
+    chapters: "Chapters"
+    practices: "Practices"
+    medias: "Medias"
   courses:
     titles:
       edit_course: "Edit course"

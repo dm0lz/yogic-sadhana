@@ -22,6 +22,16 @@ fr:
             description:
               blank: "La description ne peut pas être vide"
 
+  nav_bar:
+    login: "Se connecter"
+    logout: "Se déconnecter"
+    register: "Créer un compte"
+    account_settings: "Paramètres du compte"
+  breadcrumbs:
+    courses: "Cours"
+    chapters: "Chapitres"
+    practices: "Pratiques"
+    medias: "Medias"
   courses:
     titles:
       edit_course: "Editer le cours"

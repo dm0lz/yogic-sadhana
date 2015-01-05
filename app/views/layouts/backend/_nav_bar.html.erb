@@ -1,0 +1,96 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Home", root_path, class: "navbar-brand" %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav"> </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if admin_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_admin.email %><span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+              <a href="#"><%= t('nav_bar.account_settings') %></a>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to t('nav_bar.logout'), destroy_admin_session_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Log in<span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <%= link_to  t('nav_bar.login'), new_admin_session_path %>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to t('nav_bar.register'), new_admin_registration_path %>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+  <ol class="breadcrumb">
+    <li>
+    <%= link_to t('breadcrumbs.courses'), backend_courses_path %>
+    </li>
+    <% if @course %>
+      <li>
+      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@course) %>
+      </li>
+    <% end %>
+    <% if @chapter %>
+      <li>
+      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@chapter.course) %>
+      </li>
+      <li>
+      <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@chapter) %>
+      </li>
+    <% end %>
+    <% if @practice %>
+      <li>
+      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@practice.chapter.course) %>
+      </li>
+      <li>
+      <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@practice.chapter) %>
+      </li>
+      <li>
+      <%= link_to t('breadcrumbs.medias'), backend_practice_medias_path(@practice) %>
+      </li>
+    <% end %>
+    <% if @media %>
+      <li>
+      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@media.practice.chapter.course) %>
+      </li>
+      <li>
+      <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@media.practice.chapter) %>
+      </li>
+      <li>
+      <%= link_to t('breadcrumbs.medias'), backend_practice_medias_path(@media.practice) %>
+      </li>
+    <% end %>
+  </ol>
+</div>
+
+
+
