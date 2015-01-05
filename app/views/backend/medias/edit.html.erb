@@ -4,7 +4,7 @@
 
     <%= render partial: "edit_form", locals: {media: @media} %>
     <%= link_to t('medias.buttons.back_to_media_description'), backend_media_path(@media), class: "row btn btn-success" %>
-    <%= link_to t('medias.buttons.back_to_medias_list'), backend_media_path, class: "row btn btn-info", style: "margin-left:20px" %>
+    <%= link_to t('medias.buttons.back_to_medias_list'), backend_practice_medias_path(@media.practice), class: "row btn btn-info", style: "margin-left:20px" %>
 
   </div>
 </div>

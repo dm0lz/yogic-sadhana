@@ -56,37 +56,37 @@
     </li>
     <% if @course %>
       <li>
-      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@course) %>
+      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@course) if @course.id %>
       </li>
     <% end %>
     <% if @chapter %>
       <li>
-      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@chapter.course) %>
+      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@chapter.course) if @chapter.id %>
       </li>
       <li>
-      <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@chapter) %>
+      <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@chapter) if @chapter.id %>
       </li>
     <% end %>
     <% if @practice %>
       <li>
-      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@practice.chapter.course) %>
+      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@practice.chapter.course) if @practice.id %>
       </li>
       <li>
-      <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@practice.chapter) %>
+      <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@practice.chapter) if @practice.id %>
       </li>
       <li>
-      <%= link_to t('breadcrumbs.medias'), backend_practice_medias_path(@practice) %>
+      <%= link_to t('breadcrumbs.medias'), backend_practice_medias_path(@practice) if @practice.id %>
       </li>
     <% end %>
     <% if @media %>
       <li>
-      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@media.practice.chapter.course) %>
+      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@media.practice.chapter.course) if @media.id %>
       </li>
       <li>
-      <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@media.practice.chapter) %>
+      <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@media.practice.chapter) if @media.id %>
       </li>
       <li>
-      <%= link_to t('breadcrumbs.medias'), backend_practice_medias_path(@media.practice) %>
+      <%= link_to t('breadcrumbs.medias'), backend_practice_medias_path(@media.practice) if @media.id %>
       </li>
     <% end %>
   </ol>
