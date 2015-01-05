@@ -1,4 +1,4 @@
-class Backend::ChaptersController < BackendController
+class Backend::ChaptersController < Backend::BackendController
 
   before_action :find_chapter, only: [:edit, :destroy, :update, :show]
   before_action :find_course, only: [:index, :new]

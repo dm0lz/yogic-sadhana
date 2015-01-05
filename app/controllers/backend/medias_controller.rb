@@ -1,4 +1,4 @@
-class Backend::MediasController < BackendController
+class Backend::MediasController < Backend::BackendController
 
   before_action :find_media, only: [:show, :edit, :update, :destroy]
   before_action :find_practice, only: [:index, :new]

@@ -1,4 +1,4 @@
-class Frontend::PracticesController < FrontendController
+class Frontend::PracticesController < Frontend::FrontendController
 
   before_action :authenticate_admin!
 

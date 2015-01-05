@@ -1,4 +1,4 @@
-class Backend::PracticesController < BackendController
+class Backend::PracticesController < Backend::BackendController
 
   before_action :find_practice, only: [:show, :edit, :update, :destroy]
   before_action :find_chapter, only: [:index, :new]

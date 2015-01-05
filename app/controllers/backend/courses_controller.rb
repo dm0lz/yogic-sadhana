@@ -1,4 +1,4 @@
-class Backend::CoursesController < BackendController
+class Backend::CoursesController < Backend::BackendController
 
   before_action :find_course, only: [:show, :edit, :update, :destroy]
 
