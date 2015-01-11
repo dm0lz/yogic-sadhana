@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  devise_for :users
   scope "(:locale)", :locale => /en|fr/ do
 
     root to: "home#index"
