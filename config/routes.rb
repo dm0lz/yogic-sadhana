@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   scope "(:locale)", :locale => /en|fr/ do
 
     root to: "home#index"
@@ -12,6 +11,9 @@ Rails.application.routes.draw do
       resources :courses, shallow: true do
         resources :chapters, shallow: true do
           resources :practices, shallow: true do
+            resources :medias
+          end
+          resources :theories, shallow: true do
             resources :medias
           end
         end

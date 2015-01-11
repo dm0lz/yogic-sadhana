@@ -5,15 +5,15 @@
       <li><%= t('medias.attributes.id') %> : <%= @media.id %></li>
       <li><%= t('medias.attributes.title') %> : <%= @media.title %></li>
       <li><%= t('medias.attributes.description') %> : <%= @media.description %></li>
-      <li><%= t('courses.attributes.course_title') %> : <%= @media.practice.chapter.course.title %></li>
-      <li><%= t('chapters.attributes.chapter_title') %> : <%= @media.practice.chapter.title %></li>
-      <li><%= t('practices.attributes.practice_title') %> : <%= @media.practice.title %></li>
+      <li><%= t('courses.attributes.course_title') %> : <%= @media.mediumable.chapter.course.title %></li>
+      <li><%= t('chapters.attributes.chapter_title') %> : <%= @media.mediumable.chapter.title %></li>
+      <li><%= t('practices.attributes.practice_title') %> : <%= @media.mediumable.title %></li>
       <li><%= t('medias.attributes.audio') %> : <%= audio_tag @media.audio.url, autoplay: false, controls: true %></li>
     </ul>
   </div>
 </div>
 
-<%= link_to t('medias.buttons.back_to_medias_list'), backend_practice_medias_path(@media.practice), class: "btn btn-success" %>
+<%= link_to t('medias.buttons.back_to_medias_list'), @media.mediumable_type == "Theory" ? backend_theory_medias_path(@media.mediumable) : backend_practice_medias_path(@media.mediumable), class: "btn btn-success" %>
 <%= link_to t('medias.buttons.edit_media'), edit_backend_media_path(@media), class: "btn btn-info" %>
 
 <div class="small-spacer"></div>

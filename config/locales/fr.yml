@@ -21,6 +21,12 @@ fr:
               blank: "Le title ne peut pas être vide"
             description:
               blank: "La description ne peut pas être vide"
+        theory:
+          attributes:
+            title:
+              blank: "Le title ne peut pas être vide"
+            description:
+              blank: "La description ne peut pas être vide"
 
   nav_bar:
     login: "Se connecter"
@@ -32,6 +38,7 @@ fr:
     chapters: "Chapitres"
     practices: "Pratiques"
     medias: "Medias"
+    theories: "Theories"
   courses:
     titles:
       edit_course: "Editer le cours"
@@ -106,6 +113,31 @@ fr:
       practice_created: "La pratique a été crée avec succès"
       practice_updated: "La pratique a été mis à jour correctement"
       practice_destroyed: "La pratique a été détruite avec succès"
+  theories:
+    titles:
+      edit_theory: "Editer la theorie"
+      create_theory: "Créer une nouvelle theorie"
+    buttons:
+      list: "Voir la liste des theories"
+      list_title: "Liste des theories"
+      create_theory: "Créer une nouvelle theorie"
+      show_theory: "Voir la theorie"
+      destroy_theory: "Effacer la theorie"
+      edit_theory: "Editer la theorie"
+      back_to_theory_description: "Retourner à la description de la theorie"
+      back_to_theories_list: "Retourner à la liste des theories"
+      submit_edit: "Editer"
+      submit_create: "Créer"
+      back: "retour"
+    attributes:
+      id: "Id"
+      title: "Title"
+      description: "Description"
+      theory_title: "Titre de la theorie"
+    flash_messages:
+      theory_created: "La theorie a été crée avec succès"
+      theory_updated: "La theorie a été mis à jour correctement"
+      theory_destroyed: "La theorie a été détruite avec succès"
   medias:
     titles:
       edit_medias: "Editer le media"

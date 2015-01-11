@@ -3,31 +3,30 @@
 <div class="col-md-12">
   <div class="well well-sm">
 
-    <%= form_for @practice, :url => backend_practice_path(@practice), method: :patch do |f| %>
+    <%= form_for @theory, :url => backend_theory_path(@theory), method: :patch do |f| %>
       <fieldset>
-        <legend class="text-center"><%= t('practices.titles.create_practice') %></legend>
+        <legend class="text-center"><%= t('theories.titles.edit_theory') %></legend>
 
         <div class="form-group">
-          <%= label_tag t('practices.attributes.title'), nil, class: "col-md-3 control-label" %>
+          <%= label_tag t('theories.attributes.title'), nil, class: "col-md-3 control-label" %>
           <div class="col-md-9">
             <%= f.text_field :title, class: "form-control" %>
             <div class="small-spacer"></div>
           </div>
         </div>
 
-
         <div class="form-group">
-          <%= label_tag t('practices.attributes.description'), nil, class: "col-md-3 control-label" %>
+          <%= label_tag t('theories.attributes.description'), nil, class: "col-md-3 control-label" %>
           <div class="col-md-9">
             <%= f.text_area :description, class: "form-control", rows: 5 %>
             <div class="small-spacer"></div>
-            <%= f.hidden_field :chapter_id, :value => @practice.chapter.id %>
+            <%= f.hidden_field :chapter_id, :value => @theory.chapter.id %>
           </div>
         </div>
 
         <div class="form-group">
           <div class="col-md-12 text-right">
-            <%= f.submit t('practices.buttons.submit_edit'), class: "btn btn-primary btn-lg" %>
+            <%= f.submit t('theories.buttons.submit_edit'), class: "btn btn-primary btn-lg" %>
           </div>
         </div>
       </fieldset>
@@ -35,3 +34,4 @@
 
   </div>
 </div>
+

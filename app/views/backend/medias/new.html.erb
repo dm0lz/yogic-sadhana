@@ -3,7 +3,7 @@
 
     <%= render partial: "create_form", locals: {media: @media}  %>
 
-    <%= link_to t('medias.buttons.back'), backend_practice_medias_path, class: "row btn btn-success" %>
+    <%= link_to t('medias.buttons.back'), params[:practice_id].nil? ? backend_theory_medias_path  : backend_practice_medias_path, class: "row btn btn-success" %>
 
   </div>
 </div>

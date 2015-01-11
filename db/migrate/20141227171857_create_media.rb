@@ -3,7 +3,9 @@ class CreateMedia < ActiveRecord::Migration
     create_table :media do |t|
       t.string :title
       t.text :description
-      t.references :practice, index: true
+      t.string :audio
+      #t.references :practice, index: true
+      t.references :mediumable, polymorphic: true, index: true
 
       t.timestamps
     end

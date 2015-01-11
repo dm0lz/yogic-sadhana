@@ -1,0 +1,24 @@
+
+<div class="container">
+  <div class="row">
+    <h1>Chapter : <%= @chapter.title %></h1>
+    <ul class="well">
+      <li><%= t('chapters.attributes.id') %> : <%= @chapter.id %></li>
+      <li><%= t('chapters.attributes.title') %> : <%= @chapter.title %></li>
+      <li><%= t('chapters.attributes.description') %> : <%= @chapter.description %></li>
+      <li><%= t('course.attributes.course_title') %> : <%= @chapter.course.title %></li>
+    </ul>
+  </div>
+</div>
+
+<%= link_to t('theories.buttons.create_theory'), new_backend_chapter_theory_path, class: "btn btn-warning" %>
+
+<div class="small-spacer"></div>
+
+<h1><%= t('theories.buttons.list_title') %></h1>
+
+<%= render 'backend/theories/theories_list' %>
+
+<%= link_to t('chapters.buttons.back_to_chapter_description'), backend_chapter_path(@chapter), class: "btn btn-success" %>
+
+<div class="small-spacer"></div>

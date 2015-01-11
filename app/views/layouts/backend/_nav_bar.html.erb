@@ -63,8 +63,25 @@
       <li>
       <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@chapter.course) if @chapter.id %>
       </li>
+      <% if params[:controller] == "backend/theories" %>
+        <li>
+        <%= link_to t('breadcrumbs.theories'), backend_chapter_theories_path(@chapter) if @chapter.id %>
+        </li>
+      <% else %>
+        <li>
+        <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@chapter) if @chapter.id %>
+        </li>
+      <% end %>
+    <% end %>
+    <% if @theory %>
       <li>
-      <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@chapter) if @chapter.id %>
+      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@theory.chapter.course) if @theory.id %>
+      </li>
+      <li>
+      <%= link_to t('breadcrumbs.theories'), backend_chapter_theories_path(@theory.chapter) if @theory.id %>
+      </li>
+      <li>
+      <%= link_to t('breadcrumbs.medias'), backend_theory_medias_path(@theory) if @theory.id %>
       </li>
     <% end %>
     <% if @practice %>
@@ -80,13 +97,13 @@
     <% end %>
     <% if @media %>
       <li>
-      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@media.practice.chapter.course) if @media.id %>
+      <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@media.mediumable.chapter.course) if @media.id %>
       </li>
       <li>
-      <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@media.practice.chapter) if @media.id %>
+      <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@media.mediumable.chapter) if @media.id %>
       </li>
       <li>
-      <%= link_to t('breadcrumbs.medias'), backend_practice_medias_path(@media.practice) if @media.id %>
+      <%= link_to t('breadcrumbs.medias'), backend_practice_medias_path(@media.mediumable) if @media.id %>
       </li>
     <% end %>
   </ol>

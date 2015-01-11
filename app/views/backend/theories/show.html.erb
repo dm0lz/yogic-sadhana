@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="row">
+    <ul class="well">
+      <li><%= t('theories.attributes.id') %> : <%= @theory.id %></li>
+      <li><%= t('theories.attributes.title') %> : <%= @theory.title %></li>
+      <li><%= t('theories.attributes.description') %> : <%= @theory.description %></li>
+      <li><%= t('courses.attributes.course_title') %> : <%= @theory.chapter.course.title %></li>
+      <li><%= t('chapters.attributes.chapter_title') %> : <%= @theory.chapter.title %></li>
+    </ul>
+  </div>
+</div>
+
+<%= link_to t('theories.buttons.back_to_theories_list'), backend_chapter_theories_path(@theory.chapter), class: "btn btn-success" %>
+<%= link_to t('theories.buttons.edit_theory'), edit_backend_theory_path(@theory), class: "btn btn-info" %>
+<%= link_to t('medias.buttons.list'), backend_theory_medias_path(@theory), class: "btn btn-danger" %>
+
+
+<div class="small-spacer"></div>
+

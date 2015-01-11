@@ -21,6 +21,12 @@ en:
               blank: "Title cannot be blank"
             description:
               blank: "Description cannot be blank"
+        theory:
+          attributes:
+            title:
+              blank: "Title cannot be blank"
+            description:
+              blank: "Description cannot be blank"
   nav_bar:
     login: "Login"
     logout: "Logout"
@@ -31,6 +37,7 @@ en:
     chapters: "Chapters"
     practices: "Practices"
     medias: "Medias"
+    theories: "Theories"
   courses:
     titles:
       edit_course: "Edit course"
@@ -107,6 +114,31 @@ en:
       practice_created: "practice was successfully created"
       practice_updated: "practice was successfully updated"
       practice_destroyed: "practice was successfully destroyed"
+  theories:
+    titles:
+      edit_theory: "Edit theory"
+      create_theory: "Create new theory"
+    buttons:
+      list: "Show Theories list"
+      list_title: "Theories list"
+      create_theory: "Create a new theory"
+      show_theory: "Show theory"
+      destroy_theory: "Destroy theory"
+      edit_theory: "Edit theory"
+      back_to_theory_description: "Back to theory description"
+      back_to_theories_list: "Back to theories list"
+      submit_edit: "Edit"
+      submit_create: "Create"
+      back: "back"
+    attributes:
+      id: "Id"
+      title: "Title"
+      description: "Description"
+      theory_title: "Theorie title"
+    flash_messages:
+      theory_created: "Theory was successfully created"
+      theory_updated: "Theory was successfully created"
+      theory_destroyed: "Theory was successfully destroyed"
   medias:
     titles:
       edit_medias: "Edit media"

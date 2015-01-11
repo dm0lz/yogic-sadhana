@@ -27,7 +27,9 @@
           <div class="col-md-9">
             <%= f.file_field :audio, class: "form-control" %>
             <div class="small-spacer"></div>
-            <%= f.hidden_field :practice_id, :value => @media.practice.id %>
+            <%#= f.hidden_field :practice_id, :value => @media.practice.id %>
+            <%#= f.hidden_field :mediumable_type, :value => params[:practice_id].nil? ? "Theory" : "Practice" %>
+            <%#= f.hidden_field :mediumable_id, :value => params[:practice_id].nil? ? @theory.id : @practice.id %>
           </div>
         </div>
 

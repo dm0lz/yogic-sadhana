@@ -1,18 +1,37 @@
 
-<div class="container">
-  <div class="row">
-    <h1>Practice : <%= @practice.title %></h1>
-    <ul class="well">
-      <li><%= t('medias.attributes.id') %> : <%= @practice.id %></li>
-      <li><%= t('medias.attributes.title') %> : <%= @practice.title %></li>
-      <li><%= t('medias.attributes.description') %> : <%= @practice.description %></li>
-      <li><%= t('courses.attributes.course_title') %> : <%= @practice.chapter.course.title %></li>
-      <li><%= t('chapters.attributes.chapter_title') %> : <%= @practice.chapter.title %></li>
-    </ul>
+<% if @practice %>
+  <div class="container">
+    <div class="row">
+      <h1>Practice : <%= @practice.title %></h1>
+      <ul class="well">
+        <li><%= t('medias.attributes.id') %> : <%= @practice.id %></li>
+        <li><%= t('medias.attributes.title') %> : <%= @practice.title %></li>
+        <li><%= t('medias.attributes.description') %> : <%= @practice.description %></li>
+        <li><%= t('courses.attributes.course_title') %> : <%= @practice.chapter.course.title %></li>
+        <li><%= t('chapters.attributes.chapter_title') %> : <%= @practice.chapter.title %></li>
+      </ul>
+    </div>
   </div>
-</div>
+<% elsif @theory %>
+  <div class="container">
+    <div class="row">
+      <h1>Theory : <%= @theory.title %></h1>
+      <ul class="well">
+        <li><%= t('medias.attributes.id') %> : <%= @theory.id %></li>
+        <li><%= t('medias.attributes.title') %> : <%= @theory.title %></li>
+        <li><%= t('medias.attributes.description') %> : <%= @theory.description %></li>
+        <li><%= t('courses.attributes.course_title') %> : <%= @theory.chapter.course.title %></li>
+        <li><%= t('chapters.attributes.chapter_title') %> : <%= @theory.chapter.title %></li>
+      </ul>
+    </div>
+  </div>
+<% end %>
 
-<%= link_to t('medias.buttons.create_media'), new_backend_practice_media_path, class: "btn btn-warning" %>
+<% if @practice %>
+  <%= link_to t('medias.buttons.create_media'), new_backend_practice_media_path, class: "btn btn-warning" %>
+<% elsif @theory %>
+  <%= link_to t('medias.buttons.create_media'), new_backend_theory_media_path, class: "btn btn-warning" %>
+<% end %>
 
 <div class="small-spacer"></div>
 
@@ -20,6 +39,10 @@
 
 <%= render 'backend/medias/medias_list' %>
 
-<%= link_to t('practices.buttons.back_to_practice_description'), backend_practice_path(@practice), class: "btn btn-success" %>
+<% if @practice %>
+  <%= link_to t('practices.buttons.back_to_practice_description'), backend_practice_path(@practice), class: "btn btn-success" %>
+<% elsif @theory %>
+  <%= link_to t('theories.buttons.back_to_theory_description'), backend_theory_path(@theory), class: "btn btn-success" %>
+<% end %>
 
 <div class="small-spacer"></div>

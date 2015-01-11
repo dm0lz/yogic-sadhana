@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141227171908) do
+ActiveRecord::Schema.define(version: 20150109153449) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -51,13 +51,14 @@ ActiveRecord::Schema.define(version: 20141227171908) do
   create_table "media", force: true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "practice_id"
+    t.string   "audio"
+    t.integer  "mediumable_id"
+    t.string   "mediumable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "audio"
   end
 
-  add_index "media", ["practice_id"], name: "index_media_on_practice_id"
+  add_index "media", ["mediumable_id", "mediumable_type"], name: "index_media_on_mediumable_id_and_mediumable_type"
 
   create_table "practices", force: true do |t|
     t.string   "title"
@@ -68,5 +69,15 @@ ActiveRecord::Schema.define(version: 20141227171908) do
   end
 
   add_index "practices", ["chapter_id"], name: "index_practices_on_chapter_id"
+
+  create_table "theories", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "chapter_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "theories", ["chapter_id"], name: "index_theories_on_chapter_id"
 
 end
