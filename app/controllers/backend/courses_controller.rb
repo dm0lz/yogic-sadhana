@@ -53,7 +53,7 @@ class Backend::CoursesController < Backend::BackendController
 
   private
   def course_params
-    params.require(:course).permit(:id, :title, :description)
+    params.require(:course).permit(:id, :title, :description, :picture)
   end
 
   def find_course

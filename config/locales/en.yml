@@ -59,6 +59,7 @@ en:
       title: "Title"
       description: "Description"
       course_title: "Course Title"
+      picture: "Picture"
     flash_messages:
       course_created: "course was successfully created"
       course_updated: "course was successfully updated"

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   scope "(:locale)", :locale => /en|fr/ do
 
     root to: "home#index"
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
     end
 
     namespace :frontend do
-      get 'home/index'
+      resources :course, only: [:index, :show]
     end
 
   end
