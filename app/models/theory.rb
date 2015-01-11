@@ -1,5 +1,5 @@
 class Theory < ActiveRecord::Base
-  #belongs_to :mediumable, polymorphic: true
+
   belongs_to :chapter
   has_many :media, as: :mediumable, dependent: :destroy
 

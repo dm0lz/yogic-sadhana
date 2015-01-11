@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
     devise_for :admins, :controllers => { :sessions => 'authentication/sessions', :passwords => 'authentication/passwords', :registrations => 'authentication/registrations' }
 
-
     namespace :backend do
       resources :courses, shallow: true do
         resources :chapters, shallow: true do

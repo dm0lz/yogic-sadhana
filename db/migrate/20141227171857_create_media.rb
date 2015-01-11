@@ -4,7 +4,6 @@ class CreateMedia < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.string :audio
-      #t.references :practice, index: true
       t.references :mediumable, polymorphic: true, index: true
 
       t.timestamps
