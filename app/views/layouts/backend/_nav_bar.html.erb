@@ -12,10 +12,17 @@
       <%= link_to "Home", root_path, class: "navbar-brand" %>
     </div>
 
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav"> </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li>
+        <span class="country_flags">
+          <%= link_to image_tag('icons/France.png'), :locale => :fr  %>
+          <%= link_to image_tag('icons/England.png'), :locale => :en %>
+        </span>
+        </li>
         <% if admin_signed_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= current_admin.email %><span class="caret"></span></a>
@@ -30,6 +37,7 @@
             </ul>
           </li>
         <% else %>
+          <li><a href="#">Link</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Log in<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
@@ -67,7 +75,7 @@
         <li>
         <%= link_to t('breadcrumbs.theories'), backend_chapter_theories_path(@chapter) if @chapter.id %>
         </li>
-      <% else %>
+      <% elsif params[:controller] == "backend/practices"%>
         <li>
         <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@chapter) if @chapter.id %>
         </li>

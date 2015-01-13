@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'carrierwave'
 
+gem 'globalize', '~> 4.0.2'
+
 group :development do
   gem 'pry'
   gem 'pry-rails'

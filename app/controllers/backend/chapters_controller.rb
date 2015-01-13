@@ -41,7 +41,7 @@ class Backend::ChaptersController < Backend::BackendController
   def update
     if @chapter.update_attributes(chapter_params)
       flash[:success] = t('chapters.flash_messages.chapter_updated')
-      redirect_to backend_course_chapters_path(@chapter)
+      redirect_to backend_course_chapters_path(@chapter.course)
     else
       flash[:error] = @chapter.errors.messages.map{|k,v| v}.flatten.join " -- "
       redirect_to edit_backend_chapter_path(@chapter)

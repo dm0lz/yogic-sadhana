@@ -1,5 +1,7 @@
 class Course < ActiveRecord::Base
 
+  translates :title, :description
+
   has_many :chapters, dependent: :destroy
   mount_uploader :picture, PictureUploader
 
