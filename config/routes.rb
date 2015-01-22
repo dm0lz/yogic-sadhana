@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
 
-  devise_for :users
   scope "(:locale)", :locale => /en|fr/ do
 
     root to: "home#index"
 
+    devise_for :users
     devise_for :admins, :controllers => { :sessions => 'authentication/sessions', :passwords => 'authentication/passwords', :registrations => 'authentication/registrations' }
 
     namespace :backend do
@@ -23,6 +23,12 @@ Rails.application.routes.draw do
 
     namespace :frontend do
       resources :course, only: [:index, :show]
+    end
+
+    namespace :api do
+      namespace :v1 do
+        resources :courses, only: [:index, :show]
+      end
     end
 
   end

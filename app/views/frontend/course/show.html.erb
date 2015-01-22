@@ -1,12 +1,68 @@
 
-<%= @course.inspect %>
-<%= @chapters.inspect %>
+
 
 <section ng-app="yogicSadhana">
   <section ng-controller="MainController">
 
-    <h1>{{testmsg}}</h1>
-    <h1>{{path}}</h1>
+  <div class="row">
+
+    <div snap-drawer>
+      <p>I'm a drawer! I maybe I've got some sweet navigation links.</p>
+
+      <nav id="menu" class="left">
+      <ul>
+        <li><a href="#" class="active"><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="#"><i class="fa fa-info-circle"></i>About</a></li>
+        <li> <a href="#"><i class="fa fa-laptop"></i>Services <i class="fa fa-caret-down"></i></a>
+        <ul>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Service</a></li>
+        </ul>
+        </li>
+
+        <li> <a href="#"><i class="fa fa-laptop"></i>Services <i class="fa fa-caret-down"></i></a>
+        <ul>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Service</a></li>
+        </ul>
+        </li>
+
+        <li><a href="#"><i class="fa fa-phone"></i>Contact</a></li>
+      </ul>
+      </nav>
+
+    </div>
+
+
+    <div snap-content class="snap_content" snap-options="snap_opts">
+      <button snap-toggle="" class="toggle_button"><i class="fa fa-align-justify"></i></button>
+      <section class="co10">
+        <h1>{{testmsg}}</h1>
+        <h1>{{path}}</h1>
+        <%= @course.inspect %>
+        <hr />
+        <%= @chapters.inspect %>
+      </section>
+      <p>Hello! I'm your main content!</p>
+      <ul ng-repeat="course in courses">
+        <li>{{course}}</li>
+      </ul>
+      <h1>{{chapters}}</h1>
+    </div>
+
+  </div>
 
   </section>
 </section>
+
+<script type="text/javascript" charset="utf-8">
+  $("#menu a").click(function(event){
+      event.preventDefault();
+      if($(this).next('ul').length){
+      $(this).next().toggle('fast');
+      $(this).children('i:last-child').toggleClass('fa-caret-down fa-caret-left');
+      }
+      });
+</script>
