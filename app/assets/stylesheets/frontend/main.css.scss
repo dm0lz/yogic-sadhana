@@ -20,14 +20,16 @@
 .snap_content {
   background-color: #fff;
   border-left: 4px solid #ccc;
-  }
+}
 
-
-
+.main_content{
+  margin-top: 70px;
+}
 
 #menu {
   background-color: #222;
   color: #bbb;
+  //margin-top: 100px;
 }
  
 #menu ul {
@@ -83,5 +85,5 @@
 #menu ul li ul li a:hover { background-color: #1A1A1A; }
 
 button.toggle_button{
-  margin: 10px 0 0 10px;
+  margin: 70px 0 0 10px;
 }

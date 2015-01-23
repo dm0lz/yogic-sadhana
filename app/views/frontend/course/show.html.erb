@@ -1,14 +1,13 @@
 
 
+<base href="<%= request.original_url %>">
 
 <section ng-app="yogicSadhana">
-  <section ng-controller="MainController">
+  <section ng-controller="MainController" ng-init="init('<%= @course.id %>')">
 
   <div class="row">
 
     <div snap-drawer>
-      <p>I'm a drawer! I maybe I've got some sweet navigation links.</p>
-
       <nav id="menu" class="left">
       <ul>
         <li><a href="#" class="active"><i class="fa fa-home"></i>Home</a></li>
@@ -21,12 +20,13 @@
         </ul>
         </li>
 
-        <li> <a href="#"><i class="fa fa-laptop"></i>Services <i class="fa fa-caret-down"></i></a>
-        <ul>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Service</a></li>
-        </ul>
+        <li>
+          <a href="#"><i class="fa fa-laptop"></i>Chapters<i class="fa fa-caret-down"></i></a>
+          <ul>
+            <li ng-repeat="chapter in chapters">
+              <a href="#">{{chapter.title}}</a>
+            </li>
+          </ul>
         </li>
 
         <li><a href="#"><i class="fa fa-phone"></i>Contact</a></li>
@@ -37,19 +37,19 @@
 
 
     <div snap-content class="snap_content" snap-options="snap_opts">
+
       <button snap-toggle="" class="toggle_button"><i class="fa fa-align-justify"></i></button>
-      <section class="co10">
-        <h1>{{testmsg}}</h1>
-        <h1>{{path}}</h1>
-        <%= @course.inspect %>
-        <hr />
-        <%= @chapters.inspect %>
-      </section>
-      <p>Hello! I'm your main content!</p>
-      <ul ng-repeat="course in courses">
-        <li>{{course}}</li>
-      </ul>
-      <h1>{{chapters}}</h1>
+
+      <!-- <h1>Path : {{path}}</h1> -->
+      <a ui-sref="state1">State 1</a>
+      <a ui-sref="state2">State 2</a>
+
+      <section ui-view></section>
+
+      <!-- <ul ng&#45;repeat="chapter in chapters"> -->
+      <!--   <li>{{chapter}}</li> -->
+      <!-- </ul> -->
+
     </div>
 
   </div>

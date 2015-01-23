@@ -1,15 +1,30 @@
 
-var YsApp = angular.module('yogicSadhana', ['ngRoute', 'snap']);
+var YsApp = angular.module('yogicSadhana', ['ui.router', 'snap']);
 
 /* CONFIG */
-YsApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
-  //$locationProvider.html5Mode(true);
-  $locationProvider.html5Mode({
-      enabled: true,
-      requireBase: false
-  });
+YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', function(snapRemoteProvider, $stateProvider, $urlRouterProvider){
+  snapRemoteProvider.globalOptions = {
+    disable: 'right',
+    maxPosition: 266,
+    minPosition: -266
+  };
+  $urlRouterProvider.otherwise('/');
+  $stateProvider
+    .state("contacts", {
+      url: "/contacts",
+      template: "<h1>My Contacts</h1>"
+    })
+    .state('state1', {
+      url: "/state1",
+      templateUrl: "/assets/frontend/partials/state1.html"
+    })
+    .state('state2', {
+      url: "/state2",
+      templateUrl: "/assets/frontend/partials/state2.html"
+    });
 }]);
 
+/* FACTORIES */
 YsApp.factory('GetCourses', function($http){
   var GetCourses = {};
   GetCourses.get = function(callback){
@@ -30,25 +45,19 @@ YsApp.factory('GetChapters', function($http){
   return GetChapters;
 });
 
-YsApp.controller('MainController', ['$scope', '$location', 'GetCourses', 'GetChapters', function($scope, $location, GetCourses, GetChapters){
+/* CONTROLLERS */
+YsApp.controller('MainController', ['$scope', 'GetCourses', 'GetChapters', function($scope, GetCourses, GetChapters){
 
-  var path = $location.path();
-  var course_id = path.match(/\/([^/]*)$/)[1];
-
-  $scope.testmsg = "hello";
-  $scope.path = $location.path();
-
-  $scope.snap_opts = {
-      disable: 'right'
+  $scope.init = function(course_id){
+    GetChapters.get(course_id, function(data){
+      $scope.chapters = data.chapters;
+    });
   };
 
   GetCourses.get(function(data){
     $scope.courses = data.courses;
   });
 
-  GetChapters.get(course_id, function(data){
-    $scope.chapters = data.chapters;
-  });
 
 }]);
 
