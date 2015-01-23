@@ -1,4 +1,12 @@
 
+span.country_flags{
+  position: relative;
+  top: 14px;
+  img{
+    margin-right: 3px;
+  }
+}
+
 .small-spacer{
   margin-top: 10px;
 }
@@ -29,7 +37,7 @@
 #menu {
   background-color: #222;
   color: #bbb;
-  //margin-top: 100px;
+  margin-top: 51px;
 }
  
 #menu ul {

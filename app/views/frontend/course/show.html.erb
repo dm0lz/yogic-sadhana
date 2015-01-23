@@ -10,7 +10,7 @@
     <div snap-drawer>
       <nav id="menu" class="left">
       <ul>
-        <li><a href="#" class="active"><i class="fa fa-home"></i>Home</a></li>
+        <li><a ui-sref="chapters" ui-sref-active="active"><i class="fa fa-home"></i>Chapters List</a></li>
         <li><a href="#"><i class="fa fa-info-circle"></i>About</a></li>
         <li> <a href="#"><i class="fa fa-laptop"></i>Services <i class="fa fa-caret-down"></i></a>
         <ul>
@@ -19,7 +19,6 @@
           <li><a href="#">Service</a></li>
         </ul>
         </li>
-
         <li>
           <a href="#"><i class="fa fa-laptop"></i>Chapters<i class="fa fa-caret-down"></i></a>
           <ul>
@@ -28,27 +27,16 @@
             </li>
           </ul>
         </li>
-
         <li><a href="#"><i class="fa fa-phone"></i>Contact</a></li>
       </ul>
       </nav>
-
     </div>
-
 
     <div snap-content class="snap_content" snap-options="snap_opts">
 
       <button snap-toggle="" class="toggle_button"><i class="fa fa-align-justify"></i></button>
 
-      <!-- <h1>Path : {{path}}</h1> -->
-      <a ui-sref="state1">State 1</a>
-      <a ui-sref="state2">State 2</a>
-
       <section ui-view></section>
-
-      <!-- <ul ng&#45;repeat="chapter in chapters"> -->
-      <!--   <li>{{chapter}}</li> -->
-      <!-- </ul> -->
 
     </div>
 
