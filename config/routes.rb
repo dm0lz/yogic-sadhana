@@ -27,10 +27,13 @@ Rails.application.routes.draw do
 
     namespace :api do
       namespace :v1 do
-        resources :courses, only: [:index, :show]
-        resources :chapters, only: [:index, :show] do
-
+        resources :courses, only: [:index, :show] do
+          get :menu
         end
+        resources :chapters, only: [:index, :show]
+        resources :practices, only: [:index, :show]
+        resources :theories, only: [:index, :show]
+        resources :medias, only: [:index, :show]
       end
     end
 

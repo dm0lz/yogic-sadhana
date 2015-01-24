@@ -10,4 +10,10 @@ class Api::V1::CoursesController < Api::BaseApiController
     render json: {:course => @course, :chapters => @chapters}
   end
 
+  def menu
+    @course = Course.find params[:course_id]
+    @chapters = @course.chapters
+    render json: {:course => @course, :chapters => @chapters}
+  end
+
 end

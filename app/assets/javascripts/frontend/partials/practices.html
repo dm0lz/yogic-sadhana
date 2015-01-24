@@ -3,5 +3,5 @@
 
 <ul ng-repeat="practice in practices">
   <li>{{practice}}</li>
-  <li><a ui-sref="practice_show({chapterId: {{practice.chapter_id}}, practiceId: {{practice.id}} })" ui-sref-active="active">{{practice.title}}</a></li>
+  <li><a ui-sref="course.practice_show({chapterId: {{practice.chapter_id}}, practiceId: {{practice.id}} })" ui-sref-active="active">{{practice.title}}</a></li>
 </ul>

@@ -8,8 +8,4 @@ class Api::V1::ChaptersController < Api::BaseApiController
     render json: {:chapter => @chapter, :practices => @chapter.practices, :theories => @chapter.theories}
   end
 
-  def get_media
-
-  end
-
 end

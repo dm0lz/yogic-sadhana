@@ -1,0 +1,38 @@
+
+<div snap-drawer>
+  <nav id="menu" class="left">
+  <ul>
+
+    <li><a ui-sref="course.chapters" ui-sref-active="active"><i class="fa fa-home"></i>Chapters List</a></li>
+
+    <li>
+      <a href="#"><i class="fa fa-laptop"></i>Chapters<i class="fa fa-caret-down"></i></a>
+      <ul>
+        <li ng-repeat="chapter in chapters">
+          <a ui-sref="course.chapter_show({ chapterId: {{chapter.id}} })" ui-sref-active="active">{{chapter.title}}</a>
+        </li>
+      </ul>
+    </li>
+
+    <li ng-if="theories">
+      <a href="#"><i class="fa fa-laptop"></i>Theories<i class="fa fa-caret-down"></i></a>
+      <ul>
+        <li ng-repeat="theory in theories">
+          <a href="#">{{theory.title}}</a>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+  </nav>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  $("#menu a").click(function(event){
+    event.preventDefault();
+    if($(this).next('ul').length){
+      $(this).next().toggle('fast');
+      $(this).children('i:last-child').toggleClass('fa-caret-down fa-caret-left');
+    }
+  });
+</script>
