@@ -13,26 +13,32 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', func
     .state('course', {
       abstract: true,
       url: "/chapters",
-      views: {
-        'left_menu': {
-          templateUrl: "/assets/frontend/partials/left_menu.html",
-          controller: 'MenuController'
-        },
-        'main': {
-          templateUrl: "/assets/frontend/partials/main.html",
-          controller: 'MainController'
-        }
-      }
+      templateUrl: "/assets/frontend/partials/main.html",
+      controller: 'MainController'
     })
     .state('course.chapters', {
       url: '',
-      templateUrl: '/assets/frontend/partials/chapters.html',
-      //controller: 'MainController'
+      views: {
+        'main_content': {
+          templateUrl: '/assets/frontend/partials/chapters.html',
+        },
+        'left_menu': {
+          templateUrl: '/assets/frontend/partials/left_menu.html',
+        }
+      }
     })
     .state('course.chapter_show', {
       url: "/:chapterId",
-      templateUrl: "/assets/frontend/partials/chapter.show.html",
-      controller: 'ChaptersController'
+      views: {
+        'main_content': {
+          templateUrl: "/assets/frontend/partials/chapter.show.html",
+          controller: 'ChaptersController'
+        },
+        'left_menu': {
+          templateUrl: '/assets/frontend/partials/left_menu.html',
+          controller: 'ChaptersController'
+        }
+      }
     })
     .state('course.practices', {
       url: "/chapter/:chapterId/practices",

@@ -1,10 +1,49 @@
 
+<section ui-view="left_menu"></section>
+
+<!-- <div snap&#45;drawer> -->
+<!--   <nav id="menu" class="left"> -->
+<!--   <ul> -->
+<!--  -->
+<!--     <li><a ui&#45;sref="course.chapters" ui&#45;sref&#45;active="active"><i class="fa fa&#45;home"></i>Chapters List</a></li> -->
+<!--  -->
+<!--     <li> -->
+<!--       <a href="#"><i class="fa fa&#45;laptop"></i>Chapters<i class="fa fa&#45;caret&#45;down"></i></a> -->
+<!--       <ul> -->
+<!--         <li ng&#45;repeat="chapter in chapters"> -->
+<!--           <a ui&#45;sref="course.chapter_show({ chapterId: {{chapter.id}} })" ui&#45;sref&#45;active="active">{{chapter.title}}</a> -->
+<!--         </li> -->
+<!--       </ul> -->
+<!--     </li> -->
+<!--  -->
+<!--     <li> -->
+<!--       <a href="#"><i class="fa fa&#45;laptop"></i>Theories<i class="fa fa&#45;caret&#45;down"></i></a> -->
+<!--       <ul> -->
+<!--         <li ng&#45;repeat="theory in theories"> -->
+<!--           <a href="#">{{theory.title}}</a> -->
+<!--         </li> -->
+<!--       </ul> -->
+<!--     </li> -->
+<!--  -->
+<!--   </ul> -->
+<!--   </nav> -->
+<!-- </div> -->
+
+<script type="text/javascript" charset="utf-8">
+  // $("#menu a").click(function(event){
+  //   event.preventDefault();
+  //   if($(this).next('ul').length){
+  //     $(this).next().toggle('fast');
+  //     $(this).children('i:last-child').toggleClass('fa-caret-down fa-caret-left');
+  //   }
+  // });
+</script>
 
 <div snap-content class="snap_content" snap-options="snap_opts">
 
   <button snap-toggle="" class="toggle_button"><i class="fa fa-align-justify"></i></button>
 
-  <section ui-view></section>
+  <section ui-view="main_content"></section>
 
 </div>
 
