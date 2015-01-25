@@ -40,25 +40,57 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', func
         }
       }
     })
-    .state('course.practices', {
-      url: "/chapter/:chapterId/practices",
-      templateUrl: "/assets/frontend/partials/practices.html",
-      controller: 'ChaptersController'
-    })
-    .state('course.practice_show', {
-      url: "/chapter/:chapterId/practice/:practiceId",
-      templateUrl: "/assets/frontend/partials/practice.show.html",
-      controller: 'PracticesController'
-    })
     .state('course.theories', {
-      url: "/chapter/:chapterId/theories",
-      templateUrl: "/assets/frontend/partials/theories.html",
-      controller: 'ChaptersController'
+      url: "/:chapterId/theories",
+      views: {
+        'main_content': {
+          templateUrl: "/assets/frontend/partials/theories.html",
+          controller: 'ChaptersController'
+        },
+        'left_menu': {
+          templateUrl: '/assets/frontend/partials/left_menu.html',
+          controller: 'ChaptersController'
+        }
+      }
+    })
+    .state('course.practices', {
+      url: "/:chapterId/practices",
+      views: {
+        'main_content': {
+          templateUrl: "/assets/frontend/partials/practices.html",
+          controller: 'ChaptersController'
+        },
+        'left_menu': {
+          templateUrl: '/assets/frontend/partials/left_menu.html',
+          controller: 'ChaptersController'
+        }
+      }
     })
     .state('course.theory_show', {
-      url: "/chapter/:chapterId/theory/:theoryId",
-      templateUrl: "/assets/frontend/partials/theory.show.html",
-      controller: 'TheoriesController'
+      url: "/:chapterId/theories/:theoryId",
+      views: {
+        'main_content': {
+          templateUrl: "/assets/frontend/partials/theory.show.html",
+          controller: 'TheoriesController'
+        },
+        'left_menu': {
+          templateUrl: '/assets/frontend/partials/left_menu.html',
+          controller: 'TheoriesController'
+        }
+      }
+    })
+    .state('course.practice_show', {
+      url: "/:chapterId/practices/:practiceId",
+      views: {
+        'main_content': {
+          templateUrl: "/assets/frontend/partials/practice.show.html",
+          controller: 'PracticesController'
+        },
+        'left_menu': {
+          templateUrl: '/assets/frontend/partials/left_menu.html',
+          controller: 'PracticesController'
+        }
+      }
     });
 }]);
 
@@ -122,9 +154,7 @@ YsApp.controller('MainController', ['$scope', 'GetChapters', function($scope, Ge
   //   });
   // };
   $scope.$watch("course_id", function(){
-    // console.log($scope.course_id);
     GetChapters.get($scope.course_id, function(data){
-      // console.log(data);
       $scope.chapters = data.chapters;
     });
   });
@@ -163,17 +193,6 @@ YsApp.controller('TheoriesController', ['$scope', '$stateParams', 'GetTheoryMedi
 }]);
 
 
-YsApp.controller('MenuController', ['$scope', '$stateParams', 'GetMenu', function($scope, $stateParams, GetMenu){
-
-  $scope.$watch("course_id", function(){
-    // console.log($scope.course_id);
-    GetMenu.get($scope.course_id, function(data){
-      // console.log(data);
-      $scope.chapters = data.chapters;
-    });
-  });
-
-}]);
 
 
 

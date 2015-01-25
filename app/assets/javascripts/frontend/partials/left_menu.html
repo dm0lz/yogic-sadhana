@@ -5,7 +5,7 @@
 
     <li><a ui-sref="course.chapters" ui-sref-active="active"><i class="fa fa-home"></i>Chapters List</a></li>
 
-    <li>
+    <li ng-show="!theories.length">
       <a href="#"><i class="fa fa-laptop"></i>Chapters<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="chapter in chapters">
@@ -14,11 +14,29 @@
       </ul>
     </li>
 
-    <li>
-      <a href="#"><i class="fa fa-laptop"></i>Theories<i class="fa fa-caret-down"></i></a>
+    <li ng-show="theories.length">
+      <a href="#"><i class="fa fa-pencil"></i>Theories<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="theory in theories">
-          <a href="#">{{theory.title}}</a>
+          <a ui-sref="course.theory_show({chapterId: {{theory.chapter_id }}, theoryId: {{theory.id}} })">{{theory.title}}</a>
+        </li>
+      </ul>
+    </li>
+
+    <li ng-show="practices.length">
+      <a href="#"><i class="fa fa-plane"></i>Practices<i class="fa fa-caret-down"></i></a>
+      <ul>
+        <li ng-repeat="practice in practices">
+          <a ui-sref="course.practice_show({chapterId: {{practice.chapter_id }}, practiceId: {{practice.id}} })">{{practice.title}}</a>
+        </li>
+      </ul>
+    </li>
+
+    <li ng-show="medias.length">
+      <a href="#"><i class="fa fa-plane"></i>Medias<i class="fa fa-caret-down"></i></a>
+      <ul>
+        <li ng-repeat="practice in practices">
+          <a ui-sref="course.practice_show({chapterId: {{practice.chapter_id }}, practiceId: {{practice.id}} })">{{practice.title}}</a>
         </li>
       </ul>
     </li>
