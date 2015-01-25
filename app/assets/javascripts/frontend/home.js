@@ -146,18 +146,22 @@ YsApp.factory('GetMenu', function($http){
 });
 
 /* CONTROLLERS */
-YsApp.controller('MainController', ['$scope', 'GetChapters', function($scope, GetChapters){
+YsApp.controller('MainController', ['$scope', 'GetChapters', 'snapRemote', function($scope, GetChapters, snapRemote){
 
   // $scope.init = function(course_id){
   //   GetChapters.get(course_id, function(data){
   //     $scope.chapters = data.chapters;
   //   });
   // };
+
+  // Retrieve course_id from ng-init and query chapters
   $scope.$watch("course_id", function(){
     GetChapters.get($scope.course_id, function(data){
       $scope.chapters = data.chapters;
     });
   });
+  // Open Menu Bar on startup
+  snapRemote.open('left');
 
 }]);
 

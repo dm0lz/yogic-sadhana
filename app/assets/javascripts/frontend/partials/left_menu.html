@@ -6,10 +6,10 @@
     <li><a ui-sref="course.chapters" ui-sref-active="active"><i class="fa fa-home"></i>Chapters List</a></li>
 
     <li ng-show="!theories.length">
-      <a href="#"><i class="fa fa-laptop"></i>Chapters<i class="fa fa-caret-down"></i></a>
+      <a href="#"><i class="fa fa-list"></i>Chapters<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="chapter in chapters">
-          <a ui-sref="course.chapter_show({ chapterId: {{chapter.id}} })" ui-sref-active="active">{{chapter.title}}</a>
+          <a ui-sref="course.chapter_show({ chapterId: {{chapter.id}} })" ui-sref-active="active"><i class="fa fa-coffee"></i>{{chapter.title}}</a>
         </li>
       </ul>
     </li>
@@ -18,7 +18,7 @@
       <a href="#"><i class="fa fa-pencil"></i>Theories<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="theory in theories">
-          <a ui-sref="course.theory_show({chapterId: {{theory.chapter_id }}, theoryId: {{theory.id}} })">{{theory.title}}</a>
+          <a ui-sref="course.theory_show({chapterId: {{theory.chapter_id }}, theoryId: {{theory.id}} })"><i class="fa fa-magic"></i>{{theory.title}}</a>
         </li>
       </ul>
     </li>
@@ -27,7 +27,7 @@
       <a href="#"><i class="fa fa-plane"></i>Practices<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="practice in practices">
-          <a ui-sref="course.practice_show({chapterId: {{practice.chapter_id }}, practiceId: {{practice.id}} })">{{practice.title}}</a>
+          <a ui-sref="course.practice_show({chapterId: {{practice.chapter_id }}, practiceId: {{practice.id}} })"><i class="fa fa-magic"></i>{{practice.title}}</a>
         </li>
       </ul>
     </li>
