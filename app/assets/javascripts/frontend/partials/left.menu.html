@@ -3,15 +3,9 @@
   <nav id="menu" class="left">
   <ul>
 
-    <li ng-hide="$state.current.name == 'course.chapters'"><a ui-sref="course.chapters" ui-sref-active="active"><i class="fa fa-home"></i>Chapters List</a></li>
-
     <li ng-show="$state"> <h4 class="text-center" style="color: red;"> {{$state.current.name}} </h4> </li>
 
-    <li ng-show="$state.current.name == 'course.chapter.theory'"> <h4 class="text-center" style="color: red;"> {{theory.title}} </h4> </li>
-
-    <li>
-      <h4 class="text-center"> {{chapter.title}} </h4>
-    </li>
+    <li ng-hide="$state.current.name == 'course.chapters'"><a ui-sref="course.chapters" ui-sref-active="active"><i class="fa fa-home"></i>Chapters List</a></li>
 
     <li ng-show="$state.current.name == 'course.chapters'">
       <a href="#"><i class="fa fa-list"></i>Chapters<i class="fa fa-caret-down"></i></a>
@@ -22,7 +16,7 @@
       </ul>
     </li>
 
-    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.theory' || $state.current.name == 'course.chapter.theories'">
+    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.theory' || $state.current.name == 'course.chapter.theories' || $state.current.name == 'course.chapter.theory.media' || $state.current.name == 'course.chapter.theory.medias'">
       <a href="#"><i class="fa fa-pencil"></i>Theories<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="theory in theories">
@@ -31,11 +25,11 @@
       </ul>
     </li>
 
-    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.practice' || $state.current.name == 'course.chapter.practices'">
-      <a href="#"><i class="fa fa-plane"></i>Practices<i class="fa fa-caret-down"></i></a>
-      <ul>
-        <li ng-repeat="practice in practices">
-          <a ui-sref="course.chapter.practice({ practiceId: {{practice.id}} })"><i class="fa fa-magic"></i>{{practice.title}}</a>
+    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.practice' || $state.current.name == 'course.chapter.practices' || $state.current.name == 'course.chapter.practice.media' || $state.current.name == 'course.chapter.practice.medias'">
+    <a href="#"><i class="fa fa-plane"></i>Practices<i class="fa fa-caret-down"></i></a>
+    <ul>
+      <li ng-repeat="practice in practices">
+      <a ui-sref="course.chapter.practice({ practiceId: {{practice.id}} })"><i class="fa fa-magic"></i>{{practice.title}}</a>
         </li>
       </ul>
     </li>
