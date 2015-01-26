@@ -253,6 +253,7 @@ YsApp.controller('PracticesController', ['$scope', '$stateParams', 'GetPracticeM
   var practice_id = $stateParams.practiceId;
   GetPracticeMedias.get($scope.locale, practice_id, function(data){
     $scope.practice = data.practice;
+    $scope.practices = data.practices;
     $scope.medias = data.medias;
   });
 
@@ -263,6 +264,7 @@ YsApp.controller('TheoriesController', ['$scope', '$stateParams', 'GetTheoryMedi
 
   var theory_id = $stateParams.theoryId;
   GetTheoryMedias.get($scope.locale, theory_id, function(data){
+    $scope.theories = data.theories;
     $scope.theory = data.theory;
     $scope.medias = data.medias;
   });

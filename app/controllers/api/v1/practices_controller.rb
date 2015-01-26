@@ -6,8 +6,9 @@ class Api::V1::PracticesController < Api::BaseApiController
 
   def show
     @practice = Practice.find params[:id]
+    @practices = @practice.chapter.practices
     @medias = @practice.media
-    render json: {:practice => @practice, :medias => @medias}
+    render json: {:practice => @practice, :medias => @medias, :practices => @practices}
   end
 
 end

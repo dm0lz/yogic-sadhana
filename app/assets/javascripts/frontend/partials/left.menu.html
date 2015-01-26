@@ -2,13 +2,18 @@
 <div snap-drawer>
   <nav id="menu" class="left">
   <ul>
-    <li ng-show="$state">
-      <h4 class="text-center"> {{$state.current.name}} </h4>
+
+    <li ng-hide="$state.current.name == 'course.chapters'"><a ui-sref="course.chapters" ui-sref-active="active"><i class="fa fa-home"></i>Chapters List</a></li>
+
+    <li ng-show="$state"> <h4 class="text-center" style="color: red;"> {{$state.current.name}} </h4> </li>
+
+    <li ng-show="$state.current.name == 'course.chapter.theory'"> <h4 class="text-center" style="color: red;"> {{theory.title}} </h4> </li>
+
+    <li>
+      <h4 class="text-center"> {{chapter.title}} </h4>
     </li>
 
-    <li><a ui-sref="course.chapters" ui-sref-active="active"><i class="fa fa-home"></i>Chapters List</a></li>
-
-    <li ng-show="!theories.length">
+    <li ng-show="$state.current.name == 'course.chapters'">
       <a href="#"><i class="fa fa-list"></i>Chapters<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="chapter in chapters">
@@ -17,12 +22,7 @@
       </ul>
     </li>
 
-
-    <li ng-show="chapter">
-      <h4 class="text-center"> {{chapter.title}} </h4>
-    </li>
-
-    <li ng-show="theories.length">
+    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.theory' || $state.current.name == 'course.chapter.theories'">
       <a href="#"><i class="fa fa-pencil"></i>Theories<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="theory in theories">
@@ -31,7 +31,7 @@
       </ul>
     </li>
 
-    <li ng-show="practices.length">
+    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.practice' || $state.current.name == 'course.chapter.practices'">
       <a href="#"><i class="fa fa-plane"></i>Practices<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="practice in practices">
