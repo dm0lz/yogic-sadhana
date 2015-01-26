@@ -4,6 +4,8 @@ class Api::V1::MediasController < Api::BaseApiController
   end
 
   def show
+    @media = Medium.find params[:id]
+    render json: { :media => @media }
   end
 
 end

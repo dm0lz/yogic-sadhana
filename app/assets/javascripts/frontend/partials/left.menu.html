@@ -2,6 +2,9 @@
 <div snap-drawer>
   <nav id="menu" class="left">
   <ul>
+    <li ng-show="$state">
+      <h4 class="text-center"> {{$state.current.name}} </h4>
+    </li>
 
     <li><a ui-sref="course.chapters" ui-sref-active="active"><i class="fa fa-home"></i>Chapters List</a></li>
 
@@ -9,16 +12,21 @@
       <a href="#"><i class="fa fa-list"></i>Chapters<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="chapter in chapters">
-          <a ui-sref="course.chapter_show({ chapterId: {{chapter.id}} })" ui-sref-active="active"><i class="fa fa-coffee"></i>{{chapter.title}}</a>
+          <a ui-sref="course.chapter({ chapterId: {{chapter.id}} })" ui-sref-active="active"><i class="fa fa-coffee"></i>{{chapter.title}}</a>
         </li>
       </ul>
+    </li>
+
+
+    <li ng-show="chapter">
+      <h4 class="text-center"> {{chapter.title}} </h4>
     </li>
 
     <li ng-show="theories.length">
       <a href="#"><i class="fa fa-pencil"></i>Theories<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="theory in theories">
-          <a ui-sref="course.theory_show({chapterId: {{theory.chapter_id }}, theoryId: {{theory.id}} })"><i class="fa fa-magic"></i>{{theory.title}}</a>
+          <a ui-sref="course.chapter.theory({ theoryId: {{theory.id}} })"><i class="fa fa-magic"></i>{{theory.title}}</a>
         </li>
       </ul>
     </li>
@@ -27,7 +35,7 @@
       <a href="#"><i class="fa fa-plane"></i>Practices<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="practice in practices">
-          <a ui-sref="course.practice_show({chapterId: {{practice.chapter_id }}, practiceId: {{practice.id}} })"><i class="fa fa-magic"></i>{{practice.title}}</a>
+          <a ui-sref="course.chapter.practice({ practiceId: {{practice.id}} })"><i class="fa fa-magic"></i>{{practice.title}}</a>
         </li>
       </ul>
     </li>
@@ -35,8 +43,13 @@
     <li ng-show="medias.length">
       <a href="#"><i class="fa fa-plane"></i>Medias<i class="fa fa-caret-down"></i></a>
       <ul>
-        <li ng-repeat="practice in practices">
-          <a ui-sref="course.practice_show({chapterId: {{practice.chapter_id }}, practiceId: {{practice.id}} })">{{practice.title}}</a>
+        <li ng-repeat="media in medias">
+          <div ng-if="media.mediumable_type === 'Theory'">
+            <a ui-sref="course.chapter.theory.media({ mediaId: {{media.id}} })"><i class="fa fa-magic"></i>{{media.title}}</a>
+          </div>
+          <div ng-if="media.mediumable_type === 'Practice'">
+            <a ui-sref="course.chapter.practice.media({ mediaId: {{media.id}} })"><i class="fa fa-magic"></i>{{media.title}}</a>
+          </div>
         </li>
       </ul>
     </li>

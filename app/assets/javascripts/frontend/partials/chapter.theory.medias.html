@@ -1,0 +1,7 @@
+
+<h1>Theory medias</h1>
+
+<ul ng-repeat="media in medias">
+  <li>{{media}}</li>
+  <li><a ui-sref="course.chapter.theory.media({ mediaId: {{media.id}} })" ui-sref-active="active">{{media.title}}</a></li>
+</ul>

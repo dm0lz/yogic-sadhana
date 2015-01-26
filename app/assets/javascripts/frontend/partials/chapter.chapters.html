@@ -1,0 +1,6 @@
+
+<h1>Chapters List</h1>
+
+<ul ng-repeat="chapter in chapters">
+  <li><a ui-sref="course.chapter({chapterId: {{chapter.id}} })" ui-sref-active="active">{{chapter.title}}</a></li>
+</ul>

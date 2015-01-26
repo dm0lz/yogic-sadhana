@@ -1,8 +1,0 @@
-
-
-<h1>Theories List</h1>
-
-<ul ng-repeat="theory in theories">
-  <li>{{theory}}</li>
-  <li><a ui-sref="course.theory_show({chapterId: {{theory.chapter_id}}, theoryId: {{theory.id}} })" ui-sref-active="active">{{theory.title}}</a></li>
-</ul>
