@@ -60,12 +60,15 @@ YsApp.factory('GetPracticeMedia', function($http){
   return GetPracticeMedia;
 });
 
-YsApp.factory('Locale', function($location){
-  var Locale = {};
-  Locale.getLocale = function(){
-    var url = $location.$$absUrl;
-    var locale = url.split("/")[3];
-    return locale;
-  };
-  return Locale;
-});
+// YsApp.factory('Locale', function($location){
+//   var Locale = {};
+//   Locale.getLocale = function(){
+//     var url = $location.$$absUrl;
+//     var locale = url.split("/")[3];
+//     return locale;
+//   };
+//   return Locale;
+// });
+
+
+

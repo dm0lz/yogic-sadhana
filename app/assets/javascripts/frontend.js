@@ -12,6 +12,7 @@
 //= require frontend/app
 //= require frontend/config
 //= require frontend/factories
+//= require frontend/services
 //= require frontend/controllers
 
 
