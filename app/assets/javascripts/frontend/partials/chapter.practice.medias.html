@@ -1,6 +1,9 @@
 
-<h1>Practice medias</h1>
+<h1>{{i18n_translations.medias.buttons.list_title}}</h1>
 
 <ul ng-repeat="media in medias">
-  <li>{{media}}</li>
+  <li>
+    <a ui-sref="course.chapter.practice.media({ mediaId: {{media.id}} })" ui-sref-active="active">{{media.title}}</a>
+    {{media}}
+  </li>
 </ul>

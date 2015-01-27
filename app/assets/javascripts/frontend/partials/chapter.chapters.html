@@ -1,6 +1,23 @@
 
-<h1>Chapters List</h1>
+<h1 class="text-center">{{i18n_translations.chapters.buttons.list_title}}</h1>
 
-<ul ng-repeat="chapter in chapters">
-  <li><a ui-sref="course.chapter({chapterId: {{chapter.id}} })" ui-sref-active="active">{{chapter.title}}</a></li>
-</ul>
+<div class="big-spacer"></div>
+
+<div class="container">
+  <div class="row frontpage">
+
+    <div ng-repeat="chapter in chapters">
+
+      <div class="col-md-4">
+          <div class="well">
+            <!--  IMG            -->
+            <a ui-sref="course.chapter({chapterId: {{chapter.id}} })" ui-sref-active="active">
+              {{chapter}}
+            </a>
+          </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

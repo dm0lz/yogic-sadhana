@@ -9,6 +9,9 @@
 //= require lib/angular-snap
 //= require lib/loading-bar
 //= require bootstrap-sprockets
-//= require frontend/home
+//= require frontend/app
+//= require frontend/config
+//= require frontend/factories
+//= require frontend/controllers
 
 

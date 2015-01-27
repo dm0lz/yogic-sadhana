@@ -5,10 +5,10 @@
 
     <li ng-show="$state"> <h4 class="text-center" style="color: red;"> {{$state.current.name}} </h4> </li>
 
-    <li ng-hide="$state.current.name == 'course.chapters'"><a ui-sref="course.chapters" ui-sref-active="active"><i class="fa fa-home"></i>Chapters List</a></li>
+    <li ng-hide="$state.current.name == 'course.chapters'"><a ui-sref="course.chapters" ui-sref-active="active"><i class="fa fa-home"></i>{{i18n_translations.chapters.buttons.list_title}}</a></li>
 
     <li ng-show="$state.current.name == 'course.chapters'">
-      <a href="#"><i class="fa fa-list"></i>Chapters<i class="fa fa-caret-down"></i></a>
+      <a href="#"><i class="fa fa-list"></i>{{i18n_translations.breadcrumbs.chapters}}<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="chapter in chapters">
           <a ui-sref="course.chapter({ chapterId: {{chapter.id}} })" ui-sref-active="active"><i class="fa fa-coffee"></i>{{chapter.title}}</a>
@@ -17,7 +17,7 @@
     </li>
 
     <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.theory' || $state.current.name == 'course.chapter.theories' || $state.current.name == 'course.chapter.theory.media' || $state.current.name == 'course.chapter.theory.medias'">
-      <a href="#"><i class="fa fa-pencil"></i>Theories<i class="fa fa-caret-down"></i></a>
+      <a href="#"><i class="fa fa-pencil"></i>{{i18n_translations.breadcrumbs.theories}}<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="theory in theories">
           <a ui-sref="course.chapter.theory({ theoryId: {{theory.id}} })"><i class="fa fa-magic"></i>{{theory.title}}</a>
@@ -26,7 +26,7 @@
     </li>
 
     <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.practice' || $state.current.name == 'course.chapter.practices' || $state.current.name == 'course.chapter.practice.media' || $state.current.name == 'course.chapter.practice.medias'">
-    <a href="#"><i class="fa fa-plane"></i>Practices<i class="fa fa-caret-down"></i></a>
+    <a href="#"><i class="fa fa-plane"></i>{{i18n_translations.breadcrumbs.practices}}<i class="fa fa-caret-down"></i></a>
     <ul>
       <li ng-repeat="practice in practices">
       <a ui-sref="course.chapter.practice({ practiceId: {{practice.id}} })"><i class="fa fa-magic"></i>{{practice.title}}</a>
