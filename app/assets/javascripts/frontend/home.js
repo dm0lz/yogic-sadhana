@@ -1,5 +1,5 @@
 
-var YsApp = angular.module('yogicSadhana', ['ui.router', 'snap']);
+var YsApp = angular.module('yogicSadhana', ['ui.router', 'snap', 'angular-loading-bar', 'ngAnimate']);
 
 /* CONFIG AND Routing */
 YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', function(snapRemoteProvider, $stateProvider, $urlRouterProvider){
@@ -218,7 +218,8 @@ YsApp.factory('Locale', function($location){
 });
 
 /* CONTROLLERS */
-YsApp.controller('BaseController', ['$scope', 'Locale', 'snapRemote', '$state', function($scope, Locale, snapRemote, $state){
+YsApp.controller('BaseController', ['$scope', 'Locale', 'snapRemote', '$state', 'cfpLoadingBar', function($scope, Locale, snapRemote, $state, cfpLoadingBar){
+  cfpLoadingBar.start();
   $scope.locale = Locale.getLocale();
   snapRemote.open('left');
   $scope.$state = $state;
