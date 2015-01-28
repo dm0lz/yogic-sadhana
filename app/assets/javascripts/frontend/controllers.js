@@ -15,7 +15,7 @@ YsApp.controller('MainController', ['$scope', 'GetChapters', '$controller', func
   $scope.$watch("course_id", function(){
     GetChapters.get($scope.locale, $scope.course_id, function(data){
       $scope.chapters = data.chapters;
-      $scope.i18n_translations = data.i18n_translations
+      $scope.i18n_translations = data.i18n_translations;
     });
   });
 
