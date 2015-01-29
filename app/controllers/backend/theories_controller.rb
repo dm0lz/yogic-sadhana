@@ -5,7 +5,13 @@ class Backend::TheoriesController < Backend::BackendController
 
   def index
     @theories = Theory.where chapter_id: params[:chapter_id]
-    render 'index'
+
+    # respond_to do |format|
+    #   format.html  # index.html.erb
+    #   format.json  { render json: { theories: @theories }.to_a }
+    # end
+    render json: { theories: @theories }.to_a
+   #render 'index'
   end
 
   def create

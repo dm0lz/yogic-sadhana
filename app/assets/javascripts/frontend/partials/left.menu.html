@@ -20,7 +20,7 @@
       <a href="#"><i class="fa fa-pencil"></i>{{i18n_translations.breadcrumbs.theories}}<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="theory in theories">
-          <a ui-sref="course.chapter.theory({ theoryId: {{theory.id}} })"><i class="fa fa-magic"></i>{{theory.title}}</a>
+          <a ui-sref="course.chapter.theory({ theoryId: {{theory.theory.id}} })"><i class="fa fa-magic"></i>{{theory.title}}</a>
         </li>
       </ul>
     </li>
@@ -29,7 +29,7 @@
     <a href="#"><i class="fa fa-plane"></i>{{i18n_translations.breadcrumbs.practices}}<i class="fa fa-caret-down"></i></a>
     <ul>
       <li ng-repeat="practice in practices">
-      <a ui-sref="course.chapter.practice({ practiceId: {{practice.id}} })"><i class="fa fa-magic"></i>{{practice.title}}</a>
+      <a ui-sref="course.chapter.practice({ practiceId: {{practice.practice.id}} })"><i class="fa fa-magic"></i>{{practice.title}}</a>
         </li>
       </ul>
     </li>

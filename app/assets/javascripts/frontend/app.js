@@ -1,3 +1,3 @@
 
-var YsApp = angular.module('yogicSadhana', ['ui.router', 'snap', 'angular-loading-bar', 'ngAnimate', 'mediaPlayer']);
+var YsApp = angular.module('yogicSadhana', ['ui.router', 'snap', 'angular-loading-bar', 'ngAnimate', 'mediaPlayer', 'restangular']);
 

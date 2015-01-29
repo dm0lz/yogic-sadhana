@@ -9,11 +9,11 @@ YsApp.controller('BaseController', ['$scope', 'Locale', 'snapRemote', '$state', 
 
 }]);
 
-YsApp.controller('MainController', ['$scope', 'GetChapters', '$controller', function($scope, GetChapters, $controller){
+YsApp.controller('CoursesController', ['$scope', 'Course', '$controller', function($scope, Course, $controller){
   $controller('BaseController', {$scope: $scope});
 
   $scope.$watch("course_id", function(){
-    GetChapters.get($scope.locale, $scope.course_id, function(data){
+    Course.get($scope.locale, $scope.course_id, function(data){
       $scope.chapters = data.chapters;
       $scope.i18n_translations = data.i18n_translations;
     });
@@ -21,23 +21,38 @@ YsApp.controller('MainController', ['$scope', 'GetChapters', '$controller', func
 
 }]);
 
-YsApp.controller('ChaptersController', ['$scope', 'GetTheoriesAndPractices', '$stateParams', '$controller', function($scope, GetTheoriesAndPractices, $stateParams, $controller){
+YsApp.controller('ChaptersController', ['$scope', 'Chapter', '$stateParams', '$controller', function($scope, Chapter, $stateParams, $controller){
   $controller('BaseController', {$scope: $scope});
 
   var chapter_id = $stateParams.chapterId;
-  GetTheoriesAndPractices.get($scope.locale, chapter_id, function(data){
-    $scope.chapter = data.chapter;
-    $scope.practices = data.practices;
-    $scope.theories = data.theories;
+  Chapter.get($scope.locale, chapter_id, function(data){
+    console.log(data);
+    $scope.practices = [];
+    $scope.theories = [];
+    angular.forEach(data.theories, function(data){
+      var theory = {};
+      theory.theory = data.theory;
+      theory.medias = data.medias;
+      $scope.theories.push(theory);
+    });
+    angular.forEach(data.practices, function(data){
+      var practice = {};
+      practice.practice = data.practice;
+      practice.medias = data.medias;
+      $scope.practices.push(practice);
+    });
+    // $scope.theories = data.theories;
+    // $scope.practices = data.practices;
+    // $scope.chapter = data.chapter;
   });
 
 }]);
 
-YsApp.controller('PracticesController', ['$scope', '$stateParams', 'GetPracticeMedias', '$controller', function($scope, $stateParams, GetPracticeMedias, $controller){
+YsApp.controller('PracticesController', ['$scope', '$stateParams', 'Practice', '$controller', function($scope, $stateParams, Practice, $controller){
   $controller('BaseController', {$scope: $scope});
 
   var practice_id = $stateParams.practiceId;
-  GetPracticeMedias.get($scope.locale, practice_id, function(data){
+  Practice.get($scope.locale, practice_id, function(data){
     $scope.practice = data.practice;
     $scope.practices = data.practices;
     $scope.medias = data.medias;
@@ -45,11 +60,11 @@ YsApp.controller('PracticesController', ['$scope', '$stateParams', 'GetPracticeM
 
 }]);
 
-YsApp.controller('TheoriesController', ['$scope', '$stateParams', 'GetTheoryMedias', '$controller', function($scope, $stateParams, GetTheoryMedias, $controller){
+YsApp.controller('TheoriesController', ['$scope', '$stateParams', 'Theory', '$controller', function($scope, $stateParams, Theory, $controller){
   $controller('BaseController', {$scope: $scope});
 
   var theory_id = $stateParams.theoryId;
-  GetTheoryMedias.get($scope.locale, theory_id, function(data){
+  Theory.get($scope.locale, theory_id, function(data){
     $scope.theories = data.theories;
     $scope.theory = data.theory;
     $scope.medias = data.medias;

@@ -2,6 +2,7 @@
 class Api::V1::TheoriesController < Api::BaseApiController
 
   def index
+    binding.pry
   end
 
   def show
