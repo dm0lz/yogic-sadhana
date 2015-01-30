@@ -1,0 +1,7 @@
+
+
+<h1>{{i18n_translations.theories.buttons.list_title}}</h1>
+
+<ul ng-repeat="theory in theories">
+  <li><a ui-sref="course.chapter.theory({ theoryId: {{theory.theory.id}} })" ui-sref-active="active">{{theory.theory.title}}</a>{{theory}}</li>
+</ul>

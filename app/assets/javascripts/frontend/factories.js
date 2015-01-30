@@ -8,6 +8,29 @@ YsApp.factory('Course', function($http){
   };
   return Course;
 });
+//
+// YsApp.factory('Chapter', function($http, $q){
+//   function Chapter(chapter){
+//     this.chapter = chapter;
+//   };
+//   Chapter.prototype.setData = function(data){
+//     this.chapter = data.chapter;
+//   };
+//   Chapter.prototype.getChapter = function(data){
+//     return this.chapter;
+//   };
+//   Chapter.prototype.get = function(locale, id){
+//     var def = $q.defer();
+//     var scope = this;
+//     $http.get('/' + locale + '/api/v1/chapters/' + id).success(function(data){
+//          // console.log(data.chapter);
+//         scope.setData(data);
+//         def.resolve(data);
+//     });
+//     return def.promise;
+//   };
+//   return Chapter;
+// });
 
 YsApp.factory('Chapter', function($http){
   var Chapter = {};
@@ -19,34 +42,6 @@ YsApp.factory('Chapter', function($http){
   return Chapter;
 });
 
-// YsApp.factory('Chapter', function($http){
-//
-//   var Chapter = {};
-//   Chapter.practices = [];
-//   Chapter.theories = [];
-//
-//   Chapter.get = function(locale, id, callback){
-//     var self = this;
-//     $http.get('/' + locale + '/api/v1/chapters/' + id).success(function(data){
-//       angular.forEach(data.theories, function(data){
-//         var theory = {};
-//         theory.theory = data.theory;
-//         theory.medias = data.medias;
-//         self.theories.push(theory);
-//       });
-//       angular.forEach(data.practices, function(data){
-//         var practice = {};
-//         practice.practice = data.practice;
-//         practice.medias = data.medias;
-//         self.practices.push(practice);
-//       });
-//       self.chapter = data.chapter;
-//       callback(self);
-//     });
-//   };
-//
-//   return Chapter;
-// });
 
 YsApp.factory('Practice', function($http){
   var Practice = {};

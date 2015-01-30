@@ -16,21 +16,27 @@
       </ul>
     </li>
 
-    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.theory' || $state.current.name == 'course.chapter.theories' || $state.current.name == 'course.chapter.theory.media' || $state.current.name == 'course.chapter.theory.medias'">
+    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.theory' || $state.current.name == 'course.chapter.theories' ">
       <a href="#"><i class="fa fa-pencil"></i>{{i18n_translations.breadcrumbs.theories}}<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="theory in theories">
-          <a ui-sref="course.chapter.theory({ theoryId: {{theory.theory.id}} })"><i class="fa fa-magic"></i>{{theory.title}}</a>
+          <!-- <a href="#"><i class="fa fa&#45;pencil"></i>{{theory.theory.title}}<i class="fa fa&#45;caret&#45;down"></i></a> -->
+          <!-- <a ui&#45;sref="course.chapter.theory({ theoryId: {{theory.theory.id}} })"><i class="fa fa&#45;magic"></i>{{theory.theory.title}}</a> -->
+          <!-- <ul class="level2"> -->
+          <!--   <li ng&#45;repeat="media in theory.medias"> -->
+          <!--     <a ui&#45;sref="course.chapter.theory.media({ mediaId: {{media.id}} })"><i class="fa fa&#45;magic"></i>{{media.title}}</a> -->
+          <!--   </li> -->
+          <!-- </ul> -->
         </li>
       </ul>
     </li>
 
-    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.practice' || $state.current.name == 'course.chapter.practices' || $state.current.name == 'course.chapter.practice.media' || $state.current.name == 'course.chapter.practice.medias'">
+    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.practice' || $state.current.name == 'course.chapter.practices' ">
     <a href="#"><i class="fa fa-plane"></i>{{i18n_translations.breadcrumbs.practices}}<i class="fa fa-caret-down"></i></a>
     <ul>
       <li ng-repeat="practice in practices">
-      <a ui-sref="course.chapter.practice({ practiceId: {{practice.practice.id}} })"><i class="fa fa-magic"></i>{{practice.title}}</a>
-        </li>
+        <a ui-sref="course.chapter.practice({ practiceId: {{practice.practice.id}} })"><i class="fa fa-magic"></i>{{practice.practice.title}}</a>
+       </li>
       </ul>
     </li>
 

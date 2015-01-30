@@ -11,11 +11,13 @@
 //= require lib/angular-media-player
 //= require lib/lodash
 //= require lib/restangular
+//= require lib/mediaelement-and-player
 //= require bootstrap-sprockets
 //= require frontend/app
 //= require frontend/config
 //= require frontend/factories
 //= require frontend/services
+//= require frontend/directives
 //= require frontend/controllers
 
 

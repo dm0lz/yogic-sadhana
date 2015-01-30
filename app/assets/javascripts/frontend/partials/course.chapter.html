@@ -22,7 +22,7 @@
     {{theory}}
     <ul ng-repeat="media in theory.medias">
       <li>
-      <a ui-sref="course.chapter.theory.media({practiceId: {{media.mediumable_id}}, mediaId: {{media.id}} })">{{media.title}}</a>
+      <a ui-sref="course.chapter.theory.media({theoryId: {{media.mediumable_id}}, mediaId: {{media.id}} })">{{media.title}}</a>
       {{media}}
       </li>
     </ul>

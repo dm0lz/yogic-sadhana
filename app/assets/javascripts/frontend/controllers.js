@@ -26,25 +26,29 @@ YsApp.controller('ChaptersController', ['$scope', 'Chapter', '$stateParams', '$c
 
   var chapter_id = $stateParams.chapterId;
   Chapter.get($scope.locale, chapter_id, function(data){
-    console.log(data);
-    $scope.practices = [];
-    $scope.theories = [];
-    angular.forEach(data.theories, function(data){
-      var theory = {};
-      theory.theory = data.theory;
-      theory.medias = data.medias;
-      $scope.theories.push(theory);
-    });
-    angular.forEach(data.practices, function(data){
-      var practice = {};
-      practice.practice = data.practice;
-      practice.medias = data.medias;
-      $scope.practices.push(practice);
-    });
-    // $scope.theories = data.theories;
-    // $scope.practices = data.practices;
-    // $scope.chapter = data.chapter;
+    $scope.chapter = data.chapter;
+    $scope.theories = data.theories;
+    $scope.practices = data.practices;
   });
+
+  // Chapter.get($scope.locale, chapter_id, function(data){
+    //console.log(data);
+    // $scope.practices = [];
+    // $scope.theories = [];
+    // angular.forEach(data.theories, function(data){
+    //   var theory = {};
+    //   theory.theory = data.theory;
+    //   theory.medias = data.medias;
+    //   $scope.theories.push(theory);
+    // });
+    // angular.forEach(data.practices, function(data){
+    //   var practice = {};
+    //   practice.practice = data.practice;
+    //   practice.medias = data.medias;
+    //   $scope.practices.push(practice);
+    // });
+    // $scope.chapter = data.chapter;
+  // });
 
 }]);
 
@@ -80,6 +84,11 @@ YsApp.controller('TheoryMediaController', ['$scope', '$stateParams', 'GetTheoryM
   GetTheoryMedia.get($scope.locale, media_id, function(data){
     $scope.media = data.media;
   });
+
+  // $scope.$watch("mep", function(){
+  //   console.log($scope.mep);
+  //   $scope.mep.load();
+  // });
 
   $scope.seekPercentage = Seeker.seekPercentage;
 
