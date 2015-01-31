@@ -10,8 +10,8 @@ class Backend::TheoriesController < Backend::BackendController
     #   format.html  # index.html.erb
     #   format.json  { render json: { theories: @theories }.to_a }
     # end
-    render json: { theories: @theories }.to_a
-   #render 'index'
+    # render json: { theories: @theories }.to_a
+   render 'index'
   end
 
   def create

@@ -85,10 +85,12 @@ YsApp.controller('TheoryMediaController', ['$scope', '$stateParams', 'GetTheoryM
     $scope.media = data.media;
   });
 
-  // $scope.$watch("mep", function(){
-  //   console.log($scope.mep);
-  //   $scope.mep.load();
-  // });
+  $scope.$watch("mel", function(mel){
+    if (mel){
+      console.log(mel);
+      mel.load();
+    }
+  });
 
   $scope.seekPercentage = Seeker.seekPercentage;
 
