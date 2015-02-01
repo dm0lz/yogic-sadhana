@@ -110,9 +110,15 @@
       <li>
       <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@media.mediumable.chapter) if @media.id %>
       </li>
-      <li>
-      <%= link_to t('breadcrumbs.medias'), backend_practice_medias_path(@media.mediumable) if @media.id %>
-      </li>
+      <% if @media.mediumable_type == "Theory" %>
+        <li>
+        <%= link_to t('breadcrumbs.medias'), backend_theory_medias_path(@media.mediumable) if @media.id %>
+        </li>
+      <% elsif @media.mediumable_type == "Practice" %>
+        <li>
+        <%= link_to t('breadcrumbs.medias'), backend_practice_medias_path(@media.mediumable) if @media.id %>
+        </li>
+      <% end %>
     <% end %>
   </ol>
 </div>

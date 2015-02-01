@@ -7,6 +7,20 @@ YsApp.controller('BaseController', ['$scope', 'Locale', 'snapRemote', '$state', 
   snapRemote.open('left');
   $scope.$state = $state;
 
+  snapRemote.getSnapper().then(function(snapper) {
+    snapper.on('open', function() {
+      console.log('Drawer opened!');
+      var element = angular.element(".snapjs_content");
+      $(element).css({ "padding-right": "266px" });
+    });
+
+    snapper.on('close', function() {
+      console.log('Drawer closed!');
+      var element = angular.element(".snapjs_content");
+      $(element).css({ "padding-right": "0px" });
+    });
+  });
+
 }]);
 
 YsApp.controller('CoursesController', ['$scope', 'Course', '$controller', function($scope, Course, $controller){
