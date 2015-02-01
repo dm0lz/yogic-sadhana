@@ -8,7 +8,6 @@
 //= require lib/angular-animate
 //= require lib/angular-snap
 //= require lib/loading-bar
-//= require lib/angular-media-player
 //= require lib/lodash
 //= require lib/restangular
 //= require lib/mediaelement-and-player

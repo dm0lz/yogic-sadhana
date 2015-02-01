@@ -18,7 +18,7 @@ YsApp.directive('mediaElement', function(){
       scope.$watch("media", function(mel){
         if (mel){
           angular.element(element).mediaelementplayer({
-            audioWidth: 900,
+            // audioWidth: 900,
             success: function(mel){
               scope.mel = mel;
             }

@@ -77,7 +77,7 @@ YsApp.controller('TheoriesController', ['$scope', '$stateParams', 'Theory', '$co
 }]);
 
 
-YsApp.controller('TheoryMediaController', ['$scope', '$stateParams', 'GetTheoryMedia', 'Seeker', '$controller',  function($scope, $stateParams, GetTheoryMedia, Seeker, $controller){
+YsApp.controller('TheoryMediaController', ['$scope', '$stateParams', 'GetTheoryMedia', '$controller',  function($scope, $stateParams, GetTheoryMedia, $controller){
   $controller('BaseController', {$scope: $scope});
 
   var media_id = $stateParams.mediaId;
@@ -85,19 +85,19 @@ YsApp.controller('TheoryMediaController', ['$scope', '$stateParams', 'GetTheoryM
     $scope.media = data.media;
   });
 
-  $scope.$watch("mel", function(mel){
-    if (mel){
-      console.log(mel);
-      mel.load();
-    }
-  });
+  // $scope.$watch("mel", function(mel){
+  //   if (mel){
+  //     console.log(mel);
+  //     mel.load();
+  //   }
+  // });
 
-  $scope.seekPercentage = Seeker.seekPercentage;
+  // $scope.seekPercentage = Seeker.seekPercentage;
 
 }]);
 
 
-YsApp.controller('PracticeMediaController', ['$scope', '$stateParams', 'GetPracticeMedia', 'Seeker', '$controller', function($scope, $stateParams, GetPracticeMedia, Seeker, $controller){
+YsApp.controller('PracticeMediaController', ['$scope', '$stateParams', 'GetPracticeMedia', '$controller', function($scope, $stateParams, GetPracticeMedia, $controller){
   $controller('BaseController', {$scope: $scope});
 
   var media_id = $stateParams.mediaId;
@@ -105,7 +105,7 @@ YsApp.controller('PracticeMediaController', ['$scope', '$stateParams', 'GetPract
     $scope.media = data.media;
   });
 
-  $scope.seekPercentage = Seeker.seekPercentage;
+  // $scope.seekPercentage = Seeker.seekPercentage;
 
 }]);
 
