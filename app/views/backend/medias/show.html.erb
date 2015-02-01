@@ -8,7 +8,11 @@
       <li><%= t('courses.attributes.course_title') %> : <%= @media.mediumable.chapter.course.title %></li>
       <li><%= t('chapters.attributes.chapter_title') %> : <%= @media.mediumable.chapter.title %></li>
       <li><%= t('practices.attributes.practice_title') %> : <%= @media.mediumable.title %></li>
+      <hr />
       <li><%= t('medias.attributes.audio') %> : <%= audio_tag @media.audio.url, autoplay: false, controls: true %></li>
+      <hr />
+      <li><%= t('medias.attributes.video') %> : <%= video_tag @media.video.url, autoplay: false, controls: true %></li>
+      <hr />
     </ul>
   </div>
 </div>

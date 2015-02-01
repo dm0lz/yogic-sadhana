@@ -1,6 +1,6 @@
 class AddVideoTranslationToMedia < ActiveRecord::Migration
   def up
-    Medium.add_translation_fields! video: :text
+    Medium.add_translation_fields!({video: :string}, {migrate_data: true})
   end
 
   def down

@@ -83,6 +83,7 @@ YsApp.controller('TheoryMediaController', ['$scope', '$stateParams', 'GetTheoryM
   var media_id = $stateParams.mediaId;
   GetTheoryMedia.get($scope.locale, media_id, function(data){
     $scope.media = data.media;
+    console.log(data.media);
   });
 
   // $scope.$watch("mel", function(mel){

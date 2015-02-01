@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 20150201132513) do
     t.string   "title"
     t.text     "description"
     t.string   "audio"
-    t.text     "video"
+    t.string   "video"
   end
 
   add_index "medium_translations", ["locale"], name: "index_medium_translations_on_locale"

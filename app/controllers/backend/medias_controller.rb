@@ -55,7 +55,7 @@ class Backend::MediasController < Backend::BackendController
 
   private
   def media_params
-    params.require(:medium).permit(:id, :title, :description, :practice_id, :audio, :mediumable_type, :mediumable_id)
+    params.require(:medium).permit(:id, :title, :description, :practice_id, :audio, :video, :mediumable_type, :mediumable_id)
   end
 
   def find_media

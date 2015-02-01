@@ -4,9 +4,11 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
   cfpLoadingBarProvider.includeSpinner = false;
   snapRemoteProvider.globalOptions = {
     disable: 'right',
+    tapToClose: false,
     maxPosition: 266,
     minPosition: -266,
-    transitionSpeed: 0.3
+    transitionSpeed: 0.3,
+    hyperextensible: false
   };
   $urlRouterProvider.otherwise('/chapters');
   $stateProvider

@@ -160,6 +160,7 @@ fr:
       title: "Title"
       description: "Description"
       audio: "Fichier Audio"
+      video: "Fichier Video"
     flash_messages:
       media_created: "Le media a été crée avec succès"
       media_updated: "Le media a été mis à jour correctement"
