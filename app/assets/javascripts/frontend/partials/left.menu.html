@@ -3,9 +3,13 @@
   <nav id="menu" class="left">
   <ul>
 
-    <li ng-show="$state"> <h4 class="text-center" style="color: red;"> {{$state.current.name}} </h4> </li>
+    <li> <h4 class="text-center" style="color: red;"> {{$state.current.name}} </h4> </li>
 
     <li ng-hide="$state.current.name == 'course.chapters'"><a ui-sref="course.chapters" ui-sref-active="active"><i class="fa fa-home"></i>{{i18n_translations.chapters.buttons.list_title}}</a></li>
+
+    <li>
+    <a href="#" nav:back><i class="fa fa-chevron-circle-left"></i>{{i18n_translations.chapters.buttons.back}}</a>
+    </li>
 
     <li ng-show="$state.current.name == 'course.chapters'">
       <a href="#"><i class="fa fa-list"></i>{{i18n_translations.breadcrumbs.chapters}}<i class="fa fa-caret-down"></i></a>
@@ -16,41 +20,21 @@
       </ul>
     </li>
 
-    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.theory' || $state.current.name == 'course.chapter.theories' ">
+    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.theories' ">
       <a href="#"><i class="fa fa-pencil"></i>{{i18n_translations.breadcrumbs.theories}}<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="theory in theories">
-          <!-- <a href="#"><i class="fa fa&#45;pencil"></i>{{theory.theory.title}}<i class="fa fa&#45;caret&#45;down"></i></a> -->
-          <!-- <a ui&#45;sref="course.chapter.theory({ theoryId: {{theory.theory.id}} })"><i class="fa fa&#45;magic"></i>{{theory.theory.title}}</a> -->
-          <!-- <ul class="level2"> -->
-          <!--   <li ng&#45;repeat="media in theory.medias"> -->
-          <!--     <a ui&#45;sref="course.chapter.theory.media({ mediaId: {{media.id}} })"><i class="fa fa&#45;magic"></i>{{media.title}}</a> -->
-          <!--   </li> -->
-          <!-- </ul> -->
+          <a ui-sref="course.chapter.theory({ theoryId: {{theory.theory.id}} })"><i class="fa fa-magic"></i>{{theory.theory.title}}</a>
         </li>
       </ul>
     </li>
 
-    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.practice' || $state.current.name == 'course.chapter.practices' ">
+    <li ng-show="$state.current.name == 'course.chapter' || $state.current.name == 'course.chapter.practices' ">
     <a href="#"><i class="fa fa-plane"></i>{{i18n_translations.breadcrumbs.practices}}<i class="fa fa-caret-down"></i></a>
     <ul>
       <li ng-repeat="practice in practices">
         <a ui-sref="course.chapter.practice({ practiceId: {{practice.practice.id}} })"><i class="fa fa-magic"></i>{{practice.practice.title}}</a>
        </li>
-      </ul>
-    </li>
-
-    <li ng-show="medias.length">
-      <a href="#"><i class="fa fa-plane"></i>Medias<i class="fa fa-caret-down"></i></a>
-      <ul>
-        <li ng-repeat="media in medias">
-          <div ng-if="media.mediumable_type === 'Theory'">
-            <a ui-sref="course.chapter.theory.media({ mediaId: {{media.id}} })"><i class="fa fa-magic"></i>{{media.title}}</a>
-          </div>
-          <div ng-if="media.mediumable_type === 'Practice'">
-            <a ui-sref="course.chapter.practice.media({ mediaId: {{media.id}} })"><i class="fa fa-magic"></i>{{media.title}}</a>
-          </div>
-        </li>
       </ul>
     </li>
 

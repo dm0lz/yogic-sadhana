@@ -6,6 +6,8 @@ YsApp.controller('BaseController', ['$scope', 'Locale', 'snapRemote', '$state', 
   $scope.locale = Locale.getLocale();
   $scope.$state = $state;
 
+  snapRemote.open('left');
+
   snapRemote.getSnapper().then(function(snapper) {
     snapper.on('open', function() {
       console.log('Drawer opened!');
@@ -20,7 +22,6 @@ YsApp.controller('BaseController', ['$scope', 'Locale', 'snapRemote', '$state', 
     });
   });
 
-  snapRemote.open('left');
 }]);
 
 YsApp.controller('CoursesController', ['$scope', 'Course', '$controller', function($scope, Course, $controller){
@@ -97,7 +98,7 @@ YsApp.controller('TheoryMediaController', ['$scope', '$stateParams', 'GetTheoryM
   var media_id = $stateParams.mediaId;
   GetTheoryMedia.get($scope.locale, media_id, function(data){
     $scope.media = data.media;
-    console.log(data.media);
+    // console.log(data.media);
   });
 
   // $scope.$watch("mel", function(mel){

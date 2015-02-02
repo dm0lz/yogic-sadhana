@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Home", root_path, class: "navbar-brand" %>
+      <%= link_to "Yogic Sadhana", root_path, class: "navbar-brand" %>
     </div>
 
 
@@ -20,8 +20,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
         <span class="country_flags">
-          <%= link_to image_tag('icons/France.png'), :locale => :fr  %>
-          <%= link_to image_tag('icons/England.png'), :locale => :en %>
+          <%= link_to image_tag('icons/France.png'), "#", class: "lang fr"  %>
+          <%= link_to image_tag('icons/England.png'), "#", class: "lang en"  %>
         </span>
         </li>
         <% if user_signed_in? %>
@@ -57,3 +57,22 @@
 
   </div><!-- /.container-fluid -->
 </nav>
+
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    $(".lang").bind('click', function(e){
+      var is_french = $(this).hasClass("fr");
+      if (is_french) {
+        var url = window.location.href;
+        var updated_url = url.replace(url.split("/")[3], "fr");
+        window.location.replace(updated_url);
+      }
+      if (!is_french) {
+        var url = window.location.href;
+        var updated_url = url.replace(url.split("/")[3], "en");
+        window.location.replace(updated_url);
+      }
+    });
+  });
+</script>
