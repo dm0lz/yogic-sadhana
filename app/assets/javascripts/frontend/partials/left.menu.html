@@ -17,7 +17,7 @@
       <a href="#"><i class="fa fa-list"></i>{{i18n_translations.breadcrumbs.courses}}<i class="fa fa-caret-down"></i></a>
       <ul>
         <li ng-repeat="course in courses">
-        <a ui-sref="ys.course({courseId: course.id})" ui-sref-active="active"><i class="fa fa-coffee"></i>{{course.title}}</a>
+        <a ui-sref="ys.course.chapters({courseId: course.id})" ui-sref-active="active"><i class="fa fa-coffee"></i>{{course.title}}</a>
         </li>
       </ul>
     </li>

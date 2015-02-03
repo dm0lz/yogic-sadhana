@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
     namespace :frontend do
 
-      resources :course, only: [:index, :show]
+      get "/ys" => "main#index", :as => "main_index"
 
     end
 
