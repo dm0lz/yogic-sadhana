@@ -1,4 +1,14 @@
 
+YsApp.factory('Courses', function($http){
+  var Courses = {};
+  Courses.get = function(locale, callback){
+    $http.get('/' + locale + '/api/v1/courses').success(function(data){
+      callback(data);
+    });
+  };
+  return Courses;
+});
+
 YsApp.factory('Course', function($http){
   var Course = {};
   Course.get = function(locale, id, callback){

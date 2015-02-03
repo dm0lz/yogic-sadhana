@@ -10,141 +10,277 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
     transitionSpeed: 0.3,
     hyperextensible: false
   };
-  $urlRouterProvider.otherwise('/chapters');
+  $urlRouterProvider.otherwise('/courses');
   $stateProvider
-    .state('course', {
+
+    .state('ys', {
       abstract: true,
-      url: "/chapter",
+      url: "/course",
       templateUrl: "/assets/frontend/partials/main.html",
       controller: 'CoursesController'
     })
-    .state('course.chapters', {
+    .state('ys.courses', {
       url: 's',
       views: {
         'main_content': {
-          templateUrl: '/assets/frontend/partials/course.chapters.html',
-          controller: 'CoursesController'
+          templateUrl: '/assets/frontend/partials/courses.html'
         },
         'left_menu': {
-          templateUrl: '/assets/frontend/partials/left.menu.html',
+          templateUrl: '/assets/frontend/partials/left.menu.html'
         }
       }
     })
-    .state('course.chapter', {
-      url: "/:chapterId",
+    .state('ys.course', {
+      url: '/:courseId',
       views: {
         'main_content': {
-          templateUrl: "/assets/frontend/partials/course.chapter.html",
-          controller: 'ChaptersController'
+          templateUrl: '/assets/frontend/partials/course.html',
+          controller: 'CourseController'
         },
         'left_menu': {
+          templateUrl: '/assets/frontend/partials/left.menu.html'
+        }
+      }
+    })
+    .state('ys.course.chapters', {
+      url: '/chapters',
+      views: {
+        'main_content@ys': {
+          templateUrl: '/assets/frontend/partials/course.chapters.html',
+          controller: 'ChaptersController'
+        },
+        'left_menu@ys': {
           templateUrl: '/assets/frontend/partials/left.menu.html',
           controller: 'ChaptersController'
         }
       }
     })
-    .state('course.chapter.theories', {
+    .state('ys.course.chapter', {
+      url: "/chapter/:chapterId",
+      views: {
+        'main_content@ys': {
+          templateUrl: "/assets/frontend/partials/course.chapter.html",
+          controller: 'ChapterController'
+        },
+        'left_menu@ys': {
+          templateUrl: '/assets/frontend/partials/left.menu.html',
+          controller: 'ChapterController'
+        }
+      }
+    })
+    .state('ys.course.chapter.theories', {
       url: "/theories",
       views: {
-        'main_content@course': {
+        'main_content@ys': {
           templateUrl: "/assets/frontend/partials/course.chapter.theories.html",
-          controller: 'ChaptersController'
+          controller: 'ChapterController'
         },
-        'left_menu@course': {
+        'left_menu@ys': {
           templateUrl: '/assets/frontend/partials/left.menu.html',
-          controller: 'ChaptersController'
+          controller: 'ChapterController'
         }
       }
     })
-    .state('course.chapter.practices', {
+    .state('ys.course.chapter.practices', {
       url: "/practices",
       views: {
-        'main_content@course': {
+        'main_content@ys': {
           templateUrl: "/assets/frontend/partials/course.chapter.practices.html",
-          controller: 'ChaptersController'
+          controller: 'ChapterController'
         },
-        'left_menu@course': {
+        'left_menu@ys': {
           templateUrl: '/assets/frontend/partials/left.menu.html',
-          controller: 'ChaptersController'
+          controller: 'ChapterController'
         }
       }
     })
-    .state('course.chapter.theory', {
+    .state('ys.course.chapter.theory', {
       url: "/theory/:theoryId",
       views: {
-        'main_content@course': {
+        'main_content@ys': {
           templateUrl: "/assets/frontend/partials/course.chapter.theory.html",
           controller: 'TheoriesController'
         },
-        'left_menu@course': {
+        'left_menu@ys': {
           templateUrl: '/assets/frontend/partials/left.menu.2.html',
           controller: 'TheoriesController'
         }
       }
     })
-    .state('course.chapter.practice', {
+    .state('ys.course.chapter.practice', {
       url: "/practice/:practiceId",
       views: {
-        'main_content@course': {
+        'main_content@ys': {
           templateUrl: "/assets/frontend/partials/course.chapter.practice.html",
           controller: 'PracticesController'
         },
-        'left_menu@course': {
+        'left_menu@ys': {
           templateUrl: '/assets/frontend/partials/left.menu.2.html',
           controller: 'PracticesController'
         }
       }
     })
-    .state('course.chapter.theory.medias', {
+    .state('ys.course.chapter.theory.medias', {
       url: "/medias",
       views: {
-        'main_content@course': {
+        'main_content@ys': {
           templateUrl: "/assets/frontend/partials/course.chapter.theory.medias.html",
           controller: 'TheoriesController'
         },
-        'left_menu@course': {
+        'left_menu@ys': {
           templateUrl: '/assets/frontend/partials/left.menu.2.html',
           controller: 'TheoriesController'
         }
       }
     })
-    .state('course.chapter.practice.medias', {
+    .state('ys.course.chapter.practice.medias', {
       url: "/medias",
       views: {
-        'main_content@course': {
+        'main_content@ys': {
           templateUrl: "/assets/frontend/partials/course.chapter.practice.medias.html",
           controller: 'PracticesController'
         },
-        'left_menu@course': {
+        'left_menu@ys': {
           templateUrl: '/assets/frontend/partials/left.menu.2.html',
           controller: 'PracticesController'
         }
       }
     })
-    .state('course.chapter.practice.media', {
+    .state('ys.course.chapter.theory.media', {
       url: "/media/:mediaId",
       views: {
-        'main_content@course': {
-          templateUrl: "/assets/frontend/partials/course.chapter.practice.media.html",
-          controller: 'PracticeMediaController'
-        },
-        'left_menu@course': {
-          templateUrl: '/assets/frontend/partials/left.menu.2.html',
-          controller: 'PracticesController'
-        }
-      }
-    })
-    .state('course.chapter.theory.media', {
-      url: "/media/:mediaId",
-      views: {
-        'main_content@course': {
+        'main_content@ys': {
           templateUrl: "/assets/frontend/partials/course.chapter.theory.media.html",
           controller: 'TheoryMediaController'
         },
-        'left_menu@course': {
+        'left_menu@ys': {
           templateUrl: '/assets/frontend/partials/left.menu.2.html',
           controller: 'TheoriesController'
         }
       }
-    });
+    })
+    .state('ys.course.chapter.practice.media', {
+      url: "/media/:mediaId",
+      views: {
+        'main_content@ys': {
+          templateUrl: "/assets/frontend/partials/course.chapter.practice.media.html",
+          controller: 'PracticeMediaController'
+        },
+        'left_menu@ys': {
+          templateUrl: '/assets/frontend/partials/left.menu.2.html',
+          controller: 'PracticesController'
+        }
+      }
+    })
+
+    // .state('course', {
+    //   abstract: true,
+    //   url: "/chapter",
+    //   templateUrl: "/assets/frontend/partials/main.html",
+    //   controller: 'CoursesController'
+    // })
+    // .state('course.chapter.theories', {
+    //   url: "/theories",
+    //   views: {
+    //     'main_content@course': {
+    //       templateUrl: "/assets/frontend/partials/course.chapter.theories.html",
+    //       controller: 'ChaptersController'
+    //     },
+    //     'left_menu@course': {
+    //       templateUrl: '/assets/frontend/partials/left.menu.html',
+    //       controller: 'ChaptersController'
+    //     }
+    //   }
+    // })
+    // .state('course.chapter.practices', {
+    //   url: "/practices",
+    //   views: {
+    //     'main_content@course': {
+    //       templateUrl: "/assets/frontend/partials/course.chapter.practices.html",
+    //       controller: 'ChaptersController'
+    //     },
+    //     'left_menu@course': {
+    //       templateUrl: '/assets/frontend/partials/left.menu.html',
+    //       controller: 'ChaptersController'
+    //     }
+    //   }
+    // })
+    // .state('course.chapter.theory', {
+    //   url: "/theory/:theoryId",
+    //   views: {
+    //     'main_content@course': {
+    //       templateUrl: "/assets/frontend/partials/course.chapter.theory.html",
+    //       controller: 'TheoriesController'
+    //     },
+    //     'left_menu@course': {
+    //       templateUrl: '/assets/frontend/partials/left.menu.2.html',
+    //       controller: 'TheoriesController'
+    //     }
+    //   }
+    // })
+    // .state('course.chapter.practice', {
+    //   url: "/practice/:practiceId",
+    //   views: {
+    //     'main_content@course': {
+    //       templateUrl: "/assets/frontend/partials/course.chapter.practice.html",
+    //       controller: 'PracticesController'
+    //     },
+    //     'left_menu@course': {
+    //       templateUrl: '/assets/frontend/partials/left.menu.2.html',
+    //       controller: 'PracticesController'
+    //     }
+    //   }
+    // })
+    // .state('course.chapter.theory.medias', {
+    //   url: "/medias",
+    //   views: {
+    //     'main_content@course': {
+    //       templateUrl: "/assets/frontend/partials/course.chapter.theory.medias.html",
+    //       controller: 'TheoriesController'
+    //     },
+    //     'left_menu@course': {
+    //       templateUrl: '/assets/frontend/partials/left.menu.2.html',
+    //       controller: 'TheoriesController'
+    //     }
+    //   }
+    // })
+    // .state('course.chapter.practice.medias', {
+    //   url: "/medias",
+    //   views: {
+    //     'main_content@course': {
+    //       templateUrl: "/assets/frontend/partials/course.chapter.practice.medias.html",
+    //       controller: 'PracticesController'
+    //     },
+    //     'left_menu@course': {
+    //       templateUrl: '/assets/frontend/partials/left.menu.2.html',
+    //       controller: 'PracticesController'
+    //     }
+    //   }
+    // })
+    // .state('course.chapter.practice.media', {
+    //   url: "/media/:mediaId",
+    //   views: {
+    //     'main_content@course': {
+    //       templateUrl: "/assets/frontend/partials/course.chapter.practice.media.html",
+    //       controller: 'PracticeMediaController'
+    //     },
+    //     'left_menu@course': {
+    //       templateUrl: '/assets/frontend/partials/left.menu.2.html',
+    //       controller: 'PracticesController'
+    //     }
+    //   }
+    // })
+    // .state('course.chapter.theory.media', {
+    //   url: "/media/:mediaId",
+    //   views: {
+    //     'main_content@course': {
+    //       templateUrl: "/assets/frontend/partials/course.chapter.theory.media.html",
+    //       controller: 'TheoryMediaController'
+    //     },
+    //     'left_menu@course': {
+    //       templateUrl: '/assets/frontend/partials/left.menu.2.html',
+    //       controller: 'TheoriesController'
+    //     }
+    //   }
+    // });
 }]);

@@ -9,12 +9,17 @@
     <div ng-repeat="chapter in chapters">
 
       <div class="col-md-4">
+        <a ui-sref="ys.course.chapter({chapterId: {{chapter.id}} })" ui-sref-active="active">
           <div class="well">
             <!--  IMG            -->
-            <a ui-sref="course.chapter({chapterId: {{chapter.id}} })" ui-sref-active="active">
-              {{chapter}}
-            </a>
+            <h4>
+              {{chapter.title}}
+            </h4>
+            <p>
+              {{chapter.description}}
+            </p>
           </div>
+        </a>
       </div>
 
     </div>

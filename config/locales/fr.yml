@@ -45,6 +45,7 @@ fr:
       create_course: "Créer un nouveau cours"
     buttons:
       list: "Voir la liste des cours"
+      list_title: "Liste des cours"
       create_course: "Créer un nouveau cours"
       show_course: "Voir le cours"
       destroy_course: "Effacer le cours"
