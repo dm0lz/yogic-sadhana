@@ -1,18 +1,27 @@
 
+<h1 class="text-center">{{i18n_translations.courses.buttons.list_title}}</h1>
+
+<div class="big-spacer"> </div>
 
 <div class="container">
   <div class="row frontpage">
-
-      <div class="col-md-4" ng-repeat="course in courses">
+    <div ng-repeat="course in courses">
+      <div class="col-xs-4" >
 
         <a ui-sref="ys.course.chapters({courseId: course.id})">
           <div class="well">
             <img ng-src="{{course.picture.url}}" class="img-thumbnail"/>
             <h1 class="text-center">{{course.title}}</h1>
+            <p class="text-center">
+            {{course.description}}
+            </p>
           </div>
         </a>
 
       </div>
-
+    </div>
   </div>
 </div>
+
+
+
