@@ -1,0 +1,87 @@
+
+/* Responsive css for landing page */
+/* Useful for video resolution 1920 1080 */
+
+@media only screen and (max-width : 1920px) {
+  section.video_box{
+    height: 1024px !important;
+  }
+}
+@media only screen and (max-width : 1820px) {
+  section.video_box{
+    height: 967px !important;
+  }
+}
+@media only screen and (max-width : 1720px) {
+  section.video_box{
+    height: 911px !important;
+  }
+}
+@media only screen and (max-width : 1620px) {
+  section.video_box{
+    height: 855px !important;
+  }
+}
+@media only screen and (max-width : 1520px) {
+  section.video_box{
+    height: 799px !important;
+  }
+}
+@media only screen and (max-width : 1420px) {
+  section.video_box{
+    height: 742px !important;
+  }
+}
+@media only screen and (max-width : 1320px) {
+  section.video_box{
+    height: 686px !important;
+  }
+}
+@media only screen and (max-width : 1220px) {
+  section.video_box{
+    height: 630px !important;
+  }
+}
+@media only screen and (max-width : 1120px) {
+  section.video_box{
+    height: 574px !important;
+  }
+}
+@media only screen and (max-width : 1020px) {
+  section.video_box{
+    height: 517px !important;
+  }
+}
+@media only screen and (max-width : 920px) {
+  section.video_box{
+    height: 461px !important;
+  }
+}
+@media only screen and (max-width : 820px) {
+  section.video_box{
+    height: 405px !important;
+  }
+}
+@media only screen and (max-width : 720px) {
+  section.video_box{
+    height: 349px !important;
+  }
+}
+@media only screen and (max-width : 620px) {
+  section.video_box{
+    height: 292px !important;
+  }
+}
+@media only screen and (max-width : 520px) {
+  section.video_box{
+    height: 237px !important;
+  }
+}
+@media only screen and (max-width : 420px) {
+  section.video_box{
+    height: 225px !important;
+  }
+}
+
+
+
