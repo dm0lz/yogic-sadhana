@@ -1,4 +1,30 @@
 
+span.country_flags{
+  position: relative;
+  top: 14px;
+  img{
+    margin-right: 3px;
+  }
+}
+
+nav.nav-custom{
+  opacity: 0.8;
+}
+
+section.video_box{
+  height: 700px;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+video#bgvid {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  float: left;
+  width: 100%;
+  height: auto;
+}
 
 section.home{
   margin-top: 30px;
