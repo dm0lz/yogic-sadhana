@@ -7,7 +7,7 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
     tapToClose: false,
     maxPosition: 266,
     minPosition: -266,
-    transitionSpeed: 0.3,
+    transitionSpeed: 0.4,
     hyperextensible: false
   };
   $urlRouterProvider.otherwise('/courses');
