@@ -2,7 +2,7 @@
 <div class="col-md-12">
   <div class="well well-sm">
 
-    <%= form_for @chapter, :url => backend_chapter_path(@chapter), method: :patch do |f| %>
+    <%= form_for @chapter, :html => {:multipart => true} , :url => backend_chapter_path(@chapter), method: :patch do |f| %>
       <fieldset>
         <legend class="text-center"><%= t('chapters.titles.edit_chapter') + " " + @chapter.id.to_s %></legend>
 
@@ -21,6 +21,21 @@
             <%= f.text_area :description, class: "form-control", rows: 5 %>
             <div class="small-spacer"></div>
             <%= f.hidden_field :course_id, :value => @chapter.course.id %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag t('chapters.attributes.picture'), nil, class: "col-md-3 control-label" %>
+          <div class="col-md-9">
+            <%= image_tag(@chapter.picture_url, size: "120x120") if @chapter.picture? %>
+            <%= f.file_field :picture, class: "form-control" %>
+            <p>
+              <label>
+                <%= f.check_box :remove_picture %>
+                Remove Picture
+              </label>
+            </p>
+            <div class="small-spacer"></div>
           </div>
         </div>
 

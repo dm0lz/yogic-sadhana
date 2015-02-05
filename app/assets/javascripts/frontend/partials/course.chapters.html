@@ -1,28 +1,22 @@
 
-<h1 class="text-center">{{i18n_translations.chapters.buttons.list_title}}</h1>
+<h1 class="text-center" style="font-size: 3em;">{{i18n_translations.chapters.buttons.list_title}}</h1>
 
-<div class="big-spacer"></div>
+<div class="big-spacer"> </div>
 
-<div class="container">
-  <div class="row frontpage">
-
-    <div ng-repeat="chapter in chapters">
-
-      <div class="col-xs-4">
-        <a ui-sref="ys.course.chapter({chapterId: {{chapter.id}} })" ui-sref-active="active">
-          <div class="well">
-            <!--  IMG            -->
-            <h4>
-              {{chapter.title}}
-            </h4>
-            <p>
+<div class="container chapters">
+      <div class="row" >
+        <div class="col-md-4" ng-repeat-start="chapter in chapters">
+          <a ui-sref="ys.course.chapter({chapterId: {{chapter.id}} })" ui-sref-active="active">
+            <div class="well">
+              <img ng-src="{{chapter.picture.thumb.url}}" class="img-thumbnail"/>
+              <h3 class="text-center">{{chapter.title}}</h3>
+              <p class="text-center">
               {{chapter.description}}
-            </p>
-          </div>
-        </a>
+              </p>
+            </div>
+          </a>
+        </div>
+        <div class="clearfix" ng-if="$index%3==2"></div>
+        <div ng-repeat-end=""></div>
       </div>
-
-    </div>
-
-  </div>
 </div>

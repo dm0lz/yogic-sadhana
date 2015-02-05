@@ -86,6 +86,7 @@ fr:
       title: "Titre"
       description: "Description"
       chapter_title: "Titre du chapitre"
+      picture: "Image"
     flash_messages:
       chapter_created: "Le chapitre a été crée avec succès"
       chapter_updated: "Le chapitre a été mis à jour avec succès"

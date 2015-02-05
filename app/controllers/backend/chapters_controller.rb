@@ -39,6 +39,7 @@ class Backend::ChaptersController < Backend::BackendController
   end
 
   def update
+    @chapter.remove_picture! if params["chapter"]["remove_picture"] == "1"
     if @chapter.update_attributes(chapter_params)
       flash[:success] = t('chapters.flash_messages.chapter_updated')
       redirect_to backend_course_chapters_path(@chapter.course)
@@ -54,7 +55,7 @@ class Backend::ChaptersController < Backend::BackendController
 
   private
   def chapter_params
-    params.require(:chapter).permit(:id, :title, :description, :course_id)
+    params.require(:chapter).permit(:id, :title, :description, :picture, :course_id)
   end
 
   def find_chapter

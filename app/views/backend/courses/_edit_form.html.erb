@@ -24,9 +24,16 @@
         </div>
 
         <div class="form-group">
-          <%= label_tag t('courses.attributes.description'), nil, class: "col-md-3 control-label" %>
+          <%= label_tag t('courses.attributes.picture'), nil, class: "col-md-3 control-label" %>
           <div class="col-md-9">
+            <%= image_tag(@course.picture_url, size: "120x120") if @course.picture? %>
             <%= f.file_field :picture, class: "form-control" %>
+            <p>
+              <label>
+                <%= f.check_box :remove_picture %>
+                Remove Picture
+              </label>
+            </p>
             <div class="small-spacer"></div>
           </div>
         </div>

@@ -32,6 +32,7 @@ class Backend::CoursesController < Backend::BackendController
   end
 
   def update
+    @course.remove_picture! if params["course"]["remove_picture"] == "1"
     if @course.update_attributes(course_params)
       flash[:success] = t('courses.flash_messages.course_updated')
       redirect_to :backend_courses

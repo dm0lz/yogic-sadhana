@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150201132513) do
+ActiveRecord::Schema.define(version: 20150205163104) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150201132513) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "course_id"
+    t.string   "picture"
   end
 
   add_index "chapters", ["course_id"], name: "index_chapters_on_course_id"

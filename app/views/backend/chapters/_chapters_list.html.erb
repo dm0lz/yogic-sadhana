@@ -3,7 +3,11 @@
   <% @chapters.each do |chapter| %>
     <div class="row well well-sm">
 
-      <div class="col-md-10">
+      <div class="col-md-2">
+        <%= image_tag chapter.picture, :size => "120x120" %>
+      </div>
+
+      <div class="col-md-8">
 
         <ul>
           <li>

@@ -23,7 +23,8 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       url: 's',
       views: {
         'main_content': {
-          templateUrl: '/assets/frontend/partials/courses.html'
+          templateUrl: '/assets/frontend/partials/courses.html',
+          controller: 'CoursesController'
         },
         'left_menu': {
           templateUrl: '/assets/frontend/partials/left.menu.html'
