@@ -10,16 +10,21 @@ YsApp.controller('BaseController', ['$scope', 'Locale', 'snapRemote', '$state', 
 
   snapRemote.getSnapper().then(function(snapper) {
     snapper.on('open', function() {
-      // console.log('Drawer opened!');
       var element = angular.element(".snapjs_content");
        $(element).css({ "padding-right": "266px" });
     });
-
     snapper.on('close', function() {
-      // console.log('Drawer closed!');
       var element = angular.element(".snapjs_content");
       $(element).css({ "padding-right": "0px" });
     });
+    // snapper.on('animated', function(side) {
+    //   var element = angular.element(".snapjs_content");
+    //   if(snapper.state().state == "closed"){
+    //     $(element).css({ "padding-right": "0px" });
+    //   }else{
+    //     $(element).css({ "padding-right": "266px" });
+    //   }
+    // });
   });
 
 }]);
