@@ -1,7 +1,13 @@
 
 
-<h1>{{i18n_translations.theories.buttons.list_title}}</h1>
+<h1 class="text-center">{{i18n_translations.theories.buttons.list_title}}</h1>
 
-<ul ng-repeat="theory in theories">
-  <li><a ui-sref="ys.course.chapter.theory({ theoryId: {{theory.theory.id}} })" ui-sref-active="active">{{theory.theory.title}}</a>{{theory}}</li>
-</ul>
+<div class="sm-padding-bottom"> </div>
+
+<section class="container-fluid">
+  <ul ng-repeat="theory in theories">
+    <div class="well">
+      <li><a ui-sref="ys.course.chapter.theory({ theoryId: {{theory.theory.id}} })" ui-sref-active="active">{{theory.theory.title}}</a>{{theory}}</li>
+    </div>
+  </ul>
+</section>

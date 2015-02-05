@@ -1,16 +1,22 @@
 
+<section class="container-fluid">
+
 <h1 class="text-center">{{theory.title}}</h1>
 
 <p class="text-center">{{theory}}</p>
 
-<h1>
-<a ui-sref="ys.course.chapter.theory.medias">{{i18n_translations.medias.buttons.list_title}}</a>
-</h1>
+<h4>
+  <a ui-sref="ys.course.chapter.theory.medias">{{i18n_translations.medias.buttons.list_title}}</a>
+</h4>
 
 <ul ng-repeat="media in medias">
   <li>
-    <a ui-sref="ys.course.chapter.theory.media({ mediaId: {{media.id}} })" ui-sref-active="active">{{media.title}}</a>
-    {{media}}
+    <div class="well">
+      <a ui-sref="ys.course.chapter.theory.media({ mediaId: {{media.id}} })" ui-sref-active="active">{{media.title}}</a>
+      {{media}}
+    </div>
   </li>
 </ul>
+
+</section>
 

@@ -1,6 +1,12 @@
 
-<h1>{{i18n_translations.practices.buttons.list_title}}</h1>
+<h1 class="text-center">{{i18n_translations.practices.buttons.list_title}}</h1>
 
-<ul ng-repeat="practice in practices">
-  <li><a ui-sref="ys.course.chapter.practice({ practiceId: {{practice.practice.id}} })" ui-sref-active="active">{{practice.practice.title}}</a>{{practice}}</li>
-</ul>
+<div class="sm-padding-bottom"> </div>
+
+<section class="container-fluid">
+  <ul ng-repeat="practice in practices">
+    <div class="well">
+      <li><a ui-sref="ys.course.chapter.practice({ practiceId: {{practice.practice.id}} })" ui-sref-active="active">{{practice.practice.title}}</a>{{practice}}</li>
+    </div>
+  </ul>
+</section>

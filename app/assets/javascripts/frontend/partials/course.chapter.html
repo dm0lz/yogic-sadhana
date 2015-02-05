@@ -3,7 +3,7 @@
   <div class="row">
 
     <h1 class="text-center">{{chapter.title}}</h1>
-    <h2><a ui-sref="ys.course.chapter.theories">{{i18n_translations.theories.buttons.list}}</a></h2>
+    <h4><a ui-sref="ys.course.chapter.theories">{{i18n_translations.theories.buttons.list}}</a></h4>
     <ul ng-repeat="theory in theories">
       <li class="well">
         <a ui-sref="ys.course.chapter.theory({theoryId: {{theory.theory.id}} })">{{theory.theory.title}}</a>
@@ -17,7 +17,7 @@
       </li>
     </ul>
 
-    <h2><a ui-sref="ys.course.chapter.practices">{{i18n_translations.practices.buttons.list}}</a></h2>
+    <h4><a ui-sref="ys.course.chapter.practices">{{i18n_translations.practices.buttons.list}}</a></h4>
     <ul ng-repeat="practice in practices">
       <li class="well">
         <a ui-sref="ys.course.chapter.practice({practiceId: {{practice.practice.id}} })">{{practice.practice.title}}</a>

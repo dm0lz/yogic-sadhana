@@ -1,7 +1,9 @@
 
+<section class="container-fluid">
+
 <h1 class="text-center">{{practice.title}}</h1>
 
-<p>{{practice}}</p>
+<p class="text-center">{{practice}}</p>
 
 <h1>
 <a ui-sref="ys.course.chapter.practice.medias">{{i18n_translations.medias.buttons.list_title}}</a>
@@ -9,7 +11,11 @@
 
 <ul ng-repeat="media in medias">
   <li>
-    <a ui-sref="ys.course.chapter.practice.media({ mediaId: {{media.id}} })" ui-sref-active="active">{{media.title}}</a>
-    {{media}}
+    <div class="well">
+      <a ui-sref="ys.course.chapter.practice.media({ mediaId: {{media.id}} })" ui-sref-active="active">{{media.title}}</a>
+      {{media}}
+    </div>
   </li>
 </ul>
+
+</section>

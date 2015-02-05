@@ -1,8 +1,8 @@
 
 
-button.toggle_button{
-  margin: 70px 0 0 10px;
-}
+/* .toggle_button{ */
+/*   margin: 70px 0 0 10px; */
+/* } */
 
 span.country_flags{
   position: relative;
@@ -20,19 +20,42 @@ span.country_flags{
   margin-top: 70px;
 }
 
+.sm-padding-bottom{
+  padding-bottom: 20px;
+}
 
 .frontpage{
   a:hover{
     text-decoration: none;
   }
   .well:hover{
-    box-shadow: 0px 0px 10px #888888;
+    box-shadow: 0px 0px 5px #888888;
   }
 }
 
+@import url(http://fonts.googleapis.com/css?family=Raleway:300);
+
+body{
+  font-family: 'Raleway', sans-serif;
+  a{
+    color: #364150;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+nav.nav-custom{
+  background-color: #364150;
+}
+
 .snapjs_content {
-  background-color: #fff;
-  border-left: 4px solid #ccc;
+  background-color: #F1F3FA;
+  /* border-left: 4px solid #ccc; */
+}
+
+div.snap-drawer{
+  color: #364150;
 }
 
 .main_content{
@@ -41,9 +64,13 @@ span.country_flags{
 
 /* Menu */
 #menu {
-  background-color: #222;
+  background-color: #364150;
   color: #bbb;
-  margin-top: 51px;
+  padding-top: 51px;
+  height: 100%;
+  a{
+    color: #b4bcc8;
+  }
 }
  
 #menu ul {
@@ -53,6 +80,9 @@ span.country_flags{
  
 #menu ul li { 
   border-bottom: 1px solid #2a2a2a; 
+  ul{
+    font-size: 0.9em;
+  }
 }
  
 #menu>ul>li>a { 
@@ -79,11 +109,11 @@ span.country_flags{
 #menu ul a:hover,
 #menu ul a.active {
   background-color: #111;
-  border-left-color: #FFCC33;
-  color: #FFCC33;
+  border-left-color: #FF2F2F;
+  color: #F1F3FA;
 }
  
-#menu ul a:hover i:first-child { color: #FFCC33; }
+#menu ul a:hover i:first-child { color: #F1F3FA; }
 
 #menu ul li a.active+ul { display: block }
  

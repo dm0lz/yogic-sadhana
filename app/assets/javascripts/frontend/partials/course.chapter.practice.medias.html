@@ -1,9 +1,15 @@
 
-<h1>{{i18n_translations.medias.buttons.list_title}}</h1>
+<h1 class="text-center">{{i18n_translations.medias.buttons.list_title}}</h1>
 
-<ul ng-repeat="media in medias">
-  <li>
-    <a ui-sref="ys.course.chapter.practice.media({ mediaId: {{media.id}} })" ui-sref-active="active">{{media.title}}</a>
-    {{media}}
-  </li>
-</ul>
+<div class="sm-padding-bottom"> </div>
+
+<section class="container-fluid">
+  <ul ng-repeat="media in medias">
+    <li>
+      <div class="well">
+        <a ui-sref="ys.course.chapter.practice.media({ mediaId: {{media.id}} })" ui-sref-active="active">{{media.title}}</a>
+        {{media}}
+      </div>
+    </li>
+  </ul>
+</section>
