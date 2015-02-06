@@ -12,7 +12,7 @@
 //= require lib/restangular
 //= require lib/mediaelement-and-player
 //= require lib/angular-adaptive-detection.min
-//= require bootstrap/dropdown
+//= require bootstrap-sprockets
 //= require frontend/app
 //= require frontend/config
 //= require frontend/factories
