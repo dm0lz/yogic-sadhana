@@ -39,6 +39,15 @@ span.country_flags{
   }
 }
 
+.chapter{
+  ul{
+    list-style-type: none;
+  }
+  .fa{
+    padding-right: 7px;
+  }
+}
+
 @import url(http://fonts.googleapis.com/css?family=Raleway:300);
 
 body{
@@ -49,11 +58,22 @@ body{
       text-decoration: none;
     }
   }
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
 }
 
-img.toggler{
+.img-thumbnail{
+  width: 100%;
+}
+
+.toggler{
+  background: url('/assets/ajna.png') no-repeat;
   height: 45px;
   margin: 65px 0 0 15px;
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 nav.nav-custom{
