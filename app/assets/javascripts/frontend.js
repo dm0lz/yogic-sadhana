@@ -11,6 +11,7 @@
 //= require lib/lodash
 //= require lib/restangular
 //= require lib/mediaelement-and-player
+//= require lib/angular-adaptive-detection.min
 //= require bootstrap/dropdown
 //= require frontend/app
 //= require frontend/config

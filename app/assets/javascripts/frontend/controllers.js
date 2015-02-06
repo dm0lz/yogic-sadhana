@@ -1,12 +1,12 @@
 
 /* CONTROLLERS */
-YsApp.controller('BaseController', ['$scope', 'Locale', 'snapRemote', '$state', 'cfpLoadingBar', '$window', function($scope, Locale, snapRemote, $state, cfpLoadingBar, $window){
+YsApp.controller('BaseController', ['$scope', 'Locale', 'snapRemote', '$state', 'cfpLoadingBar', '$detection', function($scope, Locale, snapRemote, $state, cfpLoadingBar, $detection){
 
   cfpLoadingBar.start();
   $scope.locale = Locale.getLocale();
   $scope.$state = $state;
 
-  if ($window.innerWidth > 768){
+  if (!$detection.isAndroid() && !$detection.isiOS() && !$detection.isWindowsPhone()){
     snapRemote.open('left');
   }
 
