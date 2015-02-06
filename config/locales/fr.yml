@@ -1,5 +1,8 @@
 
 fr:
+  landing:
+    intro:
+      welcome: "Un Exposé Pratique de l'Antique Système du Yoga"
   activerecord:
     errors:
       models:

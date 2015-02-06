@@ -13,7 +13,6 @@
       <%= link_to "Yogic Sadhana", root_path, class: "navbar-brand" %>
     </div>
 
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav"> </ul>
@@ -67,16 +66,18 @@
     <section class="container landing">
       <article class="welcome-text">
         <h1 class="text-center">Yogic-Sadhana</h1>
-        <p class="text-center">A Systematic course in the Ancient System of Yoga</p>
+        <p class="text-center"><%= t('landing.intro.welcome') %></p>
       </article>
     </section>
   </section>
 </div>
 </section> <!-- container-fluid -->
 
+<a href="javascript:void(0);">
 <article class="arrow-dw">
-  <span class="glyphicon glyphicon-chevron-down"></span>
+  <span class="glyphicon glyphicon-chevron-down arrow-span blink"></span>
 </article>
+</a>
 
 <section class="container">
   <div class="row">
@@ -91,3 +92,12 @@
 
 
 
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+    $(".arrow-span").bind('click', function(){
+      $('html,body').animate({
+        scrollTop: window.scrollY + window.innerHeight
+      }, 1000);
+    });
+  });
+</script>

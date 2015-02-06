@@ -1,3 +1,17 @@
+@keyframes blink {
+  0% { color: white; }
+  100% { color: grey; }
+}
+@-webkit-keyframes blink {
+  0% { color: white; }
+  100% { color: grey; }
+}
+.blink {
+  -webkit-animation: blink 0.9s linear infinite;
+  -moz-animation: blink 0.9s linear infinite;
+  animation: blink 0.9s linear infinite;
+}
+
 
 span.country_flags{
   position: relative;
