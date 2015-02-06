@@ -18,7 +18,7 @@ namespace :mysql do
     #set :db_pass, Capistrano::CLI.password_prompt("Password: ")
     #set :db_name, Capistrano::CLI.ui.ask("Database name: ")
       
-    run "mysql --user=#{mysql_user} --password=#{mysql_password} -e \"CREATE DATABASE IF NOT EXISTS #{mysql_database}\""
+    #run "mysql --user=#{mysql_user} --password=#{mysql_password} -e \"CREATE DATABASE IF NOT EXISTS #{mysql_database}\""
     #run "mysql --user=root --password=#{root_password} -e \"GRANT ALL PRIVILEGES ON #{db_name}.* TO '#{db_user}'@'localhost' IDENTIFIED BY '#{db_pass}' WITH GRANT OPTION\""
   end
   after "deploy:setup", "mysql:create_database"
