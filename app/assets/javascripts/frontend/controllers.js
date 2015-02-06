@@ -6,7 +6,7 @@ YsApp.controller('BaseController', ['$scope', 'Locale', 'snapRemote', '$state', 
   $scope.locale = Locale.getLocale();
   $scope.$state = $state;
 
-  // snapRemote.open('left');
+  snapRemote.open('left');
 
   snapRemote.getSnapper().then(function(snapper) {
     snapper.on('open', function() {
@@ -61,7 +61,7 @@ YsApp.controller('CourseController', ['$scope', '$stateParams', 'Course', '$cont
 YsApp.controller('ChaptersController', ['$scope', 'snapRemote', 'Course', '$stateParams', '$controller', function($scope, snapRemote, Course, $stateParams, $controller){
   $controller('BaseController', {$scope: $scope});
 
-  snapRemote.open('left');
+  // snapRemote.open('left');
 
   var course_id = $stateParams.courseId;
   Course.get($scope.locale, course_id, function(data){
