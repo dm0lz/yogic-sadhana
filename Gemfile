@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'puma'
+gem 'mysql2', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass'
@@ -16,6 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 
@@ -23,10 +25,14 @@ gem 'globalize', '~> 4.0.2'
 
 
 group :development do
+  gem 'sqlite3'
   gem 'pry'
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'spring'
+  gem 'capistrano'
+  gem 'rvm-capistrano'
 end
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -38,9 +44,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
 
-gem 'devise'
 
 
 # Use ActiveModel has_secure_password
