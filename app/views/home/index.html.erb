@@ -61,9 +61,7 @@
 <section class="container-fluid video-container">
 <div class="row">
   <section class="video_box">
-    <video autoplay loop muted="true" id="bgvid">
-      <source src="/assets/krishnamacharya.mp4" poster="/assets/bg.png" type="video/mp4">
-    </video>
+    <%= video_tag("krishnamacharya.mp4", autoplay: true, loop: true, muted: true, id: 'bgvid') %>
     <section class="container landing">
       <article class="welcome-text">
         <h1 class="text-center">Yogic-Sadhana</h1>
