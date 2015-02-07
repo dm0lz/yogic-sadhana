@@ -1,4 +1,3 @@
 
 //= require jquery
-//= require bootstrap/dropdown
-/*//= require bootstrap-sprockets*/
+//= require bootstrap-sprockets
