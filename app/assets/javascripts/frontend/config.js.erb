@@ -16,18 +16,18 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
     .state('ys', {
       abstract: true,
       url: "/course",
-      templateUrl: "/assets/frontend/partials/main.html",
+      templateUrl: "<%= asset_path 'frontend/partials/main.html'%>",
       controller: 'CoursesController'
     })
     .state('ys.courses', {
       url: 's',
       views: {
         'main_content': {
-          templateUrl: '/assets/frontend/partials/courses.html',
+          templateUrl: "<%= asset_path 'frontend/partials/courses.html'%>",
           controller: 'CoursesController'
         },
         'left_menu': {
-          templateUrl: '/assets/frontend/partials/left.menu.html'
+          templateUrl: "<%= asset_path 'frontend/partials/left.menu.html' %>"
         }
       }
     })
@@ -35,11 +35,11 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       url: '/:courseId',
       views: {
         'main_content': {
-          templateUrl: '/assets/frontend/partials/course.html',
+          templateUrl: "<%= asset_path 'frontend/partials/course.html'%>",
           controller: 'CourseController'
         },
         'left_menu': {
-          templateUrl: '/assets/frontend/partials/left.menu.html'
+          templateUrl: "<%= asset_path 'frontend/partials/left.menu.html' %>"
         }
       }
     })
@@ -47,11 +47,11 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       url: '/chapters',
       views: {
         'main_content@ys': {
-          templateUrl: '/assets/frontend/partials/course.chapters.html',
+          templateUrl: "<%= asset_path 'frontend/partials/course.chapters.html'%>",
           controller: 'ChaptersController'
         },
         'left_menu@ys': {
-          templateUrl: '/assets/frontend/partials/left.menu.html',
+          templateUrl: "<%= asset_path 'frontend/partials/left.menu.html' %>",
           controller: 'ChaptersController'
         }
       }
@@ -60,11 +60,11 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       url: "/chapter/:chapterId",
       views: {
         'main_content@ys': {
-          templateUrl: "/assets/frontend/partials/course.chapter.html",
+          templateUrl: "<%= asset_path 'frontend/partials/course.chapter.html'%>",
           controller: 'ChapterController'
         },
         'left_menu@ys': {
-          templateUrl: '/assets/frontend/partials/left.menu.html',
+          templateUrl: "<%= asset_path 'frontend/partials/left.menu.html' %>",
           controller: 'ChapterController'
         }
       }
@@ -73,11 +73,11 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       url: "/theories",
       views: {
         'main_content@ys': {
-          templateUrl: "/assets/frontend/partials/course.chapter.theories.html",
+          templateUrl: "<%= asset_path 'frontend/partials/course.chapter.theories.html'%>",
           controller: 'ChapterController'
         },
         'left_menu@ys': {
-          templateUrl: '/assets/frontend/partials/left.menu.html',
+          templateUrl: "<%= asset_path 'frontend/partials/left.menu.html' %>",
           controller: 'ChapterController'
         }
       }
@@ -86,11 +86,11 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       url: "/practices",
       views: {
         'main_content@ys': {
-          templateUrl: "/assets/frontend/partials/course.chapter.practices.html",
+          templateUrl: "<%= asset_path 'frontend/partials/course.chapter.practices.html'%>",
           controller: 'ChapterController'
         },
         'left_menu@ys': {
-          templateUrl: '/assets/frontend/partials/left.menu.html',
+          templateUrl: "<%= asset_path 'frontend/partials/left.menu.html' %>",
           controller: 'ChapterController'
         }
       }
@@ -99,11 +99,11 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       url: "/theory/:theoryId",
       views: {
         'main_content@ys': {
-          templateUrl: "/assets/frontend/partials/course.chapter.theory.html",
+          templateUrl: "<%= asset_path 'frontend/partials/course.chapter.theory.html'%>",
           controller: 'TheoriesController'
         },
         'left_menu@ys': {
-          templateUrl: '/assets/frontend/partials/left.menu.2.html',
+          templateUrl: "<%= asset_path 'frontend/partials/left.menu.2.html' %>",
           controller: 'TheoriesController'
         }
       }
@@ -112,11 +112,11 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       url: "/practice/:practiceId",
       views: {
         'main_content@ys': {
-          templateUrl: "/assets/frontend/partials/course.chapter.practice.html",
+          templateUrl: "<%= asset_path 'frontend/partials/course.chapter.practice.html'%>",
           controller: 'PracticesController'
         },
         'left_menu@ys': {
-          templateUrl: '/assets/frontend/partials/left.menu.2.html',
+          templateUrl: "<%= asset_path 'frontend/partials/left.menu.2.html' %>",
           controller: 'PracticesController'
         }
       }
@@ -125,11 +125,11 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       url: "/medias",
       views: {
         'main_content@ys': {
-          templateUrl: "/assets/frontend/partials/course.chapter.theory.medias.html",
+          templateUrl: "<%= asset_path 'frontend/partials/course.chapter.theory.medias.html'%>",
           controller: 'TheoriesController'
         },
         'left_menu@ys': {
-          templateUrl: '/assets/frontend/partials/left.menu.2.html',
+          templateUrl: "<%= asset_path 'frontend/partials/left.menu.2.html' %>",
           controller: 'TheoriesController'
         }
       }
@@ -138,11 +138,11 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       url: "/medias",
       views: {
         'main_content@ys': {
-          templateUrl: "/assets/frontend/partials/course.chapter.practice.medias.html",
+          templateUrl: "<%= asset_path 'frontend/partials/course.chapter.practice.medias.html'%>",
           controller: 'PracticesController'
         },
         'left_menu@ys': {
-          templateUrl: '/assets/frontend/partials/left.menu.2.html',
+          templateUrl: "<%= asset_path 'frontend/partials/left.menu.2.html' %>",
           controller: 'PracticesController'
         }
       }
@@ -151,11 +151,11 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       url: "/media/:mediaId",
       views: {
         'main_content@ys': {
-          templateUrl: "/assets/frontend/partials/course.chapter.theory.media.html",
+          templateUrl: "<%= asset_path 'frontend/partials/course.chapter.theory.media.html'%>",
           controller: 'TheoryMediaController'
         },
         'left_menu@ys': {
-          templateUrl: '/assets/frontend/partials/left.menu.2.html',
+          templateUrl: "<%= asset_path 'frontend/partials/left.menu.2.html' %>",
           controller: 'TheoriesController'
         }
       }
@@ -164,11 +164,11 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       url: "/media/:mediaId",
       views: {
         'main_content@ys': {
-          templateUrl: "/assets/frontend/partials/course.chapter.practice.media.html",
+          templateUrl: "<%= asset_path 'frontend/partials/course.chapter.practice.media.html'%>",
           controller: 'PracticeMediaController'
         },
         'left_menu@ys': {
-          templateUrl: '/assets/frontend/partials/left.menu.2.html',
+          templateUrl: "<%= asset_path 'frontend/partials/left.menu.2.html' %>",
           controller: 'PracticesController'
         }
       }
