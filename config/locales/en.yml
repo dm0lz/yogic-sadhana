@@ -47,7 +47,7 @@ en:
       create_course: "Create new course"
     buttons:
       list: "Courses list"
-      list_title: "Chapters list"
+      list_title: "Courses list"
       create_course: "create a new course"
       show_course: "Show course"
       destroy_course: "Destroy course"

@@ -21,6 +21,7 @@
 //= require frontend/controllers
 
 
+
 $(document).ready(function(){
   $(".lang").bind('click', function(e){
     var is_french = $(this).hasClass("fr");
