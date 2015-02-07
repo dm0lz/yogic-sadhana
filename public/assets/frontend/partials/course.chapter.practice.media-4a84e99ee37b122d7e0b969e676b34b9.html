@@ -1,0 +1,100 @@
+
+<h1 class="text-center">{{media.title}}</h1>
+
+<section class="container">
+  <section class="row">
+
+  <hr />
+
+  <section ng-show="media.audio.url">
+    <audio controls ng-src="{{media.audio.url}}" media:element style="width:100%;height:100%;">
+      <!-- <source ng&#45;src="{{media.audio.url}}" type='audio/ogg' /> -->
+    </audio>
+  </section>
+
+  <hr />
+
+  <section ng-show="media.video.url">
+    <video controls ng-src="{{media.video.url}}" media:element style="width:100%;height:100%;">
+      <!-- <source ng&#45;src="{{media.audio.url}}" type='audio/ogg' /> -->
+    </video>
+  </section>
+
+  <hr />
+
+  {{media}}
+
+  <hr />
+
+
+  </section>
+</section>
+
+<!-- <h1 class="text&#45;center">{{media.title}}</h1> -->
+<!--  -->
+<!-- <section class="container"> -->
+<!--   <section class="row"> -->
+<!--      -->
+<!-- {{media}} -->
+<!--  -->
+<!-- <hr /> -->
+<!--  -->
+<!-- <audio -->
+<!--   ng&#45;src="{{media.audio.url}}" -->
+<!--   type="audio/ogg" -->
+<!--   media&#45;player="mediaPlayer" -->
+<!--   data&#45;playlist="playlist1" -->
+<!--   > -->
+<!-- </audio> -->
+<!--  -->
+<!-- <div class="player&#45;control"> -->
+<!--   <div class="btn" ng&#45;click="mediaPlayer.play()"> -->
+<!--     <span>Simple Play</span> -->
+<!--     <i class="fa fa&#45;play"></i> -->
+<!--   </div> -->
+<!--   <div class="btn" ng&#45;click="mediaPlayer.playPause()"> -->
+<!--     <i class="fa" ng&#45;class="{ 'fa&#45;pause': mediaPlayer.playing, 'fa&#45;play': !mediaPlayer.playing }"></i> -->
+<!--   </div> -->
+<!--   <div class="btn" ng&#45;click="mediaPlayer.next()"> -->
+<!--     <span>Next</span> -->
+<!--     <i class="fa fa&#45;step&#45;forward"></i> -->
+<!--   </div> -->
+<!--   <div class="btn" ng&#45;click="mediaPlayer.prev()"> -->
+<!--     <i class="fa fa&#45;step&#45;backward"></i> -->
+<!--     <span>Prev</span> -->
+<!--   </div> -->
+<!--   <div class="btn btn&#45;noclick"> -->
+<!--     <span>currentTrack: <span class="badge">{{ mediaPlayer.currentTrack }}</span></span> -->
+<!--   </div> -->
+<!--   <div class="btn btn&#45;noclick"> -->
+<!--     <span><i class="fa fa&#45;clock&#45;o"></i>: <span class="badge">{{ mediaPlayer.formatTime }}</span></span> -->
+<!--   </div> -->
+<!--   <div class="btn btn&#45;noclick"> -->
+<!--     <span>volume: <span class="badge">{{ mediaPlayer.volume * 100 | number:0 }}%</span></span> -->
+<!--   </div> -->
+<!--   <div class="btn" ng&#45;click="mediaPlayer.setVolume(mediaPlayer.volume &#45; 0.1)"> -->
+<!--     <span><i class="fa fa&#45;volume&#45;down"></i></span> -->
+<!--   </div> -->
+<!--   <div class="btn" ng&#45;click="mediaPlayer.setVolume(mediaPlayer.volume + 0.1)"> -->
+<!--     <span><i class="fa fa&#45;volume&#45;up"></i></span> -->
+<!--   </div> -->
+<!--   <div class="progress" ng&#45;click="mediaPlayer.seek(mediaPlayer.duration * seekPercentage($event))"> -->
+<!--     <div class="progress&#45;bar" role="progressbar" aria&#45;valuemin="0" aria&#45;valuemax="100" ng&#45;style="{ width: mediaPlayer.currentTime*100/mediaPlayer.duration + '%' }"></div> -->
+<!--     <div class="time" ng&#45;show="mediaPlayer.formatTime"> -->
+<!--       <span>{{ mediaPlayer.formatTime }}</span><b>/</b><span>{{ mediaPlayer.formatDuration }}</span> -->
+<!--     </div> -->
+<!--   </div> -->
+<!--  -->
+<!-- </div> -->
+<!--  -->
+<!-- <span ng&#45;show="mediaPlayer.playing"> -->
+<!--   Player status: Playing -->
+<!--   <button type="submit" ng&#45;click="mediaPlayer.playPause()">Pause</button> -->
+<!-- </span> -->
+<!-- <span ng&#45;show="!mediaPlayer.playing"> -->
+<!--   Player status: Paused -->
+<!--   <button type="submit" ng&#45;click="mediaPlayer.playPause()">Play</button> -->
+<!-- </span> -->
+<!--  -->
+<!--   </section> -->
+<!-- </section> -->
