@@ -27,11 +27,6 @@
   </div>
 <% end %>
 
-<% if @practice %>
-  <%= link_to t('medias.buttons.create_media'), new_backend_practice_media_path, class: "btn btn-warning" %>
-<% elsif @theory %>
-  <%= link_to t('medias.buttons.create_media'), new_backend_theory_media_path, class: "btn btn-warning" %>
-<% end %>
 
 <div class="small-spacer"></div>
 

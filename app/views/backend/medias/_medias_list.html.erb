@@ -1,4 +1,14 @@
 
+<% if @practice %>
+  <%= link_to t('medias.buttons.create_media'), new_backend_practice_media_path(@practice), class: "btn btn-warning" %>
+<% elsif @theory %>
+  <%= link_to t('medias.buttons.create_media'), new_backend_theory_media_path(@theory), class: "btn btn-warning" %>
+<% end %>
+
+<div class="small-spacer"> </div>
+
+<%#= binding.pry %>
+<% @medias = locals[:medias] unless local_assigns[:locals].nil? %>
 
 <div class="container">
   <% @medias.each do |media| %>

@@ -18,7 +18,7 @@ class Backend::TheoriesController < Backend::BackendController
     @theory = Theory.new theory_params
     if @theory.save
       flash[:success] = t('theories.flash_messages.theory_created')
-      redirect_to backend_chapter_theories_path
+      redirect_to backend_theory_path(@theory)
     else
       flash[:error] = @theory.errors.messages.map{|k,v| v}.flatten.join " -- "
       redirect_to new_backend_chapter_theory_path

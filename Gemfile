@@ -30,7 +30,7 @@ group :development do
   gem 'sqlite3'
   gem 'pry'
   gem 'pry-rails'
-  gem 'better_errors'
+  #gem 'better_errors'
   gem 'binding_of_caller'
   gem 'spring'
   gem 'capistrano'
