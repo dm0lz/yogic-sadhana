@@ -31,7 +31,7 @@
           </h4>
           <ul ng-repeat="media in practice.medias">
             <li>
-            <a ui-sref="ys.course.chapter.practice.media({practiceId: {{media.mediumable_id}}, mediaId: {{media.id}} })"><i class="fa fa-film"></i>{{media.title}}</a>
+            <a ui-sref="ys.course.chapter.practice.media({practiceId: {{media.mediumable_id}}, mediaId: {{media.id}} })"><i ng-class="media.media_type == 'audio' ? 'fa fa-music' : 'fa fa-film'"></i>{{media.title}}</a>
             </li>
           </ul>
           </li>
