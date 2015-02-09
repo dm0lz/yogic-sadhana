@@ -166,6 +166,7 @@ en:
       description: "Description"
       audio: "Audio file"
       video: "Video file"
+      media_type: "Media Type"
     flash_messages:
       media_created: "media was successfully created"
       media_updated: "media was successfully updated"

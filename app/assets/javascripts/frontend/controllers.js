@@ -29,6 +29,15 @@ YsApp.controller('BaseController', ['$scope', 'Locale', 'snapRemote', '$state', 
     // });
   });
 
+  $scope.apply_media_class = function(media){
+    if (media.video.url !== null){
+      return "fa fa-film"
+    }
+    if (media.audio.url !== null){
+      return "fa fa-music"
+    }
+  };
+
 }]);
 
 YsApp.controller('CoursesController', ['$scope', 'Course', 'Courses', '$controller', function($scope, Course, Courses, $controller){

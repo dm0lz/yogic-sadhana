@@ -21,6 +21,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'jquery-turbolinks'
+
 gem 'globalize', '~> 4.0.2'
 
 

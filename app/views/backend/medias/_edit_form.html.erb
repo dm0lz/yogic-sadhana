@@ -4,7 +4,7 @@
 
     <%= form_for @media, :url => backend_media_path(@media), :html => {:multipart => true}, method: :patch do |f| %>
       <fieldset>
-        <legend class="text-center"><%= t('medias.titles.create_media') %></legend>
+        <legend class="text-center"><%= t('medias.titles.edit_media') %></legend>
 
         <div class="form-group">
           <%= label_tag t('medias.attributes.title'), nil, class: "col-md-3 control-label" %>
@@ -23,17 +23,40 @@
         </div>
 
         <div class="form-group">
-          <%= label_tag t('medias.attributes.audio'), nil, class: "col-md-3 control-label" %>
+          <%= label_tag t('medias.attributes.media_type'), nil, class: "col-md-3 control-label" %>
           <div class="col-md-9">
-            <%= f.file_field :audio, class: "form-control" %>
+            <%= f.radio_button :media_type, "audio" %> Audio
+            <%= f.radio_button :media_type, "video" %> Video
             <div class="small-spacer"></div>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group audio">
+          <%= label_tag t('medias.attributes.audio'), nil, class: "col-md-3 control-label" %>
+          <div class="col-md-9">
+            <%= audio_tag @media.audio, autoplay: false, controls: true if @media.audio.url %>
+            <%= f.file_field :audio, class: "form-control" %>
+            <p>
+              <label>
+                <%= f.check_box :remove_audio %>
+                Remove Audio
+              </label>
+            </p>
+            <div class="small-spacer"></div>
+          </div>
+        </div>
+
+        <div class="form-group video">
           <%= label_tag t('medias.attributes.video'), nil, class: "col-md-3 control-label" %>
           <div class="col-md-9">
+            <%= video_tag @media.video, autoplay: false, controls: true if @media.video.url %>
             <%= f.file_field :video, class: "form-control" %>
+            <p>
+              <label>
+                <%= f.check_box :remove_video %>
+                Remove Video
+              </label>
+            </p>
             <div class="small-spacer"></div>
           </div>
         </div>
@@ -48,3 +71,15 @@
 
   </div>
 </div>
+
+
+
+
+<style type="text/css" media="all">
+  input[checked="checked"]{
+    display: show !important;
+  }
+</style>
+
+
+

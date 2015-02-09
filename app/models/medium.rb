@@ -6,4 +6,12 @@ class Medium < ActiveRecord::Base
   mount_uploader :audio, AudioUploader
   mount_uploader :video, VideoUploader
 
+  def is_audio
+    media_type == "audio"
+  end
+
+  def is_video
+    media_type == "video"
+  end
+
 end
