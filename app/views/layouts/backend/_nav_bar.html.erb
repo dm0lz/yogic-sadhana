@@ -71,15 +71,12 @@
       <li>
       <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@chapter.course) if @chapter.id %>
       </li>
-      <% if params[:controller] == "backend/theories" %>
         <li>
         <%= link_to t('breadcrumbs.theories'), backend_chapter_theories_path(@chapter) if @chapter.id %>
         </li>
-      <% elsif params[:controller] == "backend/practices"%>
         <li>
         <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@chapter) if @chapter.id %>
         </li>
-      <% end %>
     <% end %>
     <% if @theory %>
       <li>
@@ -89,12 +86,18 @@
       <%= link_to t('breadcrumbs.theories'), backend_chapter_theories_path(@theory.chapter) if @theory.id %>
       </li>
       <li>
+      <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@theory.chapter) if @theory.id %>
+      </li>
+      <li>
       <%= link_to t('breadcrumbs.medias'), backend_theory_medias_path(@theory) if @theory.id %>
       </li>
     <% end %>
     <% if @practice %>
       <li>
       <%= link_to t('breadcrumbs.chapters'), backend_course_chapters_path(@practice.chapter.course) if @practice.id %>
+      </li>
+      <li>
+      <%= link_to t('breadcrumbs.theories'), backend_chapter_theories_path(@practice.chapter) if @practice.id %>
       </li>
       <li>
       <%= link_to t('breadcrumbs.practices'), backend_chapter_practices_path(@practice.chapter) if @practice.id %>

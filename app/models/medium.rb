@@ -16,11 +16,11 @@ class Medium < ActiveRecord::Base
     errors.add(:media, I18n.t('activerecord.errors.models.medium.attributes.media_type.type')) if (!video.file.nil? && !audio.file.nil?)
   end
 
-  def is_audio
+  def is_audio?
     media_type == "audio"
   end
 
-  def is_video
+  def is_video?
     media_type == "video"
   end
 
