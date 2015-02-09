@@ -9,11 +9,11 @@
       <li><%= t('chapters.attributes.chapter_title') %> : <%= @media.mediumable.chapter.title %></li>
       <li><%= t('practices.attributes.practice_title') %> : <%= @media.mediumable.title %></li>
       <li><%= t('medias.attributes.media_type') %> : <%= @media.media_type %></li>
-      <% if @media.is_audio %>
+      <% if @media.is_audio? %>
       <hr />
       <li><%= t('medias.attributes.audio') %> : <%= audio_tag @media.audio.url, autoplay: false, controls: true %></li>
       <% end %>
-      <% if @media.is_video %>
+      <% if @media.is_video? %>
       <hr />
       <li><%= t('medias.attributes.video') %> : <%= video_tag @media.video.url, autoplay: false, controls: true %></li>
       <% end %>
