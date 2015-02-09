@@ -28,6 +28,7 @@ ssh_options[:forward_agent] = true
 
 #default_run_options[:shell] = '/bin/bash --login'
 
+before "deploy", "puma:stop"
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
