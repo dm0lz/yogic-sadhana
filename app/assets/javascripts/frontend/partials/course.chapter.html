@@ -15,7 +15,7 @@
           </h4>
           <ul ng-repeat="media in theory.medias">
             <li>
-            <a ui-sref="ys.course.chapter.theory.media({theoryId: {{media.mediumable_id}}, mediaId: {{media.id}} })"><i ng-class="apply_media_class(media)"></i>{{media.title}}</a>
+            <a ui-sref="ys.course.chapter.theory.media({theoryId: {{media.mediumable_id}}, mediaId: {{media.id}} })"><i ng-class="media.media_type == 'audio' ? 'fa fa-music' : 'fa fa-film'"></i>{{media.title}}</a>
             </li>
           </ul>
         </li>

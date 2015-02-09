@@ -16,7 +16,12 @@ class Backend::MediasController < Backend::BackendController
       redirect_to @media.mediumable_type == "Theory" ? backend_theory_medias_path(@media.mediumable) : backend_practice_medias_path(@media.mediumable)
     else
       flash[:error] = @media.errors.messages.map{|k,v| v}.flatten.join " -- "
-      redirect_to new_backend_practice_path(@media)
+      #binding.pry
+      if @media.mediumable_type == "Theory"
+        redirect_to new_backend_theory_media_path(@media.mediumable)
+      else
+        redirect_to new_backend_practice_media_path(@media.mediumable)
+      end
     end
   end
 

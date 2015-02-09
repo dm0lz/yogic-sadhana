@@ -15,14 +15,17 @@
             <h4><%= t('medias.attributes.description') %></h4>
             <%= media.description %>
           </li>
+          <% if media.media_type == "audio" %>
           <li>
             <h4><%= t('medias.attributes.audio') %></h4>
             <%= media.audio %>
           </li>
+          <% else %>
           <li>
             <h4><%= t('medias.attributes.video') %></h4>
             <%= media.video %>
           </li>
+          <% end %>
 
         </div>
 

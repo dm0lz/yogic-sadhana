@@ -30,6 +30,13 @@ en:
               blank: "Title cannot be blank"
             description:
               blank: "Description cannot be blank"
+        medium:
+          attributes:
+            title::
+              blank: "Title cannot be blank"
+            media_type:
+              blank: "Media type cannot be blank"
+              type: "Media must be audio or video"
   nav_bar:
     login: "Login"
     logout: "Logout"
