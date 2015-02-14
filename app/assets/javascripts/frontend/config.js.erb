@@ -25,7 +25,7 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
     })
     .state('sign_up', {
       url: "/sign_up",
-      templateUrl: "<%#= asset_path 'frontend/partials/user.sign_up.html'%>",
+      templateUrl: "<%= asset_path 'frontend/partials/user.sign_up.html'%>",
       controller: 'RegistrationController'
     })
     .state('ys', {
