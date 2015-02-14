@@ -1,6 +1,6 @@
 
 /* CONFIG AND Routing */
-YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfpLoadingBarProvider', function(snapRemoteProvider, $stateProvider, $urlRouterProvider, cfpLoadingBarProvider){
+YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfpLoadingBarProvider', '$authProvider', function(snapRemoteProvider, $stateProvider, $urlRouterProvider, cfpLoadingBarProvider, $authProvider){
   cfpLoadingBarProvider.includeSpinner = false;
   snapRemoteProvider.globalOptions = {
     disable: 'right',
@@ -10,14 +10,28 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
     transitionSpeed: 0.4,
     hyperextensible: false
   };
-  $urlRouterProvider.otherwise('/courses');
-  $stateProvider
+  $urlRouterProvider.otherwise('/sign_in');
 
+  $authProvider.configure({
+    apiUrl: 'http://localhost:3000'
+  });
+
+  $stateProvider
+    .state('sign_in', {
+      url: "/sign_in",
+      templateUrl: "<%= asset_path 'frontend/partials/user.login.html'%>",
+      controller: 'LoginController'
+    })
     .state('ys', {
       abstract: true,
       url: "/course",
       templateUrl: "<%= asset_path 'frontend/partials/main.html'%>",
-      controller: 'CoursesController'
+      controller: 'CoursesController',
+      resolve: {
+        auth: ['$auth', function($auth) {
+          return $auth.validateUser();
+        }]
+      }
     })
     .state('ys.courses', {
       url: 's',

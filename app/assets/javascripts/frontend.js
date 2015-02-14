@@ -7,6 +7,8 @@
 //= require lib/angular-route
 //= require lib/angular-animate
 //= require lib/angular-snap
+//= require lib/angular-cookie
+//= require lib/ng-token-auth.js
 //= require lib/loading-bar
 //= require lib/lodash
 //= require lib/restangular

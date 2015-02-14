@@ -17,7 +17,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 
@@ -25,6 +24,11 @@ gem 'jquery-turbolinks'
 
 gem 'globalize', '~> 4.0.2'
 
+gem 'devise'
+gem 'devise_token_auth'
+gem 'omniauth'
+
+gem 'angular_rails_csrf'
 
 group :development do
   gem 'sqlite3'
@@ -35,6 +39,7 @@ group :development do
   gem 'spring'
   gem 'capistrano'
   gem 'rvm-capistrano'
+  gem "letter_opener"
 end
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

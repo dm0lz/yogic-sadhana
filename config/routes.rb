@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
 
 
+  #namespace :api do
+    mount_devise_token_auth_for 'User', at: 'auth'
+  #end
+    #devise_for :users, skip: [:session, :password, :registration, :confirmation], controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+
   scope "(:locale)", :locale => /en|fr/ do
+
 
     root to: "home#index"
 
-    devise_for :users
     devise_for :admins, :controllers => { :sessions => 'authentication/sessions', :passwords => 'authentication/passwords', :registrations => 'authentication/registrations' }
 
     namespace :backend do
-
       resources :courses, shallow: true do
         resources :chapters, shallow: true do
           resources :practices, shallow: true do
@@ -20,17 +24,14 @@ Rails.application.routes.draw do
           end
         end
       end
-
     end
 
     namespace :frontend do
-
       get "/ys" => "main#index", :as => "main_index"
-
+    # devise_for :users
     end
 
     namespace :api do
-
       namespace :v1 do
         resources :courses, only: [:index, :show] do
           get :menu
@@ -40,20 +41,18 @@ Rails.application.routes.draw do
         resources :theories, only: [:index, :show]
         resources :medias, only: [:index, :show]
       end
-
-      namespace :v2 do
-        resources :courses, only: [:index, :show] do
-          resources :chapters, only: [:index, :show] do
-            resources :practices, only: [:index, :show] do
-              resources :medias, only: [:index, :show]
-            end
-            resources :theories, only: [:index, :show] do
-              resources :medias, only: [:index, :show]
-            end
-          end
-        end
-      end
-
+      # namespace :v2 do
+      #   resources :courses, only: [:index, :show] do
+      #     resources :chapters, only: [:index, :show] do
+      #       resources :practices, only: [:index, :show] do
+      #         resources :medias, only: [:index, :show]
+      #       end
+      #       resources :theories, only: [:index, :show] do
+      #         resources :medias, only: [:index, :show]
+      #       end
+      #     end
+      #   end
+      # end
     end
 
   end

@@ -1,6 +1,6 @@
 
 /* CONTROLLERS */
-YsApp.controller('BaseController', ['$scope', 'Locale', 'snapRemote', '$state', 'cfpLoadingBar', '$detection', function($scope, Locale, snapRemote, $state, cfpLoadingBar, $detection){
+YsApp.controller('BaseController', ['$scope', '$rootScope', 'Locale', 'snapRemote', '$state', 'cfpLoadingBar', '$detection', '$auth', '$location', function($scope, $rootScope, Locale, snapRemote, $state, cfpLoadingBar, $detection, $auth, $location){
 
   cfpLoadingBar.start();
   $scope.locale = Locale.getLocale();
@@ -38,9 +38,35 @@ YsApp.controller('BaseController', ['$scope', 'Locale', 'snapRemote', '$state', 
     }
   };
 
+  $scope.signOut = function() {
+    $auth.signOut()
+    // .then(function(resp) {
+    //   $location.path('/sign_in');
+    // })
+    // .catch(function(resp) {
+    //   $location.path('/sign_in');
+    // });
+  };
+
+  $rootScope.$on('auth:logout-success', function(ev) {
+    console.log('auth:logout-success');
+    $location.path('/sign_in');
+  });
+  $rootScope.$on('auth:validation-error', function(ev) {
+    console.log('auth:validation-error');
+    $location.path('/sign_in');
+  });
+  $rootScope.$on('auth:login-success', function() {
+    console.log('auth:login-success');
+    $location.path('/courses');
+  });
+  // $rootScope.$on('auth:validation-success', function() {
+  //   $location.path('/courses');
+  // });
+
 }]);
 
-YsApp.controller('CoursesController', ['$scope', 'Course', 'Courses', '$controller', function($scope, Course, Courses, $controller){
+YsApp.controller('CoursesController', ['$scope', 'Course', 'Courses', '$controller', '$auth', function($scope, Course, Courses, $controller, $auth){
   $controller('BaseController', {$scope: $scope});
 
   // $scope.$watch("course_id", function(){
@@ -54,6 +80,28 @@ YsApp.controller('CoursesController', ['$scope', 'Course', 'Courses', '$controll
     $scope.i18n_translations = data.i18n_translations;
     // console.log(data.courses);
   });
+
+}]);
+
+YsApp.controller('LoginController', ['$scope', '$rootScope', '$state', '$auth', '$controller', '$location', 'cfpLoadingBar', function($scope, $rootScope, $state, $auth, $controller, $location, cfpLoadingBar){
+  $controller('BaseController', {$scope: $scope});
+
+  $scope.submitLogin = function() {
+    $auth.submitLogin($scope.loginForm)
+    .then(function(resp) {
+      $auth.authenticate('email')
+    })
+    .catch(function(resp) {
+      console.log(resp);
+    });
+  };
+
+  var userCheck = $auth.validateUser();
+  if(userCheck.$$state.status == 1){
+    $location.path('/courses');
+  };
+
+  cfpLoadingBar.complete();
 
 }]);
 
