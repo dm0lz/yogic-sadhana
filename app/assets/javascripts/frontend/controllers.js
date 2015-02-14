@@ -105,6 +105,28 @@ YsApp.controller('LoginController', ['$scope', '$rootScope', '$state', '$auth', 
 
 }]);
 
+YsApp.controller('RegistrationController', ['$scope', '$rootScope', '$state', '$auth', '$controller', '$location', 'cfpLoadingBar', function($scope, $rootScope, $state, $auth, $controller, $location, cfpLoadingBar){
+  $controller('BaseController', {$scope: $scope});
+
+  $scope.submitRegistration = function() {
+    $auth.submitRegistration($scope.registrationForm)
+    .then(function(resp) {
+      $location.path('/sign_in');
+    })
+    .catch(function(resp) {
+      console.log(resp);
+    });
+  };
+
+  var userCheck = $auth.validateUser();
+  if(userCheck.$$state.status == 1){
+    $location.path('/courses');
+  };
+
+  cfpLoadingBar.complete();
+
+}]);
+
 YsApp.controller('CourseController', ['$scope', '$stateParams', 'Course', '$controller', function($scope, $stateParams, Course, $controller){
   $controller('BaseController', {$scope: $scope});
 
