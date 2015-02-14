@@ -23,8 +23,7 @@ Rails.application.configure do
   # config.serve_static_assets = true
   config.serve_static_assets = false
 
-  config.routes.default_url_options[:host] = 'yogic-sadhana.com'
-
+  config.action_mailer.default_url_options[:host] = 'yogic-sadhana.com'
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
