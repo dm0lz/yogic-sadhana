@@ -13,7 +13,8 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
   $urlRouterProvider.otherwise('/sign_in');
 
   $authProvider.configure({
-    apiUrl: 'http://localhost:3000'
+    // apiUrl: 'http://localhost:3000'
+    apiUrl: window.location.origin
   });
 
   $stateProvider
