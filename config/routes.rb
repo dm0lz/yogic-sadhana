@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
 
 
-  #namespace :api do
-    mount_devise_token_auth_for 'User', at: 'auth'
-  #end
-    #devise_for :users, skip: [:session, :password, :registration, :confirmation], controllers: { omniauth_callbacks: 'omniauth_callbacks' }
+  mount_devise_token_auth_for 'User', at: 'auth'
 
   scope "(:locale)", :locale => /en|fr/ do
-
 
     root to: "home#index"
 
@@ -28,7 +24,6 @@ Rails.application.routes.draw do
 
     namespace :frontend do
       get "/ys" => "main#index", :as => "main_index"
-    # devise_for :users
     end
 
     namespace :api do

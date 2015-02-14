@@ -7,13 +7,10 @@ class Api::BaseApiController < ApplicationController
   respond_to :json
   # before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # binding.pry
-
   def i18n_translations
     @translations ||= I18n.backend.send(:translations)
     @translations[I18n.locale].with_indifferent_access
   end
-
 
   private
   def authenticate_current_user

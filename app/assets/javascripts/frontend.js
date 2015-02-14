@@ -24,18 +24,3 @@
 
 
 
-$(document).ready(function(){
-  $(".lang").bind('click', function(e){
-    var is_french = $(this).hasClass("fr");
-    if (is_french) {
-      var url = window.location.href;
-      var updated_url = url.replace(url.split("/")[3], "fr");
-      window.location.replace(updated_url);
-    }
-    if (!is_french) {
-      var url = window.location.href;
-      var updated_url = url.replace(url.split("/")[3], "en");
-      window.location.replace(updated_url);
-    }
-  });
-});
