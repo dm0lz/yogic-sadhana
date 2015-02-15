@@ -1,4 +1,21 @@
 
+YsApp.directive('langToggle', ['$location', function($location){
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs){
+      element.bind('click', function(el){
+        if(el.target.alt == "France"){
+          window.location = '/fr/ys#' + $location.$$path;
+          scope.$apply();
+        }else if(el.target.alt == "England"){
+          window.location = '/en/ys#' + $location.$$path;
+          scope.$apply();
+        }
+      });
+    }
+  }
+}]);
+
 YsApp.directive('navBack', function(){
   return {
     restrict: 'A',
