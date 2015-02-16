@@ -30,6 +30,8 @@ gem 'omniauth'
 
 gem 'angular_rails_csrf'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 group :development do
   gem 'sqlite3'
   gem 'pry'

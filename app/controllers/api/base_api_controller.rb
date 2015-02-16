@@ -3,6 +3,8 @@ class Api::BaseApiController < ApplicationController
 
   include DeviseTokenAuth::Concerns::SetUserByToken
 
+  skip_before_filter  :verify_authenticity_token
+
   before_action :authenticate_current_user
   respond_to :json
   # before_action :configure_permitted_parameters, if: :devise_controller?
