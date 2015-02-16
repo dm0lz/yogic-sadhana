@@ -12,8 +12,25 @@
 <ul ng-repeat="media in medias">
   <li>
     <div class="well">
-      <a ui-sref="ys.course.chapter.theory.media({ mediaId: {{media.id}} })"><i ng-class="media.media_type == 'audio' ? 'fa fa-music' : 'fa fa-film'"></i>&nbsp;{{media.title}}</a>
+
+      <a ui-sref="ys.course.chapter.theory.media({ mediaId: {{media.id}} })"><i ng-class="media.media_type == 'audio' ? 'fa fa-music' : 'fa fa-film'"></i>&nbsp;{{media}}</a>
+
+      <hr />
+
+      <section ng-show="media.audio.url">
+        <audio controls ng-src="{{media.audio.url}}" media:element style="width:100%;height:100%;"> </audio>
+      </section>
+
+      <hr />
+
+      <section ng-show="media.video.url">
+        <video controls ng-src="{{media.video.url}}" media:element style="width:100%;height:100%;"> </video>
+      </section>
+
+      <hr />
+
     </div>
+
   </li>
 </ul>
 

@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     # namespace :frontend do
     #   get "/ys" => "main#index", :as => "main_index"
     # end
+
     resources :ys, controller: 'frontend/main', only: [:index]
 
     namespace :api do
