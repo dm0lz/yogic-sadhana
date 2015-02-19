@@ -13,11 +13,11 @@
           <h4>
             <a ui-sref="ys.course.chapter.theory({theoryId: {{theory.theory.id}} })">{{theory.theory.title}}</a>
           </h4>
-          <ul ng-repeat="media in theory.medias">
-            <li>
-            <a ui-sref="ys.course.chapter.theory.media({theoryId: {{media.mediumable_id}}, mediaId: {{media.id}} })"><i ng-class="media.media_type == 'audio' ? 'fa fa-music' : 'fa fa-film'"></i>{{media.title}}</a>
-            </li>
-          </ul>
+          <!-- <ul ng&#45;repeat="media in theory.medias"> -->
+          <!--   <li> -->
+          <!--   <a ui&#45;sref="ys.course.chapter.theory.media({theoryId: {{media.mediumable_id}}, mediaId: {{media.id}} })"><i ng&#45;class="media.media_type == 'audio' ? 'fa fa&#45;music' : 'fa fa&#45;film'"></i>{{media.title}}</a> -->
+          <!--   </li> -->
+          <!-- </ul> -->
         </li>
       </ul>
     </div>
@@ -29,11 +29,11 @@
           <h4>
             <a ui-sref="ys.course.chapter.practice({practiceId: {{practice.practice.id}} })">{{practice.practice.title}}</a>
           </h4>
-          <ul ng-repeat="media in practice.medias">
-            <li>
-            <a ui-sref="ys.course.chapter.practice.media({practiceId: {{media.mediumable_id}}, mediaId: {{media.id}} })"><i ng-class="media.media_type == 'audio' ? 'fa fa-music' : 'fa fa-film'"></i>{{media.title}}</a>
-            </li>
-          </ul>
+          <!-- <ul ng&#45;repeat="media in practice.medias"> -->
+          <!--   <li> -->
+          <!--   <a ui&#45;sref="ys.course.chapter.practice.media({practiceId: {{media.mediumable_id}}, mediaId: {{media.id}} })"><i ng&#45;class="media.media_type == 'audio' ? 'fa fa&#45;music' : 'fa fa&#45;film'"></i>{{media.title}}</a> -->
+          <!--   </li> -->
+          <!-- </ul> -->
           </li>
       </ul>
     </div>
