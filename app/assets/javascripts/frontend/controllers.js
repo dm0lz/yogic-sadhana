@@ -80,7 +80,7 @@ YsApp.controller('CoursesController', ['$scope', 'Course', 'Courses', '$controll
   Courses.get($scope.locale, function(data){
     $scope.courses = data.courses;
     $scope.i18n_translations = data.i18n_translations;
-    console.log(JSON.stringify(data.courses));
+    // console.log(JSON.stringify(data.courses));
   });
 
 
