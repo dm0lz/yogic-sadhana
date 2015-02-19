@@ -14,7 +14,7 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
   $httpProvider.defaults.withCredentials = true;
 
   $authProvider.configure({
-    apiUrl: 'http://127.0.0.1:3000',
+    // apiUrl: 'http://127.0.0.1:3000',
     tokenFormat: {
       "access-token": "{{ token }}",
       "token-type":   "Bearer",
@@ -23,7 +23,7 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       "uid":          "{{ uid }}"
     },
     // storage: 'localStorage'
-    // apiUrl: window.location.origin
+    apiUrl: window.location.origin
   });
 
   $urlRouterProvider.otherwise('/sign_in');
