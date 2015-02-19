@@ -22,8 +22,8 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
       "expiry":       "{{ expiry }}",
       "uid":          "{{ uid }}"
     },
-    // storage: 'localStorage'
     apiUrl: window.location.origin
+    // storage: 'localStorage'
   });
 
   $urlRouterProvider.otherwise('/sign_in');
