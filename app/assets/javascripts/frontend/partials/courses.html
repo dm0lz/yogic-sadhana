@@ -1,6 +1,10 @@
 
 <button class="btn btn-primary btn-lg" style="float:right;" ng-click='signOut()'>Sign out</button>
 
+<div ng-show="user.signedIn">
+  <p>{{user}}</p>
+</div>
+
 <h1 class="text-center" style="font-size: 3em;">{{i18n_translations.courses.buttons.list_title}}</h1>
 
 <div class="big-spacer"> </div>

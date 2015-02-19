@@ -39,7 +39,7 @@ YsApp.controller('BaseController', ['$scope', '$rootScope', 'Locale', 'snapRemot
   };
 
   $scope.signOut = function() {
-    $auth.signOut()
+    $auth.signOut();
     // .then(function(resp) {
     //   $location.path('/sign_in');
     // })
@@ -64,6 +64,8 @@ YsApp.controller('BaseController', ['$scope', '$rootScope', 'Locale', 'snapRemot
   //   $location.path('/courses');
   // });
 
+  // console.log(JSON.stringify($auth));
+
 }]);
 
 YsApp.controller('CoursesController', ['$scope', 'Course', 'Courses', '$controller', '$auth', function($scope, Course, Courses, $controller, $auth){
@@ -80,6 +82,7 @@ YsApp.controller('CoursesController', ['$scope', 'Course', 'Courses', '$controll
     $scope.i18n_translations = data.i18n_translations;
     // console.log(data.courses);
   });
+
 
 }]);
 

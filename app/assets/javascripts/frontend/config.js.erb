@@ -1,6 +1,6 @@
 
 /* CONFIG AND Routing */
-YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfpLoadingBarProvider', '$authProvider', function(snapRemoteProvider, $stateProvider, $urlRouterProvider, cfpLoadingBarProvider, $authProvider){
+YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfpLoadingBarProvider', '$authProvider', '$httpProvider', function(snapRemoteProvider, $stateProvider, $urlRouterProvider, cfpLoadingBarProvider, $authProvider, $httpProvider){
   cfpLoadingBarProvider.includeSpinner = false;
   snapRemoteProvider.globalOptions = {
     disable: 'right',
@@ -10,13 +10,23 @@ YsApp.config(['snapRemoteProvider', '$stateProvider', '$urlRouterProvider', 'cfp
     transitionSpeed: 0.4,
     hyperextensible: false
   };
-  $urlRouterProvider.otherwise('/sign_in');
+
+  $httpProvider.defaults.withCredentials = true;
 
   $authProvider.configure({
-    // apiUrl: 'http://localhost:3000'
-    apiUrl: window.location.origin
+    apiUrl: 'http://127.0.0.1:3000',
+    tokenFormat: {
+      "access-token": "{{ token }}",
+      "token-type":   "Bearer",
+      "client":       "{{ clientId }}",
+      "expiry":       "{{ expiry }}",
+      "uid":          "{{ uid }}"
+    },
+    // storage: 'localStorage'
+    // apiUrl: window.location.origin
   });
 
+  $urlRouterProvider.otherwise('/sign_in');
   $stateProvider
     .state('sign_in', {
       url: "/sign_in",

@@ -1,18 +1,18 @@
 
-YsApp.factory('Courses', ['$http', function($http){
+YsApp.factory('Courses', ['$http', '$auth', function($http, $auth){
   var Courses = {};
   Courses.get = function(locale, callback){
-    $http.get('/' + locale + '/api/v1/courses').success(function(data){
+    $http.get($auth.apiUrl() + '/' + locale + '/api/v1/courses').success(function(data){
       callback(data);
     });
   };
   return Courses;
 }]);
 
-YsApp.factory('Course', ['$http', function($http){
+YsApp.factory('Course', ['$http', '$auth', function($http, $auth){
   var Course = {};
   Course.get = function(locale, id, callback){
-    $http.get('/' + locale + '/api/v1/courses/' + id).success(function(data){
+    $http.get($auth.apiUrl() + '/' + locale + '/api/v1/courses/' + id).success(function(data){
       callback(data);
     });
   };
@@ -42,10 +42,10 @@ YsApp.factory('Course', ['$http', function($http){
 //   return Chapter;
 // });
 
-YsApp.factory('Chapter', ['$http', function($http){
+YsApp.factory('Chapter', ['$http', '$auth', function($http, $auth){
   var Chapter = {};
   Chapter.get = function(locale, id, callback){
-    $http.get('/' + locale + '/api/v1/chapters/' + id).success(function(data){
+    $http.get($auth.apiUrl() + '/' + locale + '/api/v1/chapters/' + id).success(function(data){
       callback(data);
     });
   };
@@ -53,40 +53,40 @@ YsApp.factory('Chapter', ['$http', function($http){
 }]);
 
 
-YsApp.factory('Practice', ['$http', function($http){
+YsApp.factory('Practice', ['$http', '$auth', function($http, $auth){
   var Practice = {};
   Practice.get = function(locale, id, callback){
-    $http.get('/' + locale + '/api/v1/practices/' + id).success(function(data){
+    $http.get($auth.apiUrl() + '/' + locale + '/api/v1/practices/' + id).success(function(data){
       callback(data);
     });
   };
   return Practice;
 }]);
 
-YsApp.factory('Theory', ['$http', function($http){
+YsApp.factory('Theory', ['$http', '$auth', function($http, $auth){
   var Theory = {};
   Theory.get = function(locale, id, callback){
-    $http.get('/' + locale + '/api/v1/theories/' + id).success(function(data){
+    $http.get($auth.apiUrl() + '/' + locale + '/api/v1/theories/' + id).success(function(data){
       callback(data);
     });
   };
   return Theory;
 }]);
 
-YsApp.factory('GetTheoryMedia', ['$http', function($http){
+YsApp.factory('GetTheoryMedia', ['$http', '$auth', function($http, $auth){
   var GetTheoryMedia = {};
   GetTheoryMedia.get = function(locale, id, callback){
-    $http.get('/' + locale + '/api/v1/medias/' + id).success(function(data){
+    $http.get($auth.apiUrl() + '/' + locale + '/api/v1/medias/' + id).success(function(data){
       callback(data);
     });
   };
   return GetTheoryMedia;
 }]);
 
-YsApp.factory('GetPracticeMedia', ['$http', function($http){
+YsApp.factory('GetPracticeMedia', ['$http', '$auth', function($http, $auth){
   var GetPracticeMedia = {};
   GetPracticeMedia.get = function(locale, id, callback){
-    $http.get('/' + locale + '/api/v1/medias/' + id).success(function(data){
+    $http.get($auth.apiUrl() + '/' + locale + '/api/v1/medias/' + id).success(function(data){
       callback(data);
     });
   };
