@@ -39,5 +39,10 @@ class Api::BaseApiController < ApplicationController
   # def configure_permitted_parameters
   #   devise_parameter_sanitizer.for(:sign_in) << :session
   # end
+  #
+  # => Regarding devise_token_auth
+  # => https://github.com/lynndylanhurley/devise_token_auth/pull/79
+  # => https://github.com/lynndylanhurley/devise_token_auth/issues/74
+  #
 
 end
