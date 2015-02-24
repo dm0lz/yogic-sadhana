@@ -3,9 +3,17 @@ upstream puma_<%= application %> {
   server unix:/tmp/puma.<%= application %>.sock fail_timeout=0;
 }
 
+# for redirecting to https version of the site
 server {
   listen 80;
   rewrite ^(.*) https://$host$1 permanent;
+}
+
+# for redirecting to non-www version of the site
+server {
+  listen  80;
+  server_name  ~^<%= site_url %>$;
+  rewrite ^(.*) http://<%= site_url %>$1 permanent;
 }
 
 server {
