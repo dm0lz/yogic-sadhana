@@ -4,6 +4,7 @@ class Api::BaseApiController < ApplicationController
   include DeviseTokenAuth::Concerns::SetUserByToken
 
   # skip_before_filter  :verify_authenticity_token
+  before_action :pryed
 
   before_action :authenticate_user!
   #before_action :authenticate_current_user
@@ -16,6 +17,9 @@ class Api::BaseApiController < ApplicationController
   end
 
   private
+  def pryed
+    # binding.pry
+  end
   # def authenticate_current_user
   #   render json: {}, status: :unauthorized if get_current_user.nil?
   # end
