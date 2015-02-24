@@ -2,7 +2,8 @@
 fr:
   landing:
     intro:
-      welcome: "Un Exposé Pratique de l'Antique Système du Yoga"
+      welcome: "Un Exposé Pratique de l'Ancien Système du Yoga"
+      launch: "Les Inscriptions ne sont pas encore ouvertes"
   activerecord:
     errors:
       models:
