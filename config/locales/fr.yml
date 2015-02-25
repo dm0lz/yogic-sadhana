@@ -3,7 +3,9 @@ fr:
   landing:
     intro:
       welcome: "Un Exposé Pratique de l'Ancien Système du Yoga"
-      launch: "Les Inscriptions ne sont pas encore ouvertes"
+      launch: "Inscription"
+    buttons:
+      submit: "Envoyer"
   activerecord:
     errors:
       models:
