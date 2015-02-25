@@ -12,8 +12,6 @@ load "config/recipes/smtp"
 
 server "yogic-sadhana.com", :web, :app, :db, :primary => true
 
-# files we want symlinking to specific entries in shared.
-
 set :site_url, "yogic-sadhana.com"
 set :application, "yogic-sadhana"
 set :user, "deployer"
