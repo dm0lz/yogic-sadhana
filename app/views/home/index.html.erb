@@ -15,7 +15,7 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav"> 
+      <ul class="nav navbar-nav">
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -68,14 +68,14 @@
   <div class="row">
     <section class="well home">
     <h3><%= t('landing.intro.launch') %></h3>
-      <form>
+      <%= form_tag landing_mailer_path do %>
         <div class="form-group">
-          <input type="email" disabled="true" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+          <%= email_field_tag :email, nil, class: "form-control", placeholder: "Enter email" %>
         </div>
         <div class="form-group">
-          <button type="submit" disabled="true" class="btn btn-primary btn-lg">Submit</button>
+          <%= submit_tag "Sign in", class: "btn btn-lg btn-primary" %>
         </div>
-      </form>
+      <% end %>
     </section>
   </div>
 </section>

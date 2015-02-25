@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   scope "(:locale)", :locale => /en|fr/ do
 
     root to: "home#index"
+    post "landing_mailer" => "home#landing_mailer", controller: "frontend/main"
 
     devise_for :admins, :controllers => { :sessions => 'authentication/sessions', :passwords => 'authentication/passwords', :registrations => 'authentication/registrations' }
 
