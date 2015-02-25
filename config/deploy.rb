@@ -12,7 +12,7 @@ load "config/recipes/rvm"
 server "yogic-sadhana.com", :web, :app, :db, :primary => true
 
 # files we want symlinking to specific entries in shared.
-set :linked_files, %w{config/smtp.yml}
+run "ln -nfs #{shared_path}/config/smtp.yml #{release_path}/config/smtp.yml"
 
 set :site_url, "yogic-sadhana.com"
 set :application, "yogic-sadhana"
