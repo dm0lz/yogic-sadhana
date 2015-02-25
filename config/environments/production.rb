@@ -1,5 +1,12 @@
 Rails.application.configure do
 
+  config.before_configuration do
+    env_file = File.join(Rails.root, 'config', 'smtp.yml')
+    YAML.load(File.open(env_file)).each do |key, value|
+      ENV[key.to_s] = value
+    end if File.exists?(env_file)
+  end
+
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
@@ -9,6 +16,7 @@ Rails.application.configure do
     :authentication       => :plain,
     :enable_starttls_auto => true
   }
+
 
   # Settings specified here will take precedence over those in config/application.rb.
   # Code is not reloaded between requests.
