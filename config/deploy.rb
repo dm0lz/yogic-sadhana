@@ -8,11 +8,11 @@ load "config/recipes/nginx_puma_ssl"
 load "config/recipes/puma"
 load "config/recipes/mysql"
 load "config/recipes/rvm"
+load "config/recipes/smtp"
 
 server "yogic-sadhana.com", :web, :app, :db, :primary => true
 
 # files we want symlinking to specific entries in shared.
-run "ln -nfs #{shared_path}/config/smtp.yml #{release_path}/config/smtp.yml"
 
 set :site_url, "yogic-sadhana.com"
 set :application, "yogic-sadhana"
