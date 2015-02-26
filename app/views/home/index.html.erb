@@ -72,13 +72,20 @@
 
 <section class="container">
   <div class="row">
-    <section class="well home">
+    <section class="well inscription_button">
     <%= link_to t('landing.buttons.register'), show_subscription_modal_path, remote: true, class: "btn btn-lg btn-primary" %>
     </section>
   </div>
 </section>
 
 
+<script type="text/javascript" charset="utf-8">
+  $(document).bind('cbox_complete', function(){
+    $('form').submit(function() {
+      $("section.well.home").hide();
+    });
+  });
+</script>
 
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function(){
