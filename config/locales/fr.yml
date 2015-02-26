@@ -4,8 +4,11 @@ fr:
     intro:
       welcome: "Un Exposé Pratique de l'Ancien Système du Yoga"
       launch: "Inscription"
+      placeholder: "Entrer votre Email"
     buttons:
       submit: "Envoyer"
+      subscribe: "Inscription"
+      register: "Inscription"
   activerecord:
     errors:
       models:

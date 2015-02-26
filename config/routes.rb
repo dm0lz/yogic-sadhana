@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   scope "(:locale)", :locale => /en|fr/ do
 
     root to: "home#index"
-    post "landing_mailer" => "home#landing_mailer", controller: "frontend/main"
+    post "create_subscription" => "home#create_subscription", controller: "frontend/main"
+    get "show_subscription_modal" => "home#show_subscription_modal", controller: "frontend/main"
 
     devise_for :admins, :controllers => { :sessions => 'authentication/sessions', :passwords => 'authentication/passwords', :registrations => 'authentication/registrations' }
 

@@ -32,6 +32,8 @@ gem 'angular_rails_csrf'
 
 gem 'rack-cors', :require => 'rack/cors'
 
+# gem 'responders', '~> 2.0'
+
 group :development do
   gem 'sqlite3'
   gem 'pry'

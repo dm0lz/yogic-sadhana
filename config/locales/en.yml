@@ -4,8 +4,11 @@ en:
     intro:
       welcome: "A Systematic Course in the Ancient System of Yoga"
       launch: "Register"
+      placeholder: "Enter Email"
     buttons:
       submit: "Submit"
+      subscribe: "Subscribe"
+      register: "Register"
   activerecord:
     errors:
       models:

@@ -69,22 +69,14 @@
 </article>
 </a>
 
+
 <section class="container">
   <div class="row">
     <section class="well home">
-    <h3><%= t('landing.intro.launch') %></h3>
-      <%= form_tag landing_mailer_path do %>
-        <div class="form-group">
-          <%= email_field_tag :email, nil, class: "form-control", placeholder: "Enter email" %>
-        </div>
-        <div class="form-group">
-          <%= submit_tag t('landing.buttons.submit'), class: "btn btn-lg btn-primary" %>
-        </div>
-      <% end %>
+    <%= link_to t('landing.buttons.register'), show_subscription_modal_path, remote: true, class: "btn btn-lg btn-primary" %>
     </section>
   </div>
 </section>
-
 
 
 
