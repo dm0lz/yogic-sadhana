@@ -5,6 +5,7 @@ fr:
       welcome: "Un Exposé Pratique de l'Ancien Système du Yoga"
       launch: "Inscription"
       placeholder: "Entrer votre Email"
+      register_message: "Merci ! Votre demande a bien été prise en compte !"
     buttons:
       submit: "Envoyer"
       subscribe: "Inscription"

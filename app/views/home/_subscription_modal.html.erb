@@ -1,6 +1,9 @@
 
 <section class="container">
   <div class="row">
+    <section class="register_message">
+    <h3><%= t('landing.intro.register_message') %></h3>
+    </section>
     <section class="well home">
     <h3 class="inscription"><%= t('landing.intro.launch') %></h3>
       <%= form_tag create_subscription_path, remote: true do %>

@@ -5,6 +5,7 @@ en:
       welcome: "A Systematic Course in the Ancient System of Yoga"
       launch: "Register"
       placeholder: "Enter Email"
+      register_message: "Thanks ! Your request was successfully processed !"
     buttons:
       submit: "Submit"
       subscribe: "Subscribe"
