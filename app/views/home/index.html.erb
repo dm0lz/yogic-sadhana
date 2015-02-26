@@ -79,21 +79,3 @@
 </section>
 
 
-<script type="text/javascript" charset="utf-8">
-  $(document).bind('cbox_complete', function(){
-    $('form').submit(function() {
-      $("section.well.home").hide();
-      $(".register_message").show();
-    });
-  });
-</script>
-
-<script type="text/javascript" charset="utf-8">
-  $(document).ready(function(){
-    $(".arrow-span").bind('click', function(){
-      $('html,body').animate({
-        scrollTop: window.scrollY + window.innerHeight
-      }, 1000);
-    });
-  });
-</script>
