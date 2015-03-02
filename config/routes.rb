@@ -57,6 +57,7 @@ Rails.application.routes.draw do
         resources :practices, only: [:index, :show]
         resources :theories, only: [:index, :show]
         resources :medias, only: [:index, :show]
+      end
     end
 
   end
