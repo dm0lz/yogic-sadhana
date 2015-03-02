@@ -51,16 +51,12 @@ Rails.application.routes.draw do
       end
       namespace :v2 do
         resources :courses, only: [:index, :show] do
-          resources :chapters, only: [:index, :show] do
-            resources :practices, only: [:index, :show] do
-              resources :medias, only: [:index, :show]
-            end
-            resources :theories, only: [:index, :show] do
-              resources :medias, only: [:index, :show]
-            end
-          end
+          get :menu
         end
-      end
+        resources :chapters, only: [:index, :show]
+        resources :practices, only: [:index, :show]
+        resources :theories, only: [:index, :show]
+        resources :medias, only: [:index, :show]
     end
 
   end
