@@ -49,18 +49,18 @@ Rails.application.routes.draw do
         resources :theories, only: [:index, :show]
         resources :medias, only: [:index, :show]
       end
-      # namespace :v2 do
-      #   resources :courses, only: [:index, :show] do
-      #     resources :chapters, only: [:index, :show] do
-      #       resources :practices, only: [:index, :show] do
-      #         resources :medias, only: [:index, :show]
-      #       end
-      #       resources :theories, only: [:index, :show] do
-      #         resources :medias, only: [:index, :show]
-      #       end
-      #     end
-      #   end
-      # end
+      namespace :v2 do
+        resources :courses, only: [:index, :show] do
+          resources :chapters, only: [:index, :show] do
+            resources :practices, only: [:index, :show] do
+              resources :medias, only: [:index, :show]
+            end
+            resources :theories, only: [:index, :show] do
+              resources :medias, only: [:index, :show]
+            end
+          end
+        end
+      end
     end
 
   end
