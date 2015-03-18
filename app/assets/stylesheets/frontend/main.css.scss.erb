@@ -52,7 +52,11 @@ span.country_flags{
   }
 }
 
-@import url(http://fonts.googleapis.com/css?family=Raleway:300);
+// @import url(http://fonts.googleapis.com/css?family=Raleway:300);
+@font-face {
+  font-family: "Raleway";
+  src: url(<%= asset_path('fonts/raleway.woff2') %>);
+}
 
 body{
   font-family: 'Raleway', sans-serif;
