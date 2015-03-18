@@ -92,8 +92,12 @@ article.arrow-dw{
   font-size: 4em;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Raleway:300);
-@import url(http://fonts.googleapis.com/css?family=Amarante);
+// @import url(http://fonts.googleapis.com/css?family=Raleway:300);
+// @import url(http://fonts.googleapis.com/css?family=Amarante);
+@font-face {
+  font-family: "Amarante";
+  src: url(<%= asset_path('fonts/amarante.woff2') %>);
+}
 
 body{
   font-family: 'Amarante', sans-serif;
