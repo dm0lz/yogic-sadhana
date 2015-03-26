@@ -3,7 +3,7 @@
 
 <h1 class="text-center">{{practice.title}}</h1>
 
-<p class="text-center">{{practice}}</p>
+<!-- <p class="text&#45;center">{{practice}}</p> -->
 
 <h1>
   <a ui-sref="ys.course.chapter.practice.medias">{{i18n_translations.medias.buttons.list_title}}</a>
@@ -13,7 +13,7 @@
   <li>
     <div class="well">
 
-      <a ui-sref="ys.course.chapter.practice.media({ mediaId: {{media.id}} })"><i ng-class="media.media_type == 'audio' ? 'fa fa-music' : 'fa fa-film'"></i>&nbsp;{{media}}</a>
+      <a ui-sref="ys.course.chapter.practice.media({ mediaId: {{media.id}} })"><i ng-class="media.media_type == 'audio' ? 'fa fa-file-audio-o' : 'fa fa-file-video-o'"></i>&nbsp;{{media.title}}</a>
 
       <!-- <hr /> -->
       <!--  -->

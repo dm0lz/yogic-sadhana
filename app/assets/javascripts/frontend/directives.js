@@ -50,6 +50,21 @@ YsApp.directive('mediaElement', function(){
       //     }
       //   });
       // });
+      scope.togglePlay = function(){
+        var el = angular.element(element).mediaelementplayer();
+        if (el[0].paused){
+          el[0].play();
+        }else{
+          el[0].pause();
+        }
+        toggleButton();
+      };
+
+      var toggleButton = function(e){
+        var button = angular.element("button.btn.btn-lg.btn-block");
+        ($("button.btn.btn-lg.btn-block").text() === "Play") ? $("button.btn.btn-lg.btn-block").text("Pause") : $("button.btn.btn-lg.btn-block").text("Play");
+        button.toggleClass("btn-success btn-danger");
+      };
     }
 
   }
