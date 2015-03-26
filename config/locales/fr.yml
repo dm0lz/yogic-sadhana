@@ -52,7 +52,7 @@ fr:
     account_settings: "Paramètres du compte"
   breadcrumbs:
     courses: "Cours"
-    chapters: "Chapitres"
+    chapters: "Modules"
     practices: "Pratiques"
     medias: "Medias"
     theories: "Théories"
@@ -87,8 +87,8 @@ fr:
       edit_chapter: "Editer le chapitre"
       create_chapter: "Créer un nouveau chapitre"
     buttons:
-      list: "Voir la liste des chapitres"
-      list_title: "Liste des chapitres"
+      list: "Voir la liste des modules"
+      list_title: "Liste des modules"
       create_chapter: "Créer un nouveau chapitre"
       show_chapter: "Voir le chapitre"
       destroy_chapter: "Effacer le chapitre"
@@ -102,7 +102,7 @@ fr:
       id: "Id"
       title: "Titre"
       description: "Description"
-      chapter_title: "Titre du chapitre"
+      chapter_title: "Titre du module"
       picture: "Image"
     flash_messages:
       chapter_created: "Le chapitre a été crée avec succès"
