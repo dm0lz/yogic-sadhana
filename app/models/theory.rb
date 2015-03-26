@@ -6,5 +6,5 @@ class Theory < ActiveRecord::Base
   has_many :media, as: :mediumable, dependent: :destroy
 
   validates_presence_of :title
-  validates_presence_of :description
+  # validates_presence_of :description
 end
