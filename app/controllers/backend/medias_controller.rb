@@ -39,6 +39,7 @@ class Backend::MediasController < Backend::BackendController
   end
 
   def update
+    @media.remove_picture! if params["medium"]["remove_picture"] == "1"
     if @media.update_attributes(media_params)
       flash[:success] = t('medias.flash_messages.media_updated')
       redirect_to backend_media_path @media
@@ -60,7 +61,7 @@ class Backend::MediasController < Backend::BackendController
 
   private
   def media_params
-    params.require(:medium).permit(:id, :title, :description, :practice_id, :audio, :video, :mediumable_type, :mediumable_id, :media_type, :remove_audio, :remove_video)
+    params.require(:medium).permit(:id, :title, :description, :practice_id, :audio, :video, :picture, :mediumable_type, :mediumable_id, :media_type, :remove_audio, :remove_video, :remove_picture)
   end
 
   def find_media

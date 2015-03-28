@@ -163,7 +163,7 @@ en:
   medias:
     titles:
       edit_medias: "Edit media"
-      create_medias: "Create new media"
+      create_media: "Create new media"
     buttons:
       list: "Show medias list"
       list_title: "Medias list"
@@ -182,6 +182,7 @@ en:
       description: "Description"
       audio: "Audio file"
       video: "Video file"
+      picture: "Picture File"
       media_type: "Media Type"
     flash_messages:
       media_created: "media was successfully created"

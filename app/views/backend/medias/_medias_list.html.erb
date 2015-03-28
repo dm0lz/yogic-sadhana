@@ -14,8 +14,11 @@
   <% @medias.each do |media| %>
     <div class="row well well-sm">
 
-      <div class="col-md-10">
+      <div class="col-md-2">
+        <%= image_tag media.picture, :size => "120x120" %>
+      </div>
 
+      <div class="col-md-8">
         <ul>
           <li>
             <h4><%= t('medias.attributes.title') %></h4>
@@ -26,33 +29,33 @@
             <%= media.description %>
           </li>
           <% if media.media_type == "audio" %>
-          <li>
-            <h4><%= t('medias.attributes.audio') %></h4>
-            <%= media.audio %>
-          </li>
+            <li>
+              <h4><%= t('medias.attributes.audio') %></h4>
+              <%= media.audio %>
+            </li>
           <% else %>
-          <li>
-            <h4><%= t('medias.attributes.video') %></h4>
-            <%= media.video %>
-          </li>
+            <li>
+              <h4><%= t('medias.attributes.video') %></h4>
+              <%= media.video %>
+            </li>
           <% end %>
-
+          </ul>
         </div>
 
         <div class="col-md-2">
-          <li>
-            <%= link_to t('medias.buttons.show_media'), backend_media_path(media), class: "btn btn-success" %>
-          </li>
-          <div class="small-spacer"></div>
-          <li>
-            <%= link_to t('medias.buttons.edit_media'), edit_backend_media_path(media), method: :get, class: "btn btn-info" %>
-          </li>
-          <div class="small-spacer"></div>
-          <li>
-            <%= link_to t('medias.buttons.destroy_media'), backend_media_path(media), method: :delete, class: "btn btn-danger" %>
-          </li>
-        </ul>
-
+          <ul>
+            <li>
+              <%= link_to t('medias.buttons.show_media'), backend_media_path(media), class: "btn btn-success" %>
+            </li>
+            <div class="small-spacer"></div>
+            <li>
+              <%= link_to t('medias.buttons.edit_media'), edit_backend_media_path(media), method: :get, class: "btn btn-info" %>
+            </li>
+            <div class="small-spacer"></div>
+            <li>
+              <%= link_to t('medias.buttons.destroy_media'), backend_media_path(media), method: :delete, class: "btn btn-danger" %>
+            </li>
+          </ul>
         </div>
 
     </div>

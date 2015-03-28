@@ -6,6 +6,7 @@ class Medium < ActiveRecord::Base
 
   mount_uploader :audio, AudioUploader
   mount_uploader :video, VideoUploader
+  mount_uploader :picture, PictureUploader
 
   validates_presence_of :media_type
   validates_presence_of :title

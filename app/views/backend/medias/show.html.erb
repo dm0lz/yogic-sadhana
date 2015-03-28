@@ -4,6 +4,11 @@
     <ul class="well">
       <li><%= t('medias.attributes.id') %> : <%= @media.id %></li>
       <li><%= t('medias.attributes.title') %> : <%= @media.title %></li>
+      <li><%= t('medias.attributes.picture') %></li>
+      <div class="col-md-2">
+        <%= image_tag @media.picture, :size => "120x120" %>
+      </div>
+      <div style="clear:both;"></div>
       <li><%= t('medias.attributes.description') %> : <%= @media.description %></li>
       <li><%= t('courses.attributes.course_title') %> : <%= @media.mediumable.chapter.course.title %></li>
       <li><%= t('chapters.attributes.chapter_title') %> : <%= @media.mediumable.chapter.title %></li>

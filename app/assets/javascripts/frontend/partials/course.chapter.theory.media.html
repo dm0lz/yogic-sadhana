@@ -9,9 +9,13 @@
 
   <hr />
 
+  <section class="" ng-if="media.picture.url">
+    <img ng-src="{{media.picture.url}}" alt="image" class="img-thumbnail" />
+  <hr />
+  </section>
+
   <section ng-if="media.audio.url">
     <audio controls ng-src="{{media.audio.url}}" media:element style="width:100%;height:100%;">
-      <!-- <source ng&#45;src="{{media.audio.url}}" type='audio/ogg' /> -->
     </audio>
     <hr />
     <button type="button" class="btn btn-lg btn-block btn-success" ng-click="togglePlay()">Play</button>
@@ -20,11 +24,8 @@
 
   <section ng-if="media.video.url">
     <video controls ng-src="{{media.video.url}}" media:element style="width:100%;height:100%;">
-      <!-- <source ng&#45;src="{{media.audio.url}}" type='audio/ogg' /> -->
     </video>
   </section>
-
-  <!-- {{media}} -->
 
   <hr />
 

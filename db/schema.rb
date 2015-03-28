@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212151321) do
+ActiveRecord::Schema.define(version: 20150328150401) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20150212151321) do
     t.datetime "updated_at"
     t.string   "video"
     t.string   "media_type"
+    t.string   "picture"
   end
 
   add_index "media", ["mediumable_id", "mediumable_type"], name: "index_media_on_mediumable_id_and_mediumable_type"
