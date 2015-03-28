@@ -7,7 +7,7 @@
 <ul ng-repeat="media in medias">
   <li>
     <div class="well">
-      <a ui-sref="ys.course.chapter.theory.media({ mediaId: {{media.id}} })" ui-sref-active="active">{{media.title}}</a>
+      <a ui-sref="ys.course.chapter.theory.media({ mediaId: {{media.id}} })" ui-sref-active="active"><i ng-class="media.media_type == 'audio' ? 'icon ion-volume-high' : 'icon ion-videocamera'"></i>&nbsp;&nbsp;{{media.title}}</a>
       <!-- {{media}} -->
     </div>
   </li>
