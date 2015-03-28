@@ -2,7 +2,7 @@
 
 
 
-<section class="container media-main">
+<section class="container container-media">
   <section class="row">
 
   <h1 class="text-center">{{media.title}}</h1>
@@ -10,7 +10,7 @@
   <hr />
 
   <section class="text-center" ng-if="media.picture.url && !media.video.url">
-    <img ng-src="{{media.picture.url}}" alt="image" class="img-thumbnail" style="max-height: 400px; max-width: 600px;" />
+    <img ng-src="{{media.picture.url}}" alt="image" class="img-thumbnail media-picture" style="" />
   <hr />
   </section>
 
